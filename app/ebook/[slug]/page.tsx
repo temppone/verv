@@ -54,7 +54,7 @@ export default function Ebook() {
         <meta name="twitter:image" content={HomeImage.src} />
       </Head>
 
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col bg-gradient-to-r from-green-100 via-white to-green-100">
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export default function Ebook() {
           </div>
         </header>
         <main className="flex-1">
-          <section className="w-full py-12 md:py-24 lg:py-32">
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-50 via-white to-green-50">
             <div className="container px-4 md:px-6">
               <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
                 <div className="flex flex-col order-2 justify-center space-y-4 md:order-1">
@@ -145,7 +145,7 @@ export default function Ebook() {
 
           <section
             id="problema"
-            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
+            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 via-white to-gray-100"
           >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -208,7 +208,10 @@ export default function Ebook() {
             </div>
           </section>
 
-          <section id="beneficios" className="w-full py-12 md:py-24 lg:py-32">
+          <section
+            id="beneficios"
+            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-50 via-white to-green-50"
+          >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -298,7 +301,7 @@ export default function Ebook() {
 
           <section
             id="para-quem"
-            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
+            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 via-white to-gray-100"
           >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -353,7 +356,10 @@ export default function Ebook() {
             </div>
           </section>
 
-          <section id="depoimentos" className="w-full py-12 md:py-24 lg:py-32">
+          <section
+            id="depoimentos"
+            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-50 via-white to-green-50"
+          >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -429,7 +435,7 @@ export default function Ebook() {
 
           <section
             id="oferta"
-            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
+            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 via-white to-gray-100"
           >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -445,52 +451,53 @@ export default function Ebook() {
               <div className="mx-auto max-w-3xl mt-8">
                 <Card className="border-2 border-black transition-all duration-300 ease-in-out hover:shadow-lg">
                   <CardContent className="p-6 md:p-8">
-                    <div className="text-center">
-                      <h3 className="text-2xl font-bold">
-                        IA para Criativos: Automatize seu Fluxo
-                      </h3>
-                      <div className="mt-4 flex items-baseline justify-center">
-                        <span className="text-lg line-through text-muted-foreground">
-                          R$27
-                        </span>
-                        <span className="ml-2 text-5xl font-bold text-black">
-                          R$7
-                        </span>
-                        <span className="ml-1 text-muted-foreground">
-                          pagamento único
-                        </span>
+                    <div className="grid gap-4">
+                      <div className="text-center">
+                        <h3 className="text-2xl font-bold">
+                          IA para Criativos: Automatize seu Fluxo
+                        </h3>
+                        <div className="mt-4 flex items-baseline justify-center">
+                          <span className="text-lg line-through text-muted-foreground">
+                            R$27
+                          </span>
+                          <span className="ml-2 text-5xl font-bold text-black">
+                            R$7
+                          </span>
+                          <span className="ml-1 text-muted-foreground">
+                            pagamento único
+                          </span>
+                        </div>
                       </div>
-                    </div>
-
-                    <ul className="grid gap-2 py-4 justify-center">
-                      {[
-                        "E-book completo em formato PDF",
-                        "Dicas práticas de automação com IA",
-                        "Templates para briefing e atendimento",
-                        "Guia de integração IA + Notion",
-                        "Acesso imediato após a compra",
-                        "Atualizações gratuitas",
-                        "Garantia de 7 dias",
-                      ].map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-black" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div id="comprar-agora" className="pt-4">
-                      <Button
-                        size="lg"
-                        className="w-full bg-green-500 text-white transition-all duration-200 ease-in-out hover:bg-green-600"
-                        asChild
-                      >
-                        <Link href="#comprar-agora">
-                          QUERO MEU E-BOOK AGORA
-                        </Link>
-                      </Button>
-                      <p className="mt-2 text-xs text-center text-muted-foreground">
-                        Pagamento seguro. Download imediato após a compra.
-                      </p>
+                      <ul className="grid gap-2 py-4">
+                        {[
+                          "E-book completo em formato PDF",
+                          "Dicas práticas de automação com IA",
+                          "Templates para briefing e atendimento",
+                          "Guia de integração IA + Notion",
+                          "Acesso imediato após a compra",
+                          "Atualizações gratuitas",
+                          "Garantia de 7 dias",
+                        ].map((feature, i) => (
+                          <li key={i} className="flex items-center gap-2">
+                            <CheckCircle className="h-4 w-4 text-black" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div id="comprar-agora" className="pt-4">
+                        <Button
+                          size="lg"
+                          className="w-full bg-green-500 text-white transition-all duration-200 ease-in-out hover:bg-green-600"
+                          asChild
+                        >
+                          <Link href="#comprar-agora">
+                            QUERO MEU E-BOOK AGORA
+                          </Link>
+                        </Button>
+                        <p className="mt-2 text-xs text-center text-muted-foreground">
+                          Pagamento seguro. Download imediato após a compra.
+                        </p>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -505,7 +512,7 @@ export default function Ebook() {
             </div>
           </section>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-900 via-black to-green-900 text-white">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -531,9 +538,9 @@ export default function Ebook() {
             </div>
           </section>
         </main>
-        <footer className="w-full border-t py-6 md:py-0">
+        <footer className="w-full border-t py-6 md:py-0 bg-gradient-to-r from-green-100 via-white to-green-100">
           <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-            <img src={Logo.src} alt="Home" className="w-40 container" />
+            <img src={Logo.src} alt="Home" className="w- container" />
           </div>
         </footer>
       </div>
