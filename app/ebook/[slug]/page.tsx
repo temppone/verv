@@ -54,7 +54,7 @@ export default function Ebook() {
         <meta name="twitter:image" content={HomeImage.src} />
       </Head>
 
-      <div className="flex min-h-screen flex-col bg-gradient-to-r from-green-100 via-white to-green-100">
+      <div className="flex min-h-screen flex-col">
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
@@ -90,12 +90,12 @@ export default function Ebook() {
           </div>
         </header>
         <main className="flex-1">
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-50 via-white to-green-50">
+          <section className="w-full py-12 md:py-24 lg:py-32">
             <div className="container px-4 md:px-6">
               <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
                 <div className="flex flex-col order-2 justify-center space-y-4 md:order-1">
                   <div className="space-y-2">
-                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-green-600">
                       Aprenda a usar a IA para automatizar seu trabalho
                     </h1>
                     <p className="max-w-[600px] text-muted-foreground md:text-xl">
@@ -111,7 +111,7 @@ export default function Ebook() {
                     >
                       <Link href="#comprar-agora">
                         QUERO MEU E-BOOK AGORA{" "}
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <ArrowRight className="ml-2 h-4 w-4 text-white" />
                       </Link>
                     </Button>
                   </div>
@@ -122,7 +122,7 @@ export default function Ebook() {
                         .map((_, i) => (
                           <Star
                             key={i}
-                            className="h-4 w-4 fill-black text-black"
+                            className="h-4 w-4 fill-green-600 text-green-600"
                           />
                         ))}
                     </div>
@@ -145,7 +145,7 @@ export default function Ebook() {
 
           <section
             id="problema"
-            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 via-white to-gray-100"
+            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
           >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -183,11 +183,11 @@ export default function Ebook() {
                   >
                     <CardContent className="p-6 text-left md:text-left text-center">
                       <div className="flex justify-center md:justify-start mb-4">
-                        <problema.icon className="h-12 w-12 text-black transition-transform duration-300 ease-in-out hover:scale-105" />
+                        <problema.icon className="h-12 w-12 text-green-600 transition-transform duration-300 ease-in-out hover:scale-105" />
                       </div>
                       <h3 className="text-xl font-bold">{problema.title}</h3>
                       <p className="text-muted-foreground mt-2">
-                        <X className="h-4 w-4 inline mr-1" />{" "}
+                        <X className="h-4 w-4 inline mr-1 text-red-600" />{" "}
                         {problema.description}
                       </p>
                     </CardContent>
@@ -195,7 +195,7 @@ export default function Ebook() {
                 ))}
               </div>
               <div className="text-center mt-8 max-w-3xl mx-auto">
-                <p className="text-lg font-medium">
+                <p className="text-lg font-medium text-green-600">
                   A boa notícia? A IA pode te ajudar a resolver tudo isso – sem
                   tirar sua autenticidade.
                 </p>
@@ -208,14 +208,11 @@ export default function Ebook() {
             </div>
           </section>
 
-          <section
-            id="beneficios"
-            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-50 via-white to-green-50"
-          >
+          <section id="beneficios" className="w-full py-12 md:py-24 lg:py-32">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-600">
                     O Que Você Vai Aprender?
                   </h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -265,15 +262,17 @@ export default function Ebook() {
                 ].map((beneficio, i) => (
                   <Card
                     key={i}
-                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md"
+                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md bg-white"
                   >
                     <CardContent className="p-6 text-left md:text-left text-center">
                       <div className="flex justify-center md:justify-start mb-4">
-                        <beneficio.icon className="h-12 w-12 text-black transition-transform duration-300 ease-in-out hover:scale-105" />
+                        <beneficio.icon className="h-12 w-12 text-green-600 transition-transform duration-300 ease-in-out hover:scale-105" />
                       </div>
-                      <h3 className="text-xl font-bold">{beneficio.title}</h3>
+                      <h3 className="text-xl font-bold text-green-600">
+                        {beneficio.title}
+                      </h3>
                       <p className="text-muted-foreground mt-2">
-                        <CheckCircle className="h-4 w-4 inline mr-1" />{" "}
+                        <CheckCircle className="h-4 w-4 inline mr-1 text-green-600" />{" "}
                         {beneficio.description}
                       </p>
                     </CardContent>
@@ -281,9 +280,9 @@ export default function Ebook() {
                 ))}
               </div>
               <div className="text-center mt-8">
-                <p className="text-xl font-bold">
-                  <Zap className="h-4 w-4 inline mr-1" /> E tudo isso por APENAS
-                  R$7!
+                <p className="text-xl font-bold text-green-600">
+                  <Zap className="h-4 w-4 inline mr-1 text-green-600" /> E tudo
+                  isso por APENAS R$7!
                 </p>
                 <Button
                   size="lg"
@@ -292,7 +291,7 @@ export default function Ebook() {
                 >
                   <Link href="#comprar-agora">
                     QUERO MEU E-BOOK AGORA{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 text-white" />
                   </Link>
                 </Button>
               </div>
@@ -301,12 +300,12 @@ export default function Ebook() {
 
           <section
             id="para-quem"
-            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 via-white to-gray-100"
+            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
           >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-600">
                     Para Quem Esse E-book é Perfeito?
                   </h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -338,15 +337,17 @@ export default function Ebook() {
                 ].map((perfil, i) => (
                   <Card
                     key={i}
-                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md"
+                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md bg-white"
                   >
                     <CardContent className="p-6 text-left md:text-left text-center">
                       <div className="flex justify-center md:justify-start mb-4">
-                        <perfil.icon className="h-12 w-12 text-black transition-transform duration-300 ease-in-out hover:scale-105" />
+                        <perfil.icon className="h-12 w-12 text-green-600 transition-transform duration-300 ease-in-out hover:scale-105" />
                       </div>
-                      <h3 className="text-xl font-bold">{perfil.title}</h3>
-                      <p className="text-muted-foreground mt-2">
-                        <CheckCircle className="h-4 w-4 inline mr-1" />{" "}
+                      <h3 className="text-xl font-bold text-green-600">
+                        {perfil.title}
+                      </h3>
+                      <p className="text-gray-600 mt-2">
+                        <CheckCircle className="h-4 w-4 inline mr-1 text-green-600" />{" "}
                         {perfil.description}
                       </p>
                     </CardContent>
@@ -356,14 +357,11 @@ export default function Ebook() {
             </div>
           </section>
 
-          <section
-            id="depoimentos"
-            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-50 via-white to-green-50"
-          >
+          <section id="depoimentos" className="w-full py-12 md:py-24 lg:py-32">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-600">
                     Depoimentos
                   </h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -400,7 +398,7 @@ export default function Ebook() {
                 ].map((depoimento, i) => (
                   <Card
                     key={i}
-                    className="text-left transition-all duration-300 ease-in-out hover:shadow-md"
+                    className="text-left transition-all duration-300 ease-in-out hover:shadow-md bg-white"
                   >
                     <CardContent className="p-6">
                       <div className="flex mb-4">
@@ -409,14 +407,18 @@ export default function Ebook() {
                           .map((_, i) => (
                             <Star
                               key={i}
-                              className="h-4 w-4 fill-black text-black"
+                              className="h-4 w-4 fill-green-600 text-green-600"
                             />
                           ))}
                       </div>
-                      <p className="mb-4 italic">"{depoimento.quote}"</p>
+                      <p className="mb-4 italic text-gray-600">
+                        "{depoimento.quote}"
+                      </p>
                       <div>
-                        <p className="font-semibold">{depoimento.author}</p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="font-semibold text-gray-800">
+                          {depoimento.author}
+                        </p>
+                        <p className="text-sm text-gray-600">
                           {depoimento.title}
                         </p>
                       </div>
@@ -425,7 +427,7 @@ export default function Ebook() {
                 ))}
               </div>
               <div className="text-center mt-8">
-                <p className="text-lg font-medium">
+                <p className="text-lg font-medium text-green-600">
                   Escrito por um designer estratégico com anos de experiência,
                   esse material traz dicas práticas e reais – sem enrolação!
                 </p>
@@ -435,12 +437,12 @@ export default function Ebook() {
 
           <section
             id="oferta"
-            className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-gray-100 via-white to-gray-100"
+            className="w-full py-12 md:py-24 lg:py-32 bg-muted/50"
           >
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-600">
                     Oferta por Tempo Limitado
                   </h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -449,18 +451,18 @@ export default function Ebook() {
                 </div>
               </div>
               <div className="mx-auto max-w-3xl mt-8">
-                <Card className="border-2 border-black transition-all duration-300 ease-in-out hover:shadow-lg">
+                <Card className="border-2 border-green-600 transition-all duration-300 ease-in-out hover:shadow-lg">
                   <CardContent className="p-6 md:p-8">
                     <div className="grid gap-4">
                       <div className="text-center">
-                        <h3 className="text-2xl font-bold">
+                        <h3 className="text-2xl font-bold text-green-600">
                           IA para Criativos: Automatize seu Fluxo
                         </h3>
                         <div className="mt-4 flex items-baseline justify-center">
                           <span className="text-lg line-through text-muted-foreground">
                             R$27
                           </span>
-                          <span className="ml-2 text-5xl font-bold text-black">
+                          <span className="ml-2 text-5xl font-bold text-green-600">
                             R$7
                           </span>
                           <span className="ml-1 text-muted-foreground">
@@ -479,7 +481,7 @@ export default function Ebook() {
                           "Garantia de 7 dias",
                         ].map((feature, i) => (
                           <li key={i} className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4 text-black" />
+                            <CheckCircle className="h-4 w-4 text-green-600" />
                             <span>{feature}</span>
                           </li>
                         ))}
@@ -503,16 +505,16 @@ export default function Ebook() {
                 </Card>
                 <div className="text-center mt-4">
                   <p className="text-sm text-muted-foreground">
-                    <AlertCircle className="h-4 w-4 inline mr-1" /> Atenção!
-                    Esse preço promocional pode acabar a qualquer momento.
-                    Aproveite antes que volte ao valor original!
+                    <AlertCircle className="h-4 w-4 inline mr-1 text-red-600" />{" "}
+                    Atenção! Esse preço promocional pode acabar a qualquer
+                    momento. Aproveite antes que volte ao valor original!
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-green-900 via-black to-green-900 text-white">
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-black text-white">
             <div className="container px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
@@ -538,9 +540,9 @@ export default function Ebook() {
             </div>
           </section>
         </main>
-        <footer className="w-full border-t py-6 md:py-0 bg-gradient-to-r from-green-100 via-white to-green-100">
+        <footer className="w-full border-t py-6 md:py-0">
           <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-            <img src={Logo.src} alt="Home" className="w- container" />
+            <img src={Logo.src} alt="Home" className="w-40 container" />
           </div>
         </footer>
       </div>
