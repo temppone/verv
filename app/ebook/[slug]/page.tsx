@@ -1,27 +1,27 @@
+import { Button } from "@/components/ui/button";
+import Logo from "@/public/verv_logo.svg";
 import {
-  AlertCircle,
   ArrowRight,
-  Bot,
-  Briefcase,
-  CheckCircle,
+  BookOpen,
+  BrainCircuit,
+  Calendar,
+  Check,
   Clock,
+  Download,
   FileText,
+  LayoutTemplate,
+  Lightbulb,
   MessageSquare,
-  Palette,
-  Star,
-  Users,
-  X,
+  Notebook,
+  ShieldCheck,
+  Sparkles,
   Zap,
 } from "lucide-react";
 import Link from "next/link";
-import HomeImage from "@/public/home.svg";
-import Logo from "@/public/verv_logo.svg";
+
 import Head from "next/head";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
-export default function Ebook() {
+export default function Home() {
   return (
     <>
       <Head>
@@ -35,518 +35,573 @@ export default function Ebook() {
           content="IA, Criativos, Ebook, Automação, Trabalho, Fluxo de Trabalho"
         />
         <meta name="author" content="IA para Criativos" />
-        <meta property="og:title" content="IA para Criativos - Ebook" />
-        <meta
-          property="og:description"
-          content="Aprenda a usar a IA para automatizar seu trabalho e otimizar seu fluxo de trabalho com nosso ebook por apenas R$7!"
-        />
-        <meta property="og:image" content={HomeImage.src} />
-        <meta
-          property="og:url"
-          content="https://www.iaparacriativos.com/ebook"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="IA para Criativos - Ebook" />
-        <meta
-          name="twitter:description"
-          content="Aprenda a usar a IA para automatizar seu trabalho e otimizar seu fluxo de trabalho com nosso ebook por apenas R$7!"
-        />
-        <meta name="twitter:image" content={HomeImage.src} />
       </Head>
 
-      <div className="flex min-h-screen flex-col">
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container flex h-16 items-center justify-between">
-            <img src={Logo.src} alt="Home" className="w-20" />
+      <div className="flex min-h-screen flex-col bg-off-white overflow-hidden">
+        <header className="w-full fixed top-0 z-50 transition-colors duration-300 bg-gradient-to-r from-dark-teal-800/90 to-dark-teal-700/90 backdrop-blur supports-[backdrop-filter]:backdrop-blur-lg border-b border-dark-teal-600/20">
+          <div className="container flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
+            <div className="flex items-center gap-2">
+              <span className="text-xl md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
+                <img
+                  src={Logo.src}
+                  alt="Verv Studio"
+                  className="w-20"
+                  style={{
+                    filter:
+                      "brightness(0) saturate(100%) invert(88%) sepia(12%) saturate(1088%) hue-rotate(77deg) brightness(99%) contrast(87%)",
+                  }}
+                />
+              </span>
+            </div>
 
-            <nav className="hidden md:flex gap-6">
-              <Link
-                href="#beneficios"
-                className="text-sm font-medium text-dark-teal hover:text-dark-teal-400 transition-colors duration-200 ease-in-out"
+            <nav className="md:flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden md:inline-flex text-off-white hover:text-sage-green-300 hover:bg-dark-teal-600/40"
+                asChild
               >
-                Benefícios
-              </Link>
-              <Link
-                href="#depoimentos"
-                className="text-sm font-medium text-dark-teal hover:text-dark-teal-400 transition-colors duration-200 ease-in-out"
+                <Link href="#beneficios">Benefícios</Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden md:inline-flex text-off-white hover:text-sage-green-300 hover:bg-dark-teal-600/40"
+                asChild
               >
-                Depoimentos
-              </Link>
-              <Link
-                href="#oferta"
-                className="text-sm font-medium text-dark-teal hover:text-dark-teal-400 transition-colors duration-200 ease-in-out"
+                <Link href="#depoimentos">Depoimentos</Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden md:inline-flex text-off-white hover:text-sage-green-300 hover:bg-dark-teal-600/40"
+                asChild
               >
-                Oferta
-              </Link>
+                <Link href="#oferta">Oferta</Link>
+              </Button>
+
+              <Button
+                size="sm"
+                className="bg-sage-green hover:bg-sage-green-600 text-off-white rounded-full px-6 shadow-sm hover:shadow transition-all"
+                asChild
+              >
+                <Link href="#comprar">Comprar agora</Link>
+              </Button>
             </nav>
-            <Button
-              className="bg-sage-green hover:bg-sage-green-600 text-off-white transition-colors duration-200 ease-in-out"
-              asChild
-            >
-              <Link href="#comprar-agora">Comprar agora</Link>
-            </Button>
           </div>
         </header>
-        <main className="flex-1">
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-off-white-200 to-off-white">
-            <div className="container px-4 md:px-6">
-              <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
-                <div className="flex flex-col order-2 justify-center space-y-4 md:order-1">
-                  <div className="space-y-2">
-                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-dark-teal">
-                      Aprenda a usar a IA para automatizar seu trabalho
-                    </h1>
-                    <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                      Automatize atendimento, organize briefings e otimize seu
-                      fluxo de trabalho – por apenas R$7!
+
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 bg-gradient-to-br from-dark-teal-800 to-dark-teal-600 relative overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] bg-repeat" />
+          </div>
+
+          <div className="container px-4 sm:px-6 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="text-off-white space-y-4 sm:space-y-6 text-center md:text-left">
+                <div className="inline-block bg-light-green text-dark-teal-800 px-4 py-1 rounded-full text-sm font-semibold mb-2 sm:mb-4 shadow-lg">
+                  Novo E-book
+                </div>
+
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
+                  Aprenda a usar a IA para automatizar seu trabalho
+                </h1>
+
+                <p className="text-off-white-200 text-base sm:text-lg md:text-xl max-w-lg mx-auto md:mx-0">
+                  Automatize atendimento, organize briefings e otimize seu fluxo
+                  de trabalho – por apenas R$7!
+                </p>
+
+                <div className="pt-4 sm:pt-6 space-y-4">
+                  <Button
+                    size="lg"
+                    className="bg-sage-green hover:bg-sage-green-600 text-off-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
+                    asChild
+                  >
+                    <Link
+                      href="#comprar"
+                      className="flex items-center justify-center"
+                    >
+                      QUERO MEU E-BOOK AGORA
+                      <Download className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    </Link>
+                  </Button>
+
+                  <div className="flex items-center justify-center md:justify-start">
+                    <Clock className="h-4 w-4 mr-2 text-light-green-300" />
+                    <p className="text-light-green-300 text-sm font-semibold">
+                      Oferta por tempo limitado
                     </p>
                   </div>
-                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                    <Button
-                      size="lg"
-                      className="bg-sage-green hover:bg-sage-green-600 text-white transition-all duration-200 ease-in-out hover:shadow-md"
-                      asChild
-                    >
-                      <Link href="#comprar-agora">
-                        QUERO MEU E-BOOK AGORA{" "}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <div className="flex">
-                      {Array(5)
-                        .fill(null)
-                        .map((_, i) => (
-                          <Star
-                            key={i}
-                            className="h-4 w-4 fill-pale-pink text-pale-pink"
-                          />
-                        ))}
+                </div>
+              </div>
+
+              <div className="relative mt-8 md:mt-0 max-w-md mx-auto md:max-w-none">
+                <div className="relative w-full h-auto transition-all duration-500 hover:scale-105">
+                  <div className="bg-off-white rounded-2xl shadow-xl overflow-hidden border border-dark-teal-200">
+                    <div className="bg-gradient-to-r from-dark-teal-500 to-dark-teal-700 p-4 sm:p-6 text-off-white">
+                      <h2 className="text-xl sm:text-2xl font-bold mb-2">
+                        IA para Criativos
+                      </h2>
+                      <div className="flex items-center justify-between">
+                        <span className="opacity-75 text-xs sm:text-sm">
+                          por VervStudio
+                        </span>
+                        <span className="bg-off-white text-dark-teal-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
+                          {new Date().getFullYear()}
+                        </span>
+                      </div>
                     </div>
-                    <span className="text-muted-foreground">
-                      Oferta por tempo limitado
-                    </span>
-                  </div>
-                </div>
 
-                <div className="flex items-center justify-center order-1">
-                  <img
-                    src={HomeImage.src}
-                    alt="Home"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section
-            id="problema"
-            className="w-full py-12 md:py-24 lg:py-32 bg-off-white-200"
-          >
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    Se você é um criativo independente, provavelmente já passou
-                    por isso
-                  </h2>
-                </div>
-              </div>
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 mt-8">
-                {[
-                  {
-                    title: "Tempo Desperdiçado",
-                    description:
-                      "Gastando tempo demais respondendo clientes e organizando tarefas.",
-                    icon: Clock,
-                  },
-                  {
-                    title: "Prazos Perdidos",
-                    description:
-                      "Perdendo prazos por falta de um processo claro.",
-                    icon: FileText,
-                  },
-                  {
-                    title: "Sobrecarga",
-                    description:
-                      "Se sentindo sobrecarregado com a parte burocrática do seu negócio.",
-                    icon: Zap,
-                  },
-                ].map((problema, i) => (
-                  <Card
-                    key={i}
-                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md"
-                  >
-                    <CardContent className="p-6 text-left md:text-left text-center">
-                      <div className="flex justify-center md:justify-start mb-4">
-                        <problema.icon className="h-12 w-12 text-dark-teal transition-transform duration-300 ease-in-out hover:scale-105" />
-                      </div>
-                      <h3 className="text-xl font-bold text-dark-teal-600">
-                        {problema.title}
-                      </h3>
-                      <p className="text-dark-teal-700 mt-2">
-                        <X className="h-4 w-4 inline mr-1 text-pale-pink" />{" "}
-                        {problema.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <div className="text-center mt-8 max-w-3xl mx-auto">
-                <p className="text-lg font-medium text-dark-teal-600">
-                  A boa notícia? A IA pode te ajudar a resolver tudo isso – sem
-                  tirar sua autenticidade.
-                </p>
-                <p className="mt-4 text-dark-teal-700">
-                  Neste e-book, você vai aprender como usar inteligência
-                  artificial para organizar sua rotina, automatizar processos e
-                  tornar seu fluxo de trabalho mais leve e eficiente.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section id="beneficios" className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    O que você vai aprender?
-                  </h2>
-                  <p className="max-w-[900px] text-dark-teal-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Saiba como a IA pode fazer o trabalho pesado enquanto você
-                    foca no que importa: criar{" "}
-                  </p>
-                </div>
-              </div>
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-                {[
-                  {
-                    title: "Mensagens persuasivas",
-                    description:
-                      "Como usar IA para criar mensagens persuasivas para clientes (sem parecer robótico).",
-                    icon: MessageSquare,
-                  },
-                  {
-                    title: "Briefings rápidos",
-                    description:
-                      "Como estruturar um briefing completo em minutos e eliminar retrabalho.",
-                    icon: FileText,
-                  },
-                  {
-                    title: "Organização prática",
-                    description:
-                      "Como organizar seus projetos de forma prática usando IA + Notion.",
-                    icon: CheckCircle,
-                  },
-                  {
-                    title: "Automatização",
-                    description:
-                      "Automatização de tarefas repetitivas para ganhar tempo e reduzir estresse.",
-                    icon: Zap,
-                  },
-                  {
-                    title: "Dicas práticas",
-                    description:
-                      "Dicas práticas e ferramentas que você pode começar a usar hoje.",
-                    icon: MessageSquare,
-                  },
-                  {
-                    title: "Economia de tempo",
-                    description:
-                      "Libere mais tempo para focar no que realmente importa: criar.",
-                    icon: Clock,
-                  },
-                ].map((beneficio, i) => (
-                  <Card
-                    key={i}
-                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md"
-                  >
-                    <CardContent className="p-6 text-left md:text-left text-center">
-                      <div className="flex justify-center md:justify-start mb-4">
-                        <beneficio.icon className="h-12 w-12 text-dark-teal transition-transform duration-300 ease-in-out hover:scale-105" />
-                      </div>
-                      <h3 className="text-xl font-bold text-dark-teal-600">
-                        {beneficio.title}
-                      </h3>
-                      <p className="text-dark-teal-700 mt-2">
-                        <CheckCircle className="h-4 w-4 inline mr-1 text-sage-green" />{" "}
-                        {beneficio.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <p className="text-xl font-bold text-dark-teal">
-                  <Zap className="h-4 w-4 inline mr-1 text-pale-pink" /> E tudo
-                  isso por APENAS R$7!
-                </p>
-                <Button
-                  size="lg"
-                  className="mt-4 bg-sage-green hover:bg-sage-green-600 text-off-white transition-all duration-200 ease-in-out hover:shadow-md"
-                  asChild
-                >
-                  <Link href="#comprar-agora">
-                    QUERO MEU E-BOOK AGORA{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          <section
-            id="para-quem"
-            className="w-full py-12 md:py-24 lg:py-32 bg-off-white-200"
-          >
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    Para quem esse e-book é perfeito?
-                  </h2>
-                  <p className="max-w-[900px] text-dark-teal-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Se você se encaixa em um desses perfis, esse guia é para
-                    você:
-                  </p>
-                </div>
-              </div>
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 mt-8">
-                {[
-                  {
-                    title: "Designers e criativos",
-                    description:
-                      "Que querem mais tempo para criar sem se perder na parte burocrática.",
-                    icon: Palette,
-                  },
-                  {
-                    title: "Freelancers",
-                    description:
-                      "Que precisam otimizar seu atendimento e organização.",
-                    icon: Briefcase,
-                  },
-                  {
-                    title: "Empreendedores criativos",
-                    description:
-                      "Que querem automatizar processos e melhorar a produtividade.",
-                    icon: Users,
-                  },
-                ].map((perfil, i) => (
-                  <Card
-                    key={i}
-                    className="border-none transition-all duration-300 ease-in-out hover:shadow-md"
-                  >
-                    <CardContent className="p-6 text-left md:text-left text-center">
-                      <div className="flex justify-center md:justify-start mb-4">
-                        <perfil.icon className="h-12 w-12 text-dark-teal transition-transform duration-300 ease-in-out hover:scale-105" />
-                      </div>
-                      <h3 className="text-xl font-bold text-dark-teal-600">
-                        {perfil.title}
-                      </h3>
-                      <p className="text-dark-teal-700 mt-2">
-                        <CheckCircle className="h-4 w-4 inline mr-1 text-sage-green" />{" "}
-                        {perfil.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-          <section id="depoimentos" className="w-full py-12 md:py-24 lg:py-32">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    Depoimentos
-                  </h2>
-                  <p className="max-w-[900px] text-dark-teal-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"></p>
-                  <p className="max-w-[900px] text-dark-teal-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Veja o que quem já usa IA no dia a dia está dizendo:
-                  </p>
-                </div>
-              </div>
-              <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 mt-8">
-                {[
-                  {
-                    quote:
-                      "Depois que comecei a usar IA no meu fluxo de trabalho, reduzi meu tempo de atendimento pela metade!",
-                    author: "Mariana S.",
-                    title: "Designer Gráfica",
-                  },
-                  {
-                    quote:
-                      "Agora organizo meus briefings em minutos e sem stress. Esse e-book me deu um norte incrível!",
-                    author: "Rafael T.",
-                    title: "Freelancer",
-                  },
-                  {
-                    quote:
-                      "As dicas de automação com IA + Notion transformaram completamente minha organização de projetos.",
-                    author: "Camila R.",
-                    title: "Social Media",
-                  },
-                  {
-                    quote:
-                      "Consegui reduzir o tempo gasto com tarefas administrativas e agora tenho mais tempo para criar.",
-                    author: "Lucas M.",
-                    title: "Ilustrador",
-                  },
-                ].map((depoimento, i) => (
-                  <Card
-                    key={i}
-                    className="text-left transition-all duration-300 ease-in-out hover:shadow-md border-sage-green-200"
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex mb-4">
-                        {Array(5)
-                          .fill(null)
-                          .map((_, i) => (
-                            <Star
-                              key={i}
-                              className="h-4 w-4 fill-pale-pink text-pale-pink"
-                            />
-                          ))}
-                      </div>
-                      <p className="mb-4 italic text-dark-teal-700">
-                        "{depoimento.quote}"
-                      </p>
-                      <div>
-                        <p className="font-semibold text-dark-teal-500">
-                          {depoimento.author}
-                        </p>
-                        <p className="text-sm text-dark-teal-400">
-                          {depoimento.title}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <p className="text-lg font-medium text-dark-teal-600">
-                  Escrito por um designer estratégico com anos de experiência,
-                  esse material traz dicas práticas e reais – sem enrolação!
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section
-            id="oferta"
-            className="w-full py-12 md:py-24 lg:py-32 bg-off-white-200"
-          >
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    Oferta por Tempo Limitado
-                  </h2>
-                  <p className="max-w-[900px] text-dark-teal-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    De R$27 por apenas R$7 – por tempo limitado!
-                  </p>
-                </div>
-              </div>
-              <div className="mx-auto max-w-3xl mt-8">
-                <Card className="border-2 border-dark-teal transition-all duration-300 ease-in-out hover:shadow-lg">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="grid gap-4">
-                      <div className="text-center">
-                        <h3 className="text-2xl font-bold text-dark-teal">
-                          IA para criativos: automatize seu fluxo
+                    <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+                      <div className="space-y-2 sm:space-y-4">
+                        <h3 className="text-lg sm:text-xl font-bold text-dark-teal-800">
+                          Otimize seu fluxo de trabalho
                         </h3>
-                        <div className="mt-4 flex items-baseline justify-center">
-                          <span className="text-lg line-through text-dark-teal-400">
-                            R$27
-                          </span>
-                          <span className="ml-2 text-5xl font-bold text-dark-teal">
-                            R$7
-                          </span>
-                          <span className="ml-1 text-dark-teal-400">
-                            pagamento único
-                          </span>
+                        <p className="text-dark-teal-600 text-sm sm:text-base">
+                          Automatize tarefas repetitivas e foque no que
+                          realmente importa: criar.
+                        </p>
+                      </div>
+
+                      <ul className="space-y-2 sm:space-y-3">
+                        <li className="flex items-center text-dark-teal-700 text-sm sm:text-base">
+                          <BookOpen className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-sage-green flex-shrink-0" />
+                          <span>E-book completo em formato PDF</span>
+                        </li>
+                        <li className="flex items-center text-dark-teal-700 text-sm sm:text-base">
+                          <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-sage-green flex-shrink-0" />
+                          <span>Templates para briefing e atendimento</span>
+                        </li>
+                        <li className="flex items-center text-dark-teal-700 text-sm sm:text-base">
+                          <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-sage-green flex-shrink-0" />
+                          <span>Acesso imediato após a compra</span>
+                        </li>
+                      </ul>
+
+                      <div className="pt-2 sm:pt-4">
+                        <div className="bg-off-white-200 rounded-lg p-3 sm:p-4 flex justify-between items-center">
+                          <div>
+                            <span className="text-xs sm:text-sm text-dark-teal-400 line-through">
+                              R$27,00
+                            </span>
+                            <div className="text-xl sm:text-2xl font-bold text-sage-green-600">
+                              R$7,00
+                            </div>
+                          </div>
+                          <div className="bg-light-green text-dark-teal-800 font-bold px-2 sm:px-3 py-1 rounded-lg text-sm">
+                            -74%
+                          </div>
                         </div>
                       </div>
-                      <ul className="grid gap-2 py-4">
-                        {[
-                          "E-book completo em formato PDF",
-                          "Dicas práticas de automação com IA",
-                          "Templates para briefing e atendimento",
-                          "Guia de integração IA + Notion",
-                          "Acesso imediato após a compra",
-                          "Atualizações gratuitas",
-                          "Garantia de 7 dias",
-                        ].map((feature, i) => (
-                          <li key={i} className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4 text-sage-green" />
-                            <span className="text-dark-teal-700">
-                              {feature}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                      <div id="comprar-agora" className="pt-4">
-                        <Button
-                          size="lg"
-                          className="w-full bg-sage-green text-off-white transition-all duration-200 ease-in-out hover:bg-sage-green-600"
-                          asChild
-                        >
-                          <Link href="#comprar-agora">
-                            QUERO MEU E-BOOK AGORA
-                          </Link>
-                        </Button>
-                        <p className="mt-2 text-xs text-center text-dark-teal-400">
-                          Pagamento seguro. Download imediato após a compra.
-                        </p>
-                      </div>
                     </div>
-                  </CardContent>
-                </Card>
-                <div className="text-center mt-4">
-                  <p className="text-sm text-dark-teal-500">
-                    <AlertCircle className="h-4 w-4 inline mr-1 text-pale-pink" />{" "}
-                    Atenção! Esse preço promocional pode acabar a qualquer
-                    momento. Aproveite antes que volte ao valor original!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+                  </div>
 
-          <section className="w-full py-12 md:py-24 lg:py-32 bg-dark-teal text-off-white">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    Pronto para transformar seu fluxo de trabalho?
-                  </h2>
-                  <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Baixe agora e libere mais tempo para focar no que realmente
-                    importa: criar.
-                  </p>
+                  <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-pale-pink text-off-white rounded-full p-3 sm:p-4 shadow-lg rotate-12 z-20">
+                    <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" />
+                  </div>
                 </div>
-                <Button
-                  size="lg"
-                  className="bg-sage-green hover:bg-sage-green-600 text-off-white transition-all duration-200 ease-in-out hover:shadow-md"
-                  asChild
-                >
-                  <Link href="#comprar-agora">
-                    QUERO MEU E-BOOK AGORA{" "}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
               </div>
             </div>
-          </section>
-        </main>
-        <footer className="w-full border-t py-6 md:py-0">
-          <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-            <img src={Logo.src} alt="Home" className="w-40 container" />
           </div>
-        </footer>
+        </section>
+
+        {/* Problema Section */}
+        <section className="py-24 bg-off-white-100">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-4">
+                Se você é um criativo independente, provavelmente já passou por
+                isso
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  title: "Tempo Desperdiçado",
+                  icon: <Clock className="h-8 w-8" />,
+                  desc: "Gastando tempo demais respondendo clientes e organizando tarefas.",
+                  color: "from-pale-pink-400 to-pale-pink-600",
+                },
+                {
+                  title: "Prazos Perdidos",
+                  icon: <Calendar className="h-8 w-8" />,
+                  desc: "Perdendo prazos por falta de um processo claro.",
+                  color: "from-light-green-400 to-sage-green-600",
+                },
+                {
+                  title: "Sobrecarga",
+                  icon: <BrainCircuit className="h-8 w-8" />,
+                  desc: "Se sentindo sobrecarregado com a parte burocrática do seu negócio.",
+                  color: "from-sage-green-400 to-dark-teal-400",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-off-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-off-white-500 group"
+                >
+                  <div className={`h-2 bg-gradient-to-r ${item.color}`}></div>
+                  <div className="p-8">
+                    <div
+                      className={`inline-flex items-center justify-center p-3 bg-gradient-to-r ${item.color} text-off-white rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    >
+                      {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-dark-teal-800 mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-dark-teal-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gradient-to-r from-sage-green-100 to-light-green-100 rounded-2xl p-8 text-center max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-dark-teal-800 mb-4">
+                A boa notícia? A IA pode te ajudar a resolver tudo isso – sem
+                tirar sua autenticidade.
+              </h3>
+              <p className="text-dark-teal-600 text-lg">
+                Neste e-book, você vai aprender como usar inteligência
+                artificial para organizar sua rotina, automatizar processos e
+                tornar seu fluxo de trabalho mais leve e eficiente.
+              </p>
+            </div>
+          </div>
+        </section>
+        {/* Benefícios Section */}
+        <section id="beneficios" className="py-16 sm:py-24 bg-off-white">
+          <div className="container px-4 sm:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-3 sm:mb-4">
+                O que você vai{" "}
+                <span className="text-sage-green">aprender?</span>
+              </h2>
+              <p className="text-dark-teal-600 text-base sm:text-lg">
+                Saiba como a IA pode fazer o trabalho pesado enquanto você foca
+                no que importa: criar
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
+              {[
+                {
+                  title: "Mensagens persuasivas",
+                  icon: <MessageSquare className="h-5 w-5 sm:h-6 sm:w-6" />,
+                  desc: "Como usar IA para criar mensagens persuasivas para clientes (sem parecer robótico).",
+                },
+                {
+                  title: "Briefings rápidos",
+                  icon: <FileText className="h-5 w-5 sm:h-6 sm:w-6" />,
+                  desc: "Como estruturar um briefing completo em minutos e eliminar retrabalho.",
+                },
+                {
+                  title: "Organização prática",
+                  icon: <LayoutTemplate className="h-5 w-5 sm:h-6 sm:w-6" />,
+                  desc: "Como organizar seus projetos de forma prática usando IA + Notion.",
+                },
+                {
+                  title: "Automatização",
+                  icon: <Zap className="h-5 w-5 sm:h-6 sm:w-6" />,
+                  desc: "Automatização de tarefas repetitivas para ganhar tempo e reduzir estresse.",
+                },
+                {
+                  title: "Dicas práticas",
+                  icon: <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6" />,
+                  desc: "Dicas práticas e ferramentas que você pode começar a usar hoje.",
+                },
+                {
+                  title: "Economia de tempo",
+                  icon: <Clock className="h-5 w-5 sm:h-6 sm:w-6" />,
+                  desc: "Libere mais tempo para focar no que realmente importa: criar.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-off-white-100 rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-off-white-400"
+                >
+                  <div className="flex items-start">
+                    <div className="bg-sage-green/20 text-sage-green-600 rounded-full p-2 sm:p-3 mr-3 sm:mr-4 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-dark-teal-800 mb-1 sm:mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-dark-teal-600 text-sm sm:text-base">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center px-4">
+              <p className="text-xl sm:text-2xl font-bold text-dark-teal-700 mb-6 sm:mb-8">
+                E tudo isso por{" "}
+                <span className="text-sage-green-600">APENAS R$7!</span>
+              </p>
+              <Button
+                size="lg"
+                className="bg-sage-green hover:bg-sage-green-600 text-off-white font-bold rounded-full shadow-lg shadow-sage-green/30 transition-all duration-300 px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
+                asChild
+              >
+                <Link
+                  href="#comprar"
+                  className="flex items-center justify-center"
+                >
+                  QUERO MEU E-BOOK AGORA
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Para Quem Section */}
+        <section className="py-24 bg-dark-teal-800 text-off-white relative overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] bg-repeat" />
+          </div>
+
+          <div className="container relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+                Para quem esse{" "}
+                <span className="text-sage-green-400">e-book é perfeito?</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Designers e criativos",
+                  desc: "Que querem mais tempo para criar sem se perder na parte burocrática.",
+                },
+                {
+                  title: "Freelancers",
+                  desc: "Que precisam otimizar seu atendimento e organização.",
+                },
+                {
+                  title: "Empreendedores criativos",
+                  desc: "Que querem automatizar processos e melhorar a produtividade.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-dark-teal-700/60 backdrop-blur-sm rounded-lg p-6 border border-dark-teal-600 hover:border-sage-green-400/50 transition-colors duration-300"
+                >
+                  <div className="flex items-start">
+                    <div className="bg-sage-green-500/20 text-sage-green-300 rounded-full p-3 mr-4">
+                      <Check className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-off-white mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-off-white-300">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="depoimentos" className="py-12 sm:py-24 bg-off-white-100">
+          <div className="container px-4 sm:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-2 sm:mb-4">
+                Depoimentos
+              </h2>
+              <p className="text-dark-teal-600 text-base sm:text-lg">
+                Veja o que quem já usa IA no dia a dia está dizendo:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-12">
+              {[
+                {
+                  name: "Mariana S.",
+                  position: "Designer Gráfica",
+                  quote:
+                    "Depois que comecei a usar IA no meu fluxo de trabalho, reduzi meu tempo de atendimento pela metade!",
+                },
+                {
+                  name: "Rafael T.",
+                  position: "Freelancer",
+                  quote:
+                    "Agora organizo meus briefings em minutos e sem stress. Esse e-book me deu um norte incrível!",
+                },
+                {
+                  name: "Camila R.",
+                  position: "Social Media",
+                  quote:
+                    "As dicas de automação com IA + Notion transformaram completamente minha organização de projetos.",
+                },
+                {
+                  name: "Lucas M.",
+                  position: "Ilustrador",
+                  quote:
+                    "Consegui reduzir o tempo gasto com tarefas administrativas e agora tenho mais tempo para criar.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-off-white rounded-xl p-4 sm:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border border-off-white-400"
+                >
+                  <div className="flex flex-col">
+                    <div className="mb-3 sm:mb-4">
+                      <p className="text-dark-teal-700 italic text-sm sm:text-base">
+                        "{item.quote}"
+                      </p>
+                    </div>
+                    <div className="mt-auto">
+                      <p className="font-bold text-dark-teal-800 text-sm sm:text-base">
+                        {item.name}
+                      </p>
+                      <p className="text-sage-green-600 text-xs sm:text-sm">
+                        {item.position}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-sage-green-100 border border-sage-green-200 rounded-xl p-4 sm:p-6 max-w-3xl mx-auto">
+              <p className="text-dark-teal-700 text-center text-sm sm:text-base">
+                <span className="font-bold">
+                  Escrito por um designer estratégico com anos de experiência
+                </span>
+                , esse material traz dicas práticas e reais – sem enrolação!
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Oferta Section */}
+        <section
+          id="oferta"
+          className="py-12 sm:py-24 bg-gradient-to-br from-off-white to-sage-green-100"
+        >
+          <div className="container px-4 sm:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-2 sm:mb-4">
+                Oferta por Tempo Limitado
+              </h2>
+            </div>
+
+            <div className="max-w-4xl mx-auto bg-off-white rounded-2xl shadow-xl overflow-hidden border border-sage-green-200">
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="bg-gradient-to-br from-dark-teal-500 to-dark-teal-600 p-6 sm:p-10 text-off-white">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8">
+                    De <span className="line-through">R$27</span> por apenas{" "}
+                    <span className="text-light-green-300">R$7</span>
+                  </h3>
+                  <p className="text-off-white-200 mb-4 sm:mb-8 text-sm sm:text-base">
+                    Pagamento único - Sem mensalidades!
+                  </p>
+                  <div id="comprar" className="space-y-3 sm:space-y-4">
+                    <Button
+                      size="lg"
+                      className="bg-light-green hover:bg-light-green-600 text-dark-teal-800 font-bold rounded-full shadow-lg transition-all duration-300 w-full py-4 sm:py-6 text-base sm:text-lg"
+                      asChild
+                    >
+                      <Link
+                        href="https://pay.kiwify.com.br/"
+                        className="flex items-center justify-center"
+                      >
+                        QUERO MEU E-BOOK AGORA
+                        <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      </Link>
+                    </Button>
+
+                    <p className="text-center text-off-white-200 text-xs sm:text-sm">
+                      Processado por Kiwify - Pagamento 100% seguro
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-6 sm:p-10">
+                  <h3 className="text-xl sm:text-2xl font-bold text-dark-teal-800 mb-4 sm:mb-6">
+                    O que está incluso:
+                  </h3>
+                  <div className="space-y-2 sm:space-y-4">
+                    {[
+                      {
+                        text: "E-book completo em formato PDF",
+                        icon: <FileText />,
+                      },
+                      {
+                        text: "Dicas práticas de automação com IA",
+                        icon: <Lightbulb />,
+                      },
+                      {
+                        text: "Templates para briefing e atendimento",
+                        icon: <LayoutTemplate />,
+                      },
+                      {
+                        text: "Guia de integração IA + Notion",
+                        icon: <Notebook />,
+                      },
+                      { text: "Acesso imediato após a compra", icon: <Zap /> },
+                      { text: "Atualizações gratuitas", icon: <ArrowRight /> },
+                      { text: "Garantia de 7 dias", icon: <ShieldCheck /> },
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-center">
+                        <Check className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-sage-green flex-shrink-0" />
+                        <span className="text-dark-teal-700 text-sm sm:text-base">
+                          {item.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-pale-pink-100 border border-pale-pink-200 rounded-lg">
+                    <p className="text-dark-teal-800 font-bold text-xs sm:text-sm">
+                      Atenção! Esse preço promocional pode acabar a qualquer
+                      momento. Aproveite antes que volte ao valor original!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final Call-to-Action Section */}
+        <section className="py-12 sm:py-20 bg-dark-teal-800 text-off-white">
+          <div className="container text-center px-4 sm:px-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 sm:mb-6">
+              Pronto para transformar seu fluxo de trabalho?
+            </h2>
+            <p className="text-off-white-200 text-sm sm:text-lg max-w-2xl mx-auto mb-6 sm:mb-10">
+              Baixe agora e libere mais tempo para focar no que realmente
+              importa: criar.
+            </p>
+            <Button
+              size="lg"
+              className="bg-sage-green hover:bg-sage-green-600 text-off-white font-bold rounded-full shadow-lg shadow-sage-green/30 transition-all duration-300 px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-lg w-full sm:w-auto"
+              asChild
+            >
+              <Link
+                href="#comprar"
+                className="flex items-center justify-center"
+              >
+                QUERO MEU E-BOOK AGORA
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+              </Link>
+            </Button>
+          </div>
+        </section>
       </div>
     </>
   );
