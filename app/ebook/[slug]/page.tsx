@@ -57,6 +57,8 @@ export default function Ebook() {
       <div className="flex min-h-screen flex-col">
         <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <div className="container flex h-16 items-center justify-between">
+            <img src={Logo.src} alt="Home" className="w-20" />
+
             <nav className="hidden md:flex gap-6">
               <Link
                 href="#beneficios"
@@ -81,7 +83,7 @@ export default function Ebook() {
               className="bg-sage-green hover:bg-sage-green-600 text-off-white transition-colors duration-200 ease-in-out"
               asChild
             >
-              <Link href="#comprar-agora">Comprar Agora</Link>
+              <Link href="#comprar-agora">Comprar agora</Link>
             </Button>
           </div>
         </header>
@@ -211,7 +213,7 @@ export default function Ebook() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    O Que Você Vai Aprender?
+                    O que você vai aprender?
                   </h2>
                   <p className="max-w-[900px] text-dark-teal-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Saiba como a IA pode fazer o trabalho pesado enquanto você
@@ -222,19 +224,19 @@ export default function Ebook() {
               <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
                 {[
                   {
-                    title: "Mensagens Persuasivas",
+                    title: "Mensagens persuasivas",
                     description:
                       "Como usar IA para criar mensagens persuasivas para clientes (sem parecer robótico).",
                     icon: MessageSquare,
                   },
                   {
-                    title: "Briefings Rápidos",
+                    title: "Briefings rápidos",
                     description:
                       "Como estruturar um briefing completo em minutos e eliminar retrabalho.",
                     icon: FileText,
                   },
                   {
-                    title: "Organização Prática",
+                    title: "Organização prática",
                     description:
                       "Como organizar seus projetos de forma prática usando IA + Notion.",
                     icon: CheckCircle,
@@ -246,13 +248,13 @@ export default function Ebook() {
                     icon: Zap,
                   },
                   {
-                    title: "Dicas Práticas",
+                    title: "Dicas práticas",
                     description:
                       "Dicas práticas e ferramentas que você pode começar a usar hoje.",
                     icon: MessageSquare,
                   },
                   {
-                    title: "Economia de Tempo",
+                    title: "Economia de tempo",
                     description:
                       "Libere mais tempo para focar no que realmente importa: criar.",
                     icon: Clock,
@@ -304,7 +306,7 @@ export default function Ebook() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-dark-teal">
-                    Para Quem Esse E-book é Perfeito?
+                    Para quem esse e-book é perfeito?
                   </h2>
                   <p className="max-w-[900px] text-dark-teal-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Se você se encaixa em um desses perfis, esse guia é para
@@ -315,7 +317,7 @@ export default function Ebook() {
               <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3 mt-8">
                 {[
                   {
-                    title: "Designers e Criativos",
+                    title: "Designers e criativos",
                     description:
                       "Que querem mais tempo para criar sem se perder na parte burocrática.",
                     icon: Palette,
@@ -327,7 +329,7 @@ export default function Ebook() {
                     icon: Briefcase,
                   },
                   {
-                    title: "Empreendedores Criativos",
+                    title: "Empreendedores criativos",
                     description:
                       "Que querem automatizar processos e melhorar a produtividade.",
                     icon: Users,
@@ -454,7 +456,7 @@ export default function Ebook() {
                     <div className="grid gap-4">
                       <div className="text-center">
                         <h3 className="text-2xl font-bold text-dark-teal">
-                          IA para Criativos: Automatize seu Fluxo
+                          IA para criativos: automatize seu fluxo
                         </h3>
                         <div className="mt-4 flex items-baseline justify-center">
                           <span className="text-lg line-through text-dark-teal-400">
@@ -519,7 +521,7 @@ export default function Ebook() {
               <div className="flex flex-col items-center justify-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    Pronto para Transformar seu Fluxo de Trabalho?
+                    Pronto para transformar seu fluxo de trabalho?
                   </h2>
                   <p className="max-w-[900px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Baixe agora e libere mais tempo para focar no que realmente
