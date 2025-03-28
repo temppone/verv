@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Logo from "@/public/ia-para-criativos.svg";
+import Profile from "@/public/profile.jpg";
 import HotmartIcons from "@/public/icones-hotmart.webp";
 import {
   ArrowRight,
@@ -114,9 +115,6 @@ export default function Home() {
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-br from-dark-teal-800 to-dark-teal-600 relative overflow-hidden">
           {/* Background pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00eiIvPjwvZz48L2c+PC9zdmc+')] bg-repeat" />
-          </div>
 
           <div className="container px-4 sm:px-6 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -227,7 +225,7 @@ export default function Home() {
         {/* Benefícios Section */}
         <section
           id="beneficios"
-          className="py-2 pb-20 sm:py-24 bg-off-white scroll-mt-16 md:scroll-mt-20"
+          className="py-20 pb-20 sm:py-24 bg-off-white scroll-mt-16 md:scroll-mt-20"
         >
           <div className="container px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -468,7 +466,7 @@ export default function Home() {
                         href="https://pay.kiwify.com.br/"
                         className="flex items-center justify-center"
                       >
-                        QUERO MEU E-BOOK AGORA
+                        QUERO FACILITAR MINHA ROTINA
                       </Link>
                     </Button>
                   </div>
@@ -621,7 +619,7 @@ export default function Home() {
                     <div className="aspect-square rounded-full overflow-hidden border-4 border-sage-green-300 max-w-[200px] mx-auto">
                       {/* Replace with actual image */}
                       <div className="w-full h-full bg-gradient-to-br from-dark-teal-400 to-dark-teal-600 flex items-center justify-center text-off-white text-5xl font-bold">
-                        G
+                        <img src={Profile.src} alt="Profile" />
                       </div>
                     </div>
                   </div>
@@ -684,7 +682,7 @@ export default function Home() {
                 href="#comprar"
                 className="flex items-center justify-center"
               >
-                QUERO MEU E-BOOK AGORA
+                GANHAR TEMPO AGORA
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             </Button>
