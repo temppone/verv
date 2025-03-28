@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Logo from "@/public/verv_logo.svg";
+import Logo from "@/public/ia-para-criativos.svg";
 import {
   ArrowRight,
   BookOpen,
@@ -15,6 +15,7 @@ import {
   Notebook,
   ShieldCheck,
   Sparkles,
+  X,
   Zap,
 } from "lucide-react";
 import Link from "next/link";
@@ -28,7 +29,7 @@ export default function Home() {
         <title>IA para Criativos - Ebook</title>
         <meta
           name="description"
-          content="Aprenda a usar a IA para automatizar seu trabalho e otimizar seu fluxo de trabalho com nosso ebook por apenas R$7!"
+          content="Aprenda a usar a IA para automatizar seu trabalho e otimizar seu fluxo de trabalho com nosso ebook por apenas R$19!"
         />
         <meta
           name="keywords"
@@ -45,11 +46,7 @@ export default function Home() {
                 <img
                   src={Logo.src}
                   alt="Verv Studio"
-                  className="w-20"
-                  style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(88%) sepia(12%) saturate(1088%) hue-rotate(77deg) brightness(99%) contrast(87%)",
-                  }}
+                  className="w-20 invert brightness-0 filter"
                 />
               </span>
             </div>
@@ -113,7 +110,7 @@ export default function Home() {
 
                 <p className="text-off-white-200 text-base sm:text-lg md:text-xl max-w-lg mx-auto md:mx-0">
                   Automatize atendimento, organize briefings e otimize seu fluxo
-                  de trabalho – por apenas R$7!
+                  de trabalho – por apenas R$19!
                 </p>
 
                 <div className="pt-4 sm:pt-6 space-y-4">
@@ -126,8 +123,7 @@ export default function Home() {
                       href="#comprar"
                       className="flex items-center justify-center"
                     >
-                      QUERO MEU E-BOOK AGORA
-                      <Download className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      QUERO PARAR DE PERDER TEMPO
                     </Link>
                   </Button>
 
@@ -182,19 +178,24 @@ export default function Home() {
                           <span>Acesso imediato após a compra</span>
                         </li>
                       </ul>
-
                       <div className="pt-2 sm:pt-4">
-                        <div className="bg-off-white-200 rounded-lg p-3 sm:p-4 flex justify-between items-center">
-                          <div>
-                            <span className="text-xs sm:text-sm text-dark-teal-400 line-through">
-                              R$27,00
+                        <div className="bg-off-white-200 rounded-lg p-3 sm:p-4">
+                          <div className="flex justify-between items-center mb-3 border-b border-dashed border-dark-teal-200 pb-3">
+                            <span className="text-xs sm:text-sm text-dark-teal-400 line-through font-medium">
+                              R$47,00
                             </span>
-                            <div className="text-xl sm:text-2xl font-bold text-sage-green-600">
-                              R$7,00
+                            <div className="bg-pale-pink text-dark-teal-800 font-bold px-2 sm:px-3 py-1 rounded-lg text-xs">
+                              -60%
                             </div>
                           </div>
-                          <div className="bg-light-green text-dark-teal-800 font-bold px-2 sm:px-3 py-1 rounded-lg text-sm">
-                            -74%
+
+                          <div className="text-center space-y-1">
+                            <div className="text-2xl sm:text-3xl font-extrabold text-sage-green-600 flex justify-center items-center bg-sage-green-50 py-2 rounded-lg shadow-sm">
+                              <span className="text-lg mr-1">R$</span>19,00
+                            </div>
+                            <span className="text-xs text-dark-teal-500 block pt-1">
+                              Pagamento único
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -345,7 +346,7 @@ export default function Home() {
             <div className="text-center px-4">
               <p className="text-xl sm:text-2xl font-bold text-dark-teal-700 mb-6 sm:mb-8">
                 E tudo isso por{" "}
-                <span className="text-sage-green-600">APENAS R$7!</span>
+                <span className="text-sage-green-600">APENAS R$19!</span>
               </p>
               <Button
                 size="lg"
@@ -372,43 +373,32 @@ export default function Home() {
           </div>
 
           <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-                Para quem esse{" "}
-                <span className="text-sage-green-400">e-book é perfeito?</span>
+                Esse e-book é para{" "}
+                <span className="text-sage-green-400">você se…</span>
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-3 mb-1 max-w-4xl mx-auto">
               {[
-                {
-                  title: "Designers e criativos",
-                  desc: "Que querem mais tempo para criar sem se perder na parte burocrática.",
-                },
-                {
-                  title: "Freelancers",
-                  desc: "Que precisam otimizar seu atendimento e organização.",
-                },
-                {
-                  title: "Empreendedores criativos",
-                  desc: "Que querem automatizar processos e melhorar a produtividade.",
-                },
+                "Perde horas com tarefas operacionais e sobra pouco tempo para criar.",
+                "Sente que poderia ser mais produtivo, mas não sabe como delegar tarefas para a IA.",
+                "Já tentou usar IA, mas não conseguiu boas respostas e acabou desistindo.",
+                "Acha que a IA não é para você, mas gostaria de testar sem complicação.",
+                "Está cansado de fazer tudo sozinho e quer uma forma mais inteligente de otimizar seu fluxo de trabalho.",
+                "Se você quer economizar tempo, automatizar o que não precisa ser manual e focar no que realmente importa, esse e-book é para você!",
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-dark-teal-700/60 backdrop-blur-sm rounded-lg p-6 border border-dark-teal-600 hover:border-sage-green-400/50 transition-colors duration-300"
+                  className="bg-dark-teal-700/60 backdrop-blur-sm rounded-lg p-5 border border-dark-teal-600 flex items-start"
                 >
-                  <div className="flex items-start">
-                    <div className="bg-sage-green-500/20 text-sage-green-300 rounded-full p-3 mr-4">
-                      <Check className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-off-white mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-off-white-300">{item.desc}</p>
-                    </div>
+                  <div className="bg-pale-green-500/20 text-pale-green-300 rounded-full p-2 mr-3 flex-shrink-0 mt-0.5">
+                    <span className="text-lg font-bold">
+                      <Check />
+                    </span>
                   </div>
+                  <p className="text-off-white-300 text-base">{item}</p>
                 </div>
               ))}
             </div>
@@ -475,15 +465,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            <div className="bg-sage-green-100 border border-sage-green-200 rounded-xl p-4 sm:p-6 max-w-3xl mx-auto">
-              <p className="text-dark-teal-700 text-center text-sm sm:text-base">
-                <span className="font-bold">
-                  Escrito por um designer estratégico com anos de experiência
-                </span>
-                , esse material traz dicas práticas e reais – sem enrolação!
-              </p>
-            </div>
           </div>
         </section>
 
@@ -502,10 +483,22 @@ export default function Home() {
             <div className="max-w-4xl mx-auto bg-off-white rounded-2xl shadow-xl overflow-hidden border border-sage-green-200">
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div className="bg-gradient-to-br from-dark-teal-500 to-dark-teal-600 p-6 sm:p-10 text-off-white">
-                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8">
-                    De <span className="line-through">R$27</span> por apenas{" "}
-                    <span className="text-light-green-300">R$7</span>
-                  </h3>
+                  <div className="mb-4 sm:mb-8">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <span className="line-through text-off-white-300 text-base">
+                        R$47
+                      </span>
+                      <span className="bg-light-green-400 text-dark-teal-800 text-xs font-bold px-2 py-1 rounded-full">
+                        60% OFF
+                      </span>
+                    </div>
+                    <div className="flex items-baseline justify-center">
+                      <span className="text-light-green-300 text-4xl sm:text-5xl font-extrabold">
+                        R$19
+                      </span>
+                      <span className="text-off-white-200 ml-1">à vista</span>
+                    </div>
+                  </div>
                   <p className="text-off-white-200 mb-4 sm:mb-8 text-sm sm:text-base">
                     Pagamento único - Sem mensalidades!
                   </p>
@@ -570,6 +563,129 @@ export default function Home() {
                       Atenção! Esse preço promocional pode acabar a qualquer
                       momento. Aproveite antes que volte ao valor original!
                     </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Guarantee Section */}
+        <section className="py-16 sm:py-24 bg-off-white-100">
+          <div className="container px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-off-white rounded-2xl shadow-lg overflow-hidden border border-sage-green-200">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                  <div className="md:col-span-2 bg-gradient-to-br from-light-green-400 to-sage-green-600 p-8 sm:p-10 text-off-white flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="bg-off-white/20 rounded-full p-5 inline-flex mb-4">
+                        <ShieldCheck className="h-12 w-12 text-off-white" />
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-bold mb-2">
+                        Garantia de 7 dias
+                      </h3>
+                      <p className="text-off-white-200 text-lg">
+                        Sem riscos, só resultados!
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-3 p-8 sm:p-10">
+                    <p className="text-dark-teal-700 mb-6">
+                      Nós acreditamos tanto que este e-book vai transformar a
+                      sua forma de trabalhar, que oferecemos uma garantia de 7
+                      dias.
+                    </p>
+                    <p className="text-dark-teal-700 mb-6">
+                      Se, por qualquer motivo, você sentir que o conteúdo não é
+                      para você ou não atendeu às suas expectativas, basta nos
+                      avisar e garantimos o seu reembolso total, sem perguntas
+                      ou burocracia.
+                    </p>
+
+                    <p className="font-semibold text-dark-teal-800 mb-4">
+                      É simples:
+                    </p>
+
+                    <div className="space-y-3 mb-6">
+                      {[
+                        "Faça o download do e-book.",
+                        "Se em até 7 dias você achar que não é o que estava procurando, nos avise.",
+                        "Receba 100% do seu dinheiro de volta.",
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-center">
+                          <div className="bg-sage-green-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
+                            <span className="text-sage-green-600 text-sm font-bold">
+                              {index + 1}
+                            </span>
+                          </div>
+                          <span className="text-dark-teal-700">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="text-dark-teal-700 mb-4">
+                      Sem stress, sem complicação. O objetivo é que você sinta
+                      que realmente está ganhando mais tempo e produtividade.
+                    </p>
+
+                    <p className="font-bold text-dark-teal-800 text-lg">
+                      Sem riscos. Só oportunidades para melhorar a sua rotina.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About the Author Section */}
+        <section className="py-2 bg-off-white">
+          <div className="container pb-14 px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-dark-teal-50 to-sage-green-50 rounded-2xl p-6 sm:p-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                  <div className="md:col-span-1">
+                    <div className="aspect-square rounded-full overflow-hidden border-4 border-sage-green-300 max-w-[200px] mx-auto">
+                      {/* Replace with actual image */}
+                      <div className="w-full h-full bg-gradient-to-br from-dark-teal-400 to-dark-teal-600 flex items-center justify-center text-off-white text-5xl font-bold">
+                        G
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="md:col-span-2">
+                    <h2 className="text-2xl text-center sm:text-3xl font-bold text-dark-teal-800 mb-6">
+                      Quem sou eu
+                      <br /> pra falar disso?
+                    </h2>
+
+                    <div className="space-y-4 text-dark-teal-700">
+                      <p>
+                        Sou o Giovani, designer estratégico e fundador da Verv,
+                        um estúdio que ajuda criativos a construir marcas
+                        autênticas sem ficarem presos a tarefas operacionais.
+                      </p>
+
+                      <p>
+                        Trabalho com criatividade há mais de 6 anos e sei bem
+                        como é perder tempo com briefing mal estruturado,
+                        clientes demorando para responder e processos que
+                        poderiam ser bem mais ágeis.
+                      </p>
+
+                      <p>
+                        A IA mudou o jogo pra mim. Aprendi a usá-la como
+                        assistente, economizando tempo e deixando espaço para
+                        focar no que realmente importa: criar.
+                      </p>
+
+                      <p className="font-medium">
+                        Agora, quero te mostrar como fazer o mesmo. Sem
+                        complicação, sem promessas irreais, só o que realmente
+                        funciona.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
