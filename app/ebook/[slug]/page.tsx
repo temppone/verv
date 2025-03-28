@@ -1,28 +1,45 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import Logo from "@/public/ia-para-criativos.svg";
+import HotmartIcons from "@/public/icones-hotmart.webp";
 import {
   ArrowRight,
-  BookOpen,
   BrainCircuit,
   Calendar,
   Check,
   Clock,
-  Download,
   FileText,
   LayoutTemplate,
   Lightbulb,
   MessageSquare,
   Notebook,
   ShieldCheck,
-  Sparkles,
-  X,
   Zap,
 } from "lucide-react";
-import Link from "next/link";
-
 import Head from "next/head";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showHeader, setShowHeader] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const secondSection = document.querySelectorAll("section")[1];
+
+      if (secondSection) {
+        const secondSectionTop = secondSection.offsetTop;
+        setShowHeader(window.scrollY >= secondSectionTop - 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
@@ -39,7 +56,11 @@ export default function Home() {
       </Head>
 
       <div className="flex min-h-screen flex-col bg-off-white overflow-hidden">
-        <header className="w-full fixed top-0 z-50 transition-colors duration-300 bg-gradient-to-r from-dark-teal-800/90 to-dark-teal-700/90 backdrop-blur supports-[backdrop-filter]:backdrop-blur-lg border-b border-dark-teal-600/20">
+        <header
+          className={`w-full fixed top-0 z-50 transition-all duration-300 bg-gradient-to-r from-dark-teal-800/90 to-dark-teal-700/90 backdrop-blur supports-[backdrop-filter]:backdrop-blur-lg border-b border-dark-teal-600/20 ${
+            showHeader ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
           <div className="container flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
             <div className="flex items-center gap-2">
               <span className="text-xl md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
@@ -105,12 +126,12 @@ export default function Home() {
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-                  Aprenda a usar a IA para automatizar seu trabalho
+                  Pare de perder horas com tarefas chatas.
                 </h1>
 
                 <p className="text-off-white-200 text-base sm:text-lg md:text-xl max-w-lg mx-auto md:mx-0">
-                  Automatize atendimento, organize briefings e otimize seu fluxo
-                  de trabalho – por apenas R$19!
+                  Automatize as tarefas operacionais com IA e foque no que
+                  realmente importa - por apenas R$19!
                 </p>
 
                 <div className="pt-4 sm:pt-6 space-y-4">
@@ -135,84 +156,12 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
-              <div className="relative mt-8 md:mt-0 max-w-md mx-auto md:max-w-none">
-                <div className="relative w-full h-auto transition-all duration-500 hover:scale-105">
-                  <div className="bg-off-white rounded-2xl shadow-xl overflow-hidden border border-dark-teal-200">
-                    <div className="bg-gradient-to-r from-dark-teal-500 to-dark-teal-700 p-4 sm:p-6 text-off-white">
-                      <h2 className="text-xl sm:text-2xl font-bold mb-2">
-                        IA para Criativos
-                      </h2>
-                      <div className="flex items-center justify-between">
-                        <span className="opacity-75 text-xs sm:text-sm">
-                          por VervStudio
-                        </span>
-                        <span className="bg-off-white text-dark-teal-700 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold">
-                          {new Date().getFullYear()}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
-                      <div className="space-y-2 sm:space-y-4">
-                        <h3 className="text-lg sm:text-xl font-bold text-dark-teal-800">
-                          Otimize seu fluxo de trabalho
-                        </h3>
-                        <p className="text-dark-teal-600 text-sm sm:text-base">
-                          Automatize tarefas repetitivas e foque no que
-                          realmente importa: criar.
-                        </p>
-                      </div>
-
-                      <ul className="space-y-2 sm:space-y-3">
-                        <li className="flex items-center text-dark-teal-700 text-sm sm:text-base">
-                          <BookOpen className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-sage-green flex-shrink-0" />
-                          <span>E-book completo em formato PDF</span>
-                        </li>
-                        <li className="flex items-center text-dark-teal-700 text-sm sm:text-base">
-                          <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-sage-green flex-shrink-0" />
-                          <span>Templates para briefing e atendimento</span>
-                        </li>
-                        <li className="flex items-center text-dark-teal-700 text-sm sm:text-base">
-                          <Check className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5 text-sage-green flex-shrink-0" />
-                          <span>Acesso imediato após a compra</span>
-                        </li>
-                      </ul>
-                      <div className="pt-2 sm:pt-4">
-                        <div className="bg-off-white-200 rounded-lg p-3 sm:p-4">
-                          <div className="flex justify-between items-center mb-3 border-b border-dashed border-dark-teal-200 pb-3">
-                            <span className="text-xs sm:text-sm text-dark-teal-400 line-through font-medium">
-                              R$47,00
-                            </span>
-                            <div className="bg-pale-pink text-dark-teal-800 font-bold px-2 sm:px-3 py-1 rounded-lg text-xs">
-                              -60%
-                            </div>
-                          </div>
-
-                          <div className="text-center space-y-1">
-                            <div className="text-2xl sm:text-3xl font-extrabold text-sage-green-600 flex justify-center items-center bg-sage-green-50 py-2 rounded-lg shadow-sm">
-                              <span className="text-lg mr-1">R$</span>19,00
-                            </div>
-                            <span className="text-xs text-dark-teal-500 block pt-1">
-                              Pagamento único
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-pale-pink text-off-white rounded-full p-3 sm:p-4 shadow-lg rotate-12 z-20">
-                    <Sparkles className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         {/* Problema Section */}
-        <section className="py-24 bg-off-white-100">
+        <section className="py-10 bg-off-white-100">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-4">
@@ -244,12 +193,12 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-off-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-off-white-500 group"
+                  className="bg-off-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-off-white-500 group text-center"
                 >
                   <div className={`h-2 bg-gradient-to-r ${item.color}`}></div>
                   <div className="p-8">
                     <div
-                      className={`inline-flex items-center justify-center p-3 bg-gradient-to-r ${item.color} text-off-white rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+                      className={`inline-flex items-center justify-center p-3 bg-gradient-to-r ${item.color} text-off-white rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto`}
                     >
                       {item.icon}
                     </div>
@@ -276,7 +225,10 @@ export default function Home() {
           </div>
         </section>
         {/* Benefícios Section */}
-        <section id="beneficios" className="py-16 sm:py-24 bg-off-white">
+        <section
+          id="beneficios"
+          className="py-2 pb-20 sm:py-24 bg-off-white scroll-mt-16 md:scroll-mt-20"
+        >
           <div className="container px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-3 sm:mb-4">
@@ -357,8 +309,7 @@ export default function Home() {
                   href="#comprar"
                   className="flex items-center justify-center"
                 >
-                  QUERO MEU E-BOOK AGORA
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  QUERO USAR A IA A MEU FAVOR
                 </Link>
               </Button>
             </div>
@@ -376,7 +327,7 @@ export default function Home() {
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
                 Esse e-book é para{" "}
-                <span className="text-sage-green-400">você se…</span>
+                <span className="text-sage-green-400">você que…</span>
               </h2>
             </div>
 
@@ -387,7 +338,7 @@ export default function Home() {
                 "Já tentou usar IA, mas não conseguiu boas respostas e acabou desistindo.",
                 "Acha que a IA não é para você, mas gostaria de testar sem complicação.",
                 "Está cansado de fazer tudo sozinho e quer uma forma mais inteligente de otimizar seu fluxo de trabalho.",
-                "Se você quer economizar tempo, automatizar o que não precisa ser manual e focar no que realmente importa, esse e-book é para você!",
+                "Quer economizar tempo, automatizar o que não precisa ser manual e focar no que realmente importa, esse e-book é para você!",
               ].map((item, index) => (
                 <div
                   key={index}
@@ -405,7 +356,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="depoimentos" className="py-12 sm:py-24 bg-off-white-100">
+        <section
+          id="depoimentos"
+          className="py-12 sm:py-24 bg-off-white-100 scroll-mt-16 md:scroll-mt-20"
+        >
           <div className="container px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark-teal-800 mb-2 sm:mb-4">
@@ -420,13 +374,13 @@ export default function Home() {
               {[
                 {
                   name: "Mariana S.",
-                  position: "Designer Gráfica",
+                  position: "Tatuadora",
                   quote:
                     "Depois que comecei a usar IA no meu fluxo de trabalho, reduzi meu tempo de atendimento pela metade!",
                 },
                 {
                   name: "Rafael T.",
-                  position: "Freelancer",
+                  position: "Designer",
                   quote:
                     "Agora organizo meus briefings em minutos e sem stress. Esse e-book me deu um norte incrível!",
                 },
@@ -445,7 +399,7 @@ export default function Home() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-off-white rounded-xl p-4 sm:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border border-off-white-400"
+                  className="bg-off-white rounded-xl text-center p-4 sm:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 border border-off-white-400"
                 >
                   <div className="flex flex-col">
                     <div className="mb-3 sm:mb-4">
@@ -471,7 +425,7 @@ export default function Home() {
         {/* Oferta Section */}
         <section
           id="oferta"
-          className="py-12 sm:py-24 bg-gradient-to-br from-off-white to-sage-green-100"
+          className="py-12 sm:py-24 bg-gradient-to-br from-off-white to-sage-green-100 scroll-mt-16 md:scroll-mt-20"
         >
           <div className="container px-4 sm:px-6">
             <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
@@ -492,17 +446,19 @@ export default function Home() {
                         60% OFF
                       </span>
                     </div>
-                    <div className="flex items-baseline justify-center">
-                      <span className="text-light-green-300 text-4xl sm:text-5xl font-extrabold">
+                    <div className="flex flex-col items-center justify-center">
+                      <span className="text-light-green-300 text-6xl sm:text-5xl font-extrabold">
                         R$19
                       </span>
-                      <span className="text-off-white-200 ml-1">à vista</span>
                     </div>
                   </div>
-                  <p className="text-off-white-200 mb-4 sm:mb-8 text-sm sm:text-base">
+                  <p className="text-off-white-200 text-center mb-4 sm:mb-8 text-sm sm:text-base">
                     Pagamento único - Sem mensalidades!
                   </p>
-                  <div id="comprar" className="space-y-3 sm:space-y-4">
+                  <div
+                    id="comprar"
+                    className="space-y-3 sm:space-y-4 scroll-mt-16 md:scroll-mt-20"
+                  >
                     <Button
                       size="lg"
                       className="bg-light-green hover:bg-light-green-600 text-dark-teal-800 font-bold rounded-full shadow-lg transition-all duration-300 w-full py-4 sm:py-6 text-base sm:text-lg"
@@ -513,18 +469,40 @@ export default function Home() {
                         className="flex items-center justify-center"
                       >
                         QUERO MEU E-BOOK AGORA
-                        <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                       </Link>
                     </Button>
+                  </div>
 
-                    <p className="text-center text-off-white-200 text-xs sm:text-sm">
-                      Processado por Kiwify - Pagamento 100% seguro
-                    </p>
+                  {/* Brazilian payment security badges */}
+                  <div>
+                    <div className="flex flex-col space-y-4">
+                      {/* Hotmart guarantee badge */}
+                      <div className="flex items-center justify-center mt-4 bg-sage-green-50 p-3 rounded-lg border border-sage-green-200">
+                        <div className="mr-3">
+                          <ShieldCheck className="h-6 w-6 text-sage-green-400" />
+                        </div>
+                        <div className="text-left">
+                          <p className="text-white font-medium text-sm">
+                            Garantia Hotmart
+                          </p>
+                          <p className="text-white-600 text-xs">
+                            Pagamento processado com segurança
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-center mt-2">
+                        <p className="text-xs text-white text-center max-w-xs">
+                          Seus dados estão protegidos e o pagamento é processado
+                          em ambiente seguro.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <div className="p-6 sm:p-10">
-                  <h3 className="text-xl sm:text-2xl font-bold text-dark-teal-800 mb-4 sm:mb-6">
+                  <h3 className="text-xl sm:text-2xl text-center font-bold text-dark-teal-800 mb-4 sm:mb-6">
                     O que está incluso:
                   </h3>
                   <div className="space-y-2 sm:space-y-4">
@@ -546,10 +524,12 @@ export default function Home() {
                         icon: <Notebook />,
                       },
                       { text: "Acesso imediato após a compra", icon: <Zap /> },
-                      { text: "Atualizações gratuitas", icon: <ArrowRight /> },
                       { text: "Garantia de 7 dias", icon: <ShieldCheck /> },
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center">
+                      <div
+                        key={index}
+                        className="flex items-center justify-center"
+                      >
                         <Check className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-sage-green flex-shrink-0" />
                         <span className="text-dark-teal-700 text-sm sm:text-base">
                           {item.text}
@@ -559,10 +539,18 @@ export default function Home() {
                   </div>
 
                   <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-pale-pink-100 border border-pale-pink-200 rounded-lg">
-                    <p className="text-dark-teal-800 font-bold text-xs sm:text-sm">
+                    <p className="text-dark-teal-800 font-bold text-xs sm:text-sm text-center">
                       Atenção! Esse preço promocional pode acabar a qualquer
                       momento. Aproveite antes que volte ao valor original!
                     </p>
+                  </div>
+
+                  <div className="w-100 flex justify-center">
+                    <img
+                      src={HotmartIcons.src}
+                      alt="Verv Studio"
+                      className="w-60"
+                    />
                   </div>
                 </div>
               </div>
@@ -571,70 +559,54 @@ export default function Home() {
         </section>
 
         {/* Guarantee Section */}
-        <section className="py-16 sm:py-24 bg-off-white-100">
-          <div className="container px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-off-white rounded-2xl shadow-lg overflow-hidden border border-sage-green-200">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-                  <div className="md:col-span-2 bg-gradient-to-br from-light-green-400 to-sage-green-600 p-8 sm:p-10 text-off-white flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="bg-off-white/20 rounded-full p-5 inline-flex mb-4">
-                        <ShieldCheck className="h-12 w-12 text-off-white" />
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold mb-2">
-                        Garantia de 7 dias
-                      </h3>
-                      <p className="text-off-white-200 text-lg">
-                        Sem riscos, só resultados!
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="md:col-span-3 p-8 sm:p-10">
-                    <p className="text-dark-teal-700 mb-6">
-                      Nós acreditamos tanto que este e-book vai transformar a
-                      sua forma de trabalhar, que oferecemos uma garantia de 7
-                      dias.
-                    </p>
-                    <p className="text-dark-teal-700 mb-6">
-                      Se, por qualquer motivo, você sentir que o conteúdo não é
-                      para você ou não atendeu às suas expectativas, basta nos
-                      avisar e garantimos o seu reembolso total, sem perguntas
-                      ou burocracia.
-                    </p>
-
-                    <p className="font-semibold text-dark-teal-800 mb-4">
-                      É simples:
-                    </p>
-
-                    <div className="space-y-3 mb-6">
-                      {[
-                        "Faça o download do e-book.",
-                        "Se em até 7 dias você achar que não é o que estava procurando, nos avise.",
-                        "Receba 100% do seu dinheiro de volta.",
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center">
-                          <div className="bg-sage-green-100 rounded-full w-6 h-6 flex items-center justify-center mr-3 flex-shrink-0">
-                            <span className="text-sage-green-600 text-sm font-bold">
-                              {index + 1}
-                            </span>
-                          </div>
-                          <span className="text-dark-teal-700">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <p className="text-dark-teal-700 mb-4">
-                      Sem stress, sem complicação. O objetivo é que você sinta
-                      que realmente está ganhando mais tempo e produtividade.
-                    </p>
-
-                    <p className="font-bold text-dark-teal-800 text-lg">
-                      Sem riscos. Só oportunidades para melhorar a sua rotina.
-                    </p>
-                  </div>
+        <section className="container text-white relative z-10 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-dark-teal-700 rounded-2xl p-8 border border-dark-teal-600 mb-8">
+              <div className="flex flex-col items-center justify-center mb-6">
+                <div className="bg-sage-green-500/20 text-sage-green-300 rounded-full p-6 mb-4">
+                  <ShieldCheck className="h-12 w-12" />
                 </div>
               </div>
+
+              <h2 className="text-3xl text-center md:text-4xl font-extrabold mb-4">
+                <span className="text-sage-green-400">Garantia</span> de 7 dias
+              </h2>
+
+              <p className="text-off-white-200 text-center mb-8 max-w-2xl mx-auto">
+                Nós acreditamos tanto que este e-book vai transformar a sua
+                forma de trabalhar, que oferecemos uma garantia de 7 dias. Se,
+                por qualquer motivo, você sentir que o conteúdo não é para você
+                ou não atendeu às suas expectativas, basta nos avisar e
+                garantimos o seu reembolso total, sem perguntas ou burocracia.
+              </p>
+
+              <p className="text-off-white font-semibold text-center mb-6">
+                É simples:
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4 mb-8">
+                {[
+                  "Faça o download do e-book e explore o conteúdo.",
+                  "Se em até 7 dias você achar que não é o que esperava, nos avise.",
+                  "Receba 100% do seu dinheiro de volta sem questionamentos.",
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-dark-teal-600/60 backdrop-blur-sm rounded-lg p-5 border border-dark-teal-500 flex items-start"
+                  >
+                    <div className="bg-pale-green-500/20 text-pale-green-300 rounded-full p-2 mr-3 flex-shrink-0 mt-0.5">
+                      <span className="flex items-center justify-center w-5 h-5 text-lg font-bold">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <p className="text-off-white-300">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="font-bold text-center text-sage-green-300 text-xl">
+                Sem riscos. Só oportunidades para melhorar a sua rotina.
+              </p>
             </div>
           </div>
         </section>
