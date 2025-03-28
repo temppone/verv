@@ -422,7 +422,7 @@ export default function Home() {
 
         {/* Oferta Section */}
         <section
-          id="oferta"
+          id="comprar"
           className="py-12 sm:py-24 bg-gradient-to-br from-off-white to-sage-green-100 scroll-mt-16 md:scroll-mt-20"
         >
           <div className="container px-4 sm:px-6">
@@ -453,10 +453,7 @@ export default function Home() {
                   <p className="text-off-white-200 text-center mb-4 sm:mb-8 text-sm sm:text-base">
                     Pagamento único - Sem mensalidades!
                   </p>
-                  <div
-                    id="comprar"
-                    className="space-y-3 sm:space-y-4 scroll-mt-16 md:scroll-mt-20"
-                  >
+                  <div className="space-y-3 sm:space-y-4 scroll-mt-16 md:scroll-mt-20">
                     <Button
                       size="lg"
                       className="bg-light-green hover:bg-light-green-600 text-dark-teal-800 font-bold rounded-full shadow-lg transition-all duration-300 w-full py-4 sm:py-6 text-base sm:text-lg"
