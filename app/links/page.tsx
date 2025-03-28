@@ -9,7 +9,7 @@ export default function Home() {
       <header className="w-full border-b border-dark-teal-200 bg-off-white-100 backdrop-blur supports-[backdrop-filter]:bg-off-white-100/90">
         <div className="container flex h-16 items-center justify-center">
           <div className="flex items-center gap-2">
-            <img src={Logo.src} alt="Home" className="w-20" />
+            <img src={Logo.src} alt="logo" className="w-20" />
           </div>
         </div>
       </header>
