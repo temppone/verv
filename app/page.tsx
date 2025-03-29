@@ -1,12 +1,15 @@
+import Biancovilli from "@/public/images/biancovilli.webp";
+import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
+import Ninho from "@/public/images/ninho.webp";
 import Logo from "@/public/verv_logo.svg";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="px-6 py-4 flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
+      <header className="px-6 flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
         <div className="flex justify-center text-xl font-bold hover:text-pale-pink transition-colors duration-300">
-          <span className="text-xl md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
+          <span className="text-xl pt-8 md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
             <img
               src={Logo.src}
               alt="Verv Studio"
@@ -63,7 +66,7 @@ export default function Home() {
           <div className="mt-12 animate-slideUp animation-delay-500">
             <a
               href="#contact"
-              className="bg-pale-pink text-black px-8 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform"
+              className="bg-pale-pink text-black px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
             >
               Fale Conosco
             </a>
@@ -72,16 +75,36 @@ export default function Home() {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="px-6 py-20 bg-gray-950">
+      <section className="px-6 py-24 bg-gray-950 overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 animate-fadeIn">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             Projetos Selecionados
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-900 aspect-square hover:scale-[1.02] transition-all duration-500 cursor-pointer animate-fadeIn animation-delay-200 hover:shadow-lg hover:shadow-pale-pink/20"></div>
-            <div className="bg-gray-900 aspect-square hover:scale-[1.02] transition-all duration-500 cursor-pointer animate-fadeIn animation-delay-400 hover:shadow-lg hover:shadow-pale-pink/20"></div>
-            <div className="bg-gray-900 aspect-square hover:scale-[1.02] transition-all duration-500 cursor-pointer animate-fadeIn animation-delay-600 hover:shadow-lg hover:shadow-pale-pink/20"></div>
-            <div className="bg-gray-900 aspect-square hover:scale-[1.02] transition-all duration-500 cursor-pointer animate-fadeIn animation-delay-800 hover:shadow-lg hover:shadow-pale-pink/20"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <ProjectCard
+              image={Biancovilli}
+              title="Biancovilli"
+              description="Da venda de brigadeiros na rua à referência no mercado de doces"
+              delay="200"
+              slug="biancovilli"
+            />
+
+            <ProjectCard
+              image={OqueFazerEmJF}
+              title="O que Fazer em JF?"
+              description="O amor por Juiz de Fora que acumulou uma legião de fãs"
+              delay="400"
+              slug="oque-fazer-em-jf"
+            />
+
+            <ProjectCard
+              image={Ninho}
+              title="Ninho Tattoo Studio"
+              description="Um estúdio de tatuagem que acolhe e transforma"
+              fullWidth={true}
+              delay="600"
+              slug="ninho-tattoo"
+            />
           </div>
         </div>
       </section>

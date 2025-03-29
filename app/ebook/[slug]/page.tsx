@@ -1,8 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Logo from "@/public/ia-para-criativos.svg";
-import Profile from "@/public/profile.jpg";
 import HotmartIcons from "@/public/icones-hotmart.webp";
+import Profile from "@/public/profile.jpg";
 import {
   ArrowRight,
   BrainCircuit,
@@ -17,7 +17,6 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -43,7 +42,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
+      <head>
         <title>IA para Criativos - Ebook</title>
         <meta
           name="description"
@@ -54,7 +53,7 @@ export default function Home() {
           content="IA, Criativos, Ebook, Automação, Trabalho, Fluxo de Trabalho"
         />
         <meta name="author" content="IA para Criativos" />
-      </Head>
+      </head>
 
       <div className="flex min-h-screen flex-col bg-off-white overflow-hidden">
         <header

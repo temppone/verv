@@ -6,10 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "IA para Criativos: Automatize seu Fluxo de Trabalho",
+  title: "Verv - Branding para criativos",
   description:
-    "Aprenda a usar IA para automatizar atendimento, organizar briefings e otimizar seu fluxo de trabalho. E-book prático para criativos e freelancers.",
-  generator: "v0.dev",
+    "Estratégias profissionais de branding para designers, artistas e freelancers. Desenvolva sua identidade visual, atraia clientes ideais e destaque-se no mercado criativo com métodos eficientes e práticos.",
 };
 
 export default function RootLayout({
