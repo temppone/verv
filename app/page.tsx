@@ -3,6 +3,21 @@ import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
 import Ninho from "@/public/images/ninho.webp";
 import Logo from "@/public/verv_logo.svg";
 import ProjectCard from "@/components/ProjectCard";
+import { Carousel, CarouselItem } from "@/components/ui/carousel";
+import { Paintbrush, BarChart3, Layout, Globe } from "lucide-react";
+
+const feedbacks = [
+  {
+    text: "Durante o processo de criação da identidade visual, ele não apenas entregou uma nova cara para minha marca, mas trouxe autenticidade e alinhamento com o estilo que sempre sonhei.",
+    author: "Mirella Mota",
+    handle: "@oquefazerem.jf",
+  },
+  {
+    text: "Hoje não só nos sentimos parte de um grupo de grandes empresas, como também conseguimos reposicionar nossos produtos e aumentar a confiança dos clientes.",
+    author: "Gustavo Biancovilli",
+    handle: "@biancovillibrigaderia",
+  },
+];
 
 export default function Home() {
   return (
@@ -75,12 +90,12 @@ export default function Home() {
       </section>
 
       {/* Portfolio Preview */}
-      <section className="px-6 py-24 bg-gray-950 overflow-hidden">
+      <section className="px-6 py-16 bg-gray-950 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             Projetos Selecionados
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ProjectCard
               image={Biancovilli}
               title="Biancovilli"
@@ -106,6 +121,158 @@ export default function Home() {
               slug="ninho-tattoo"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Feedbacks Section */}
+      <section className="px-6 py-4 bg-gray-950">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+            O que dizem depois de virar a chave
+          </h2>
+          <div className="hidden md:grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {feedbacks.map((feedback, index) => (
+              <div key={index} className="bg-black/50 p-8 rounded-lg">
+                <p className="text-lg leading-relaxed mb-6">{feedback.text}</p>
+                <div className="flex flex-col">
+                  <span className="font-bold">{feedback.author}</span>
+                  <span className="text-pale-pink">{feedback.handle}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="md:hidden">
+            <Carousel className="w-full max-w-4xl mx-auto">
+              {feedbacks.map((feedback, index) => (
+                <CarouselItem key={index} className="p-6">
+                  <div className="bg-black/50 p-8 rounded-lg">
+                    <p className="text-lg leading-relaxed mb-6">{feedback.text}</p>
+                    <div className="flex flex-col">
+                      <span className="font-bold">{feedback.author}</span>
+                      <span className="text-pale-pink">{feedback.handle}</span>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="px-6 py-16 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+            Serviços
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {[
+              {
+                icon: Paintbrush,
+                title: "Branding",
+                description: "Desenvolvimento estratégico da sua marca, desde o posicionamento até a comunicação com seu público."
+              },
+              {
+                icon: BarChart3,
+                title: "Estratégia",
+                description: "Planejamento detalhado para alcançar seus objetivos de negócio através da comunicação efetiva."
+              },
+              {
+                icon: Layout,
+                title: "Identidade Visual",
+                description: "Criação de elementos visuais únicos que traduzem a essência da sua marca e conectam com seu público."
+              },
+              {
+                icon: Globe,
+                title: "Desenvolvimento Web",
+                description: "Criação de sites e landing pages modernos e responsivos que transmitem a essência da sua marca."
+              }
+            ].map((service, index) => (
+              <div key={index} className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950">
+                <div className="flex flex-col h-full">
+                  <service.icon className="w-8 h-8 mb-4 text-pale-pink" />
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-gray-400 text-lg leading-relaxed group-hover:text-white transition-colors duration-300">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="px-6 py-24 bg-gray-950">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+            Nosso Processo
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Entrevista Individual",
+                description: "Começamos com uma conversa profunda para entender a história da sua marca, seus objetivos, personalidade e o que você deseja transmitir ao seu público."
+              },
+              {
+                step: "02",
+                title: "Estratégia & Pesquisa",
+                description: "Desenvolvemos um documento estratégico e analisamos o mercado para entender como destacar sua marca da concorrência."
+              },
+              {
+                step: "03",
+                title: "Desenvolvimento Visual",
+                description: "Criamos moodboards e desenvolvemos sua identidade visual completa, incluindo logotipo, paleta de cores e tipografia."
+              },
+              {
+                step: "04",
+                title: "Refinamento & Entrega",
+                description: "Apresentamos o projeto, realizamos ajustes necessários e entregamos todos os arquivos e materiais para uso imediato."
+              }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group relative p-8 rounded-xl transition-all duration-500 ease-out hover:bg-black/40 hover:scale-[1.02] cursor-pointer backdrop-blur-sm border border-transparent hover:border-pale-pink/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-pale-pink/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-pale-pink font-bold text-4xl opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                      {item.step}
+                    </span>
+                    <div className="h-[1px] flex-grow bg-pale-pink/20 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white/90 group-hover:text-pale-pink transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gray-950 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pale-pink/20 to-transparent opacity-30"></div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Vamos trabalhar juntos na sua marca?
+          </h2>
+          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            Transformamos marcas com estratégia, design e narrativas potentes
+            que conectam seu negócio ao público certo.
+          </p>
+          <a
+            href="#contact"
+            className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
+          >
+            Solicitar Orçamento
+          </a>
         </div>
       </section>
 

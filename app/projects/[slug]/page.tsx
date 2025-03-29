@@ -104,12 +104,12 @@ const projects = [
     slug: "oque-fazer-em-jf",
     title: "O que fazer em JF",
     subtitle: "Branding & Identidade Visual",
-    description: "O amor por Juiz de Fora que acumulou uma legião de fãs",
+    description: "O guia turístico mais querido de JF",
     image: OqueFazerEmJF,
     stats: [
       { label: "Seguidores", value: "100k+" },
       { label: "Parcerias locais", value: "50+" },
-      { label: "Tempo do projeto", value: "2 meses" },
+      { label: "Alcance mensal", value: "500k+" },
     ],
     services: [
       "Identidade visual",
@@ -128,12 +128,7 @@ const projects = [
       {
         type: "lead",
         content:
-          "Quando Mirella Mota criou a página O Que Fazer em JF, o objetivo era claro: mostrar para juiz-foranos e turistas o quanto Juiz de Fora tem a oferecer. Era uma paixão pela cidade transformada em ação.",
-      },
-      {
-        type: "paragraph",
-        content:
-          "Mas apesar do excelente posicionamento, a marca não tinha uma identidade visual consistente. O que antes funcionava bem no formato simples e espontâneo começou a demandar mais profissionalismo e identidade.",
+          "O amor por Juiz de Fora que acumulou uma legião de fãs. Quando Mirella Mota criou a página O Que Fazer em JF, o objetivo era claro: mostrar para juiz-foranos e turistas o quanto Juiz de Fora tem a oferecer.",
       },
       {
         type: "heading",
@@ -142,12 +137,7 @@ const projects = [
       {
         type: "paragraph",
         content:
-          "A falta de uma marca forte e icônica limitava as possibilidades da página, especialmente quando empresas buscavam parcerias e esperavam um nível de seriedade que a identidade existente não transmitia.",
-      },
-      {
-        type: "quote",
-        content:
-          "Precisávamos criar uma marca que fosse tão vibrante quanto a cidade, mas que também transmitisse profissionalismo e confiança.",
+          "Mas apesar do excelente posicionamento, a marca não tinha uma identidade visual consistente. O que antes funcionava bem no formato simples e espontâneo começou a demandar mais profissionalismo e identidade.",
       },
       {
         type: "heading",
@@ -159,20 +149,17 @@ const projects = [
           "A missão era clara: criar uma marca que fosse divertida, criativa e tão vibrante quanto Juiz de Fora, mas sem perder a personalidade leve e acolhedora que Mirella construiu ao longo dos anos.",
       },
       {
-        type: "paragraph",
-        content: "Durante a criação, focamos em três pilares fundamentais:",
-      },
-      {
         type: "list",
         items: [
-          "Energia - Capturar o dinamismo da cidade",
-          "Criatividade - Refletir a rica cena cultural local",
-          "Acessibilidade - Manter a conexão próxima com o público",
+          "Sistema visual dinâmico e flexível",
+          "Paleta de cores vibrante",
+          "Tipografia moderna e acessível",
+          "Elementos gráficos lúdicos",
         ],
       },
       {
         type: "heading",
-        content: "Resultados",
+        content: "Os resultados, tão coloridos quanto",
       },
       {
         type: "paragraph",
@@ -181,7 +168,7 @@ const projects = [
       },
       {
         type: "heading",
-        content: "Impacto na Comunidade",
+        content: "Impacto na Cidade",
       },
       {
         type: "paragraph",
