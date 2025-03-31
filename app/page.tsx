@@ -1,16 +1,27 @@
-import Biancovilli from "@/public/images/biancovilli.webp";
-import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
-import Ninho from "@/public/images/ninho.webp";
-import Logo from "@/public/verv_logo.svg";
 import ProjectCard from "@/components/ProjectCard";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
-import { Paintbrush, BarChart3, Layout, Globe } from "lucide-react";
+import Biancovilli from "@/public/images/biancovilli.webp";
+import Ninho from "@/public/images/ninho.webp";
+import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
+import Logo from "@/public/verv_logo.svg";
+import { BarChart3, Globe, Layout, Paintbrush } from "lucide-react";
 
 const feedbacks = [
+  {
+    text: "Eu amei todo o conceito, o formato dos elementos que escolheu, a paleta!!! Ta perfeito. Eu nem sei o que dizer, conseguiu me tirar um sorriso imenso junto com aquele silêncio de satisfação sabe. Fiquei apaixonada, pra dizer o mínimo",
+    author: "Paola Gatti",
+    handle: "@paolagatti.tattoo",
+  },
   {
     text: "Durante o processo de criação da identidade visual, ele não apenas entregou uma nova cara para minha marca, mas trouxe autenticidade e alinhamento com o estilo que sempre sonhei.",
     author: "Mirella Mota",
     handle: "@oquefazerem.jf",
+  },
+  {
+    text: "Ficou SENSACIONAL! E eu to amando aplicar aos pouquinhos! Só tenho a agradecer por esse trabalho maravilhoso e tãaaaaaao minha cara! Sucesso puro",
+    author: "Isabela Gatti",
+    handle: "@ninhoestudio",
   },
   {
     text: "Hoje não só nos sentimos parte de um grupo de grandes empresas, como também conseguimos reposicionar nossos produtos e aumentar a confiança dos clientes.",
@@ -20,18 +31,29 @@ const feedbacks = [
 ];
 
 export default function Home() {
+
   return (
-    <main className="min-h-screen bg-black text-white">
-      <header className="px-6 flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
+    <main className="min-h-screen bg-black text-white pt-24">
+      <header className="px-6 fixed w-full flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
         <div className="flex justify-center text-xl font-bold hover:text-pale-pink transition-colors duration-300">
-          <span className="text-xl pt-8 md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
+          <span className="text-xl py-4 md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
             <img
               src={Logo.src}
               alt="Verv Studio"
-              className="w-20 invert brightness-0 filter"
+              className="w-16 invert brightness-0 filter"
             />
           </span>
         </div>
+
+        <div className="block md:hidden animate-slideUp animation-delay-500">
+          <a
+            href="#contact"
+            className="bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
+          >
+            Fale conosco
+          </a>
+        </div>
+
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
             <li>
@@ -78,19 +100,20 @@ export default function Home() {
             <br />
             <span className="text-pale-pink">criativos destemidos.</span>
           </h1>
-          <div className="mt-12 animate-slideUp animation-delay-500">
+
+          <div className="hidden md:block mt-12 animate-slideUp animation-delay-500">
             <a
               href="#contact"
-              className="bg-pale-pink text-black px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
+              className="bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
             >
-              Fale Conosco
+              Fale conosco
             </a>
           </div>
         </div>
       </section>
 
       {/* Portfolio Preview */}
-      <section className="px-6 py-16 bg-gray-950 overflow-hidden">
+      <section className="px-6 py-8 bg-gray-950 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             Projetos Selecionados
@@ -130,22 +153,11 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             O que dizem depois de virar a chave
           </h2>
-          <div className="hidden md:grid grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {feedbacks.map((feedback, index) => (
-              <div key={index} className="bg-black/50 p-8 rounded-lg">
-                <p className="text-lg leading-relaxed mb-6">{feedback.text}</p>
-                <div className="flex flex-col">
-                  <span className="font-bold">{feedback.author}</span>
-                  <span className="text-pale-pink">{feedback.handle}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="md:hidden">
-            <Carousel className="w-full max-w-4xl mx-auto">
+          <div >
+            <Carousel className="w-ful">
               {feedbacks.map((feedback, index) => (
                 <CarouselItem key={index} className="p-6">
-                  <div className="bg-black/50 p-8 rounded-lg">
+                  <div className="bg-black/50 p-12 rounded-lg">
                     <p className="text-lg leading-relaxed mb-6">{feedback.text}</p>
                     <div className="flex flex-col">
                       <span className="font-bold">{feedback.author}</span>
@@ -160,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="px-6 py-16 bg-black">
+      <section className="px-6 py-12 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             Serviços
@@ -203,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="px-6 py-24 bg-gray-950">
+      <section className="px-6 py-8 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             Nosso Processo
@@ -256,10 +268,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Q&A Section */}
+      <section className="px-6 py-20 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+            Perguntas Frequentes
+          </h2>
+          <div className="w-100">
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: "Quanto tempo leva o processo completo?",
+                  answer: "O processo completo geralmente leva de 4 a 6 semanas, dependendo da complexidade do projeto e da rapidez do feedback do cliente."
+                },
+                {
+                  question: "Como funciona o processo de pagamento?",
+                  answer: "Trabalhamos com um sistema de 50% de entrada para iniciar o projeto e 50% na entrega final. Também oferecemos opções de parcelamento."
+                },
+                {
+                  question: "O que está incluído no pacote de branding?",
+                  answer: "O pacote inclui estratégia de marca, identidade visual completa (logo, cores, tipografia), manual de marca e arquivos em todos os formatos necessários."
+                },
+                {
+                  question: "Vocês fazem alterações após a entrega?",
+                  answer: "Sim, incluímos duas rodadas de alterações no pacote padrão para garantir que você esteja completamente satisfeito com o resultado."
+                },
+                {
+                  question: "Trabalham com projetos internacionais?",
+                  answer: "Sim, trabalhamos remotamente com clientes de qualquer lugar do mundo através de reuniões online e ferramentas colaborativas."
+                },
+                {
+                  question: "Como começar um projeto?",
+                  answer: "Entre em contato através do formulário ou WhatsApp. Faremos uma reunião inicial gratuita para entender suas necessidades e apresentar nossa proposta."
+                }
+              ].map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="border border-gray-800 rounded-lg px-6 data-[state=open]:border-pale-pink transition-all duration-300"
+                >
+                  <AccordionTrigger className="hover:no-underline group">
+                    <span className="text-xl font-medium text-left group-hover:text-pale-pink transition-colors duration-300">
+                      {item.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-400 text-base">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-16 bg-gray-950 relative overflow-hidden">
+      <section className="py-8 bg-gray-950 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pale-pink/20 to-transparent opacity-30"></div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-6 text-center relative">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Vamos trabalhar juntos na sua marca?
           </h2>
@@ -268,7 +334,7 @@ export default function Home() {
             que conectam seu negócio ao público certo.
           </p>
           <a
-            href="#contact"
+            href="https://form.respondi.app/NwPH9MZX"
             className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
           >
             Solicitar Orçamento
@@ -284,7 +350,7 @@ export default function Home() {
               <img
                 src={Logo.src}
                 alt="Verv Studio"
-                className="w-20 invert brightness-0 filter"
+                className="w-16 invert brightness-0 filter"
               />
             </span>{" "}
           </div>
@@ -311,7 +377,7 @@ export default function Home() {
           </div>
           <div className="animate-fadeIn animation-delay-600">
             <h4 className="font-medium mb-4">Contato</h4>
-            <p className="opacity-70 mb-2">hello@verv.studio</p>
+            <p className="opacity-70 mb-2">hello@vervstudio.com.br</p>
             <a
               href="https://wa.me/yourphonenumber"
               className="border-b border-pale-pink text-pale-pink hover:text-white hover:border-white transition-colors duration-300"
