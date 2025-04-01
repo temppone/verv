@@ -6,6 +6,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
+import PaolaGatti from "@/public/images/paola_01.webp";
+
 import Biancovilli from "@/public/images/biancovilli.webp";
 import Ninho from "@/public/images/ninho.webp";
 import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
@@ -63,27 +65,26 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ProjectCard
-              image={Biancovilli}
-              title="Biancovilli"
-              description="Da venda de brigadeiros na rua à referência no mercado de doces"
-              delay="200"
-              slug="biancovilli"
+              image={OqueFazerEmJF}
+              title="O que Fazer em JF?"
+              delay="400"
+              slug="oque-fazer-em-jf"
+              square
             />
 
             <ProjectCard
-              image={OqueFazerEmJF}
-              title="O que Fazer em JF?"
-              description="O amor por Juiz de Fora que acumulou uma legião de fãs"
+              image={PaolaGatti}
+              title="Paola Gatti"
               delay="400"
-              slug="oque-fazer-em-jf"
+              slug="paola-gatti"
+              square
             />
 
             <ProjectCard
               image={Ninho}
               title="Ninho Tattoo Studio"
-              description="Um estúdio de tatuagem que acolhe e transforma"
               fullWidth={true}
-              delay="600"
+              delay="400"
               slug="ninho-tattoo"
             />
           </div>

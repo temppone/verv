@@ -1,102 +1,171 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/Header";
 
-// Import all project images
-import Biancovilli from "@/public/images/biancovilli.webp";
+import PaolaGatti from "@/public/images/paola_01.webp";
+
 import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
-import Ninho from "@/public/images/ninho.webp";
-import Logo from "@/public/verv_logo.svg";
 import { Fragment } from "react";
 
-// Define project data
 const projects = [
   {
-    slug: "biancovilli",
-    title: "Biancovilli",
-    subtitle: "Branding & Estratégia",
+    slug: "paola-gatti",
+    title: "Paola Gatti",
+    subtitle: "Identidade Visual & Branding",
     description:
-      "Da venda de brigadeiros na rua à referência no mercado de doces premium",
-    image: Biancovilli,
+      "Transformando memórias e sentimentos em tatuagens únicas com delicadeza, afeto e conexão",
+    image: PaolaGatti,
     stats: [
-      { label: "Crescimento em vendas", value: "+215%" },
-      { label: "Alunos na Escola", value: "1000+" },
-      { label: "Tempo do projeto", value: "3 meses" },
+      { label: "Seguidores", value: "+10k" },
+      { label: "Clientes fiéis", value: "95%" },
+      { label: "Tempo do projeto", value: "2 meses" },
     ],
     services: [
-      "Estratégia de marca",
-      "Naming",
       "Identidade visual",
       "Posicionamento",
+      "Arquétipos",
+      "Tom de voz",
     ],
     testimonial: {
       quote:
-        "Agora, nossos clientes não pedem desconto. Eles sabem o que estão comprando e estão felizes em pagar pelo valor que entregamos.",
-      author: "Gustavo Biancovilli",
-      role: "Fundador",
+        "Minha experiência de trabalhar com a empresa foi maravilhosa demais. Levei muito tempo pra criar coragem e me sentir aberta a sugestões que esse tipo de trabalho me traria... E eles me deram toda a confiança em me expor (do meu jeitinho)... Gostei da forma como tiveram a sensibilidade de entender meu ponto prático e afetivo no meu trabalho! Eu amei o resultado tanto quanto o processo de construção! Hoje me sinto lindamente conectada com tudo na identidade que criaram pra mim! A equipe está de parabéns! Muito obrigada por tudo!",
+
+      author: "Paola Gatti",
+      role: "Tatuadora",
     },
+
     relatedProjects: ["oquefazeremjf", "ninho"],
     fullContent: [
       {
         type: "lead",
         content:
-          "A história da Biancovilli começou de maneira simples e inspiradora: Gustavo Biancovilli, cansado da rotina do trabalho CLT, decidiu empreender vendendo brigadeiros na rua.",
+          "Este projeto de identidade visual para a tatuadora Paola Gatti foi uma imersão em um universo de delicadeza, afeto e conexão. O desafio era traduzir a essência de seu trabalho – transformar memórias e sentimentos em tatuagens únicas – em uma marca que respirasse autenticidade e cuidado.",
       },
       {
         type: "paragraph",
         content:
-          "No início, tudo era improvisado, mas havia um elemento que nunca faltava: a paixão por entregar produtos de altíssima qualidade. Durante a pandemia, quando as vendas presenciais se tornaram inviáveis, Gustavo ousou apostar no delivery, e foi nesse momento que a marca começou a ganhar força.",
+          "Cada elemento foi pensado para refletir a sensibilidade e a paixão que Paola dedica a cada cliente e a cada traço.",
+      },
+      {
+        type: "image",
+        src: "/images/paola_02.webp",
+        alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
+      },
+
+      {
+        type: "image",
+        src: "/images/paola_03.webp",
+        alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
+      },
+
+      {
+        type: "image",
+        src: "/images/paola_04.webp",
+        alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
+      },
+
+      {
+        type: "heading",
+        content: "Essência da Marca",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Paola Gatti não é apenas uma tatuadora; é uma artista que eterniza histórias na pele. Sua abordagem acolhedora e sensível cria um espaço seguro onde os clientes se sentem à vontade para compartilhar suas vivências.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Inspirada pela natureza e pelos laços emocionais, Paola cria obras de arte personalizadas que celebram a individualidade e a beleza das relações humanas. A marca reflete essa essência, buscando transmitir a mesma delicadeza e exclusividade presentes em suas tatuagens.",
       },
       {
         type: "heading",
-        content: "O Desafio",
-      },
-      {
-        type: "paragraph",
-        content:
-          'A marca enfrentava desafios claros. Antes conhecida como "Delirium," ela carregava um nome que não traduzia a sofisticação e exclusividade dos doces que Gustavo criava. Além disso, o nome não era registrável, limitando a expansão da empresa.',
-      },
-      {
-        type: "quote",
-        content:
-          "Nossa missão era criar uma marca que representasse a qualidade excepcional dos produtos e permitisse o crescimento sustentável do negócio.",
-      },
-      {
-        type: "heading",
-        content: "Nossa Abordagem",
-      },
-      {
-        type: "paragraph",
-        content:
-          'Mergulhamos no processo de rebranding com foco na essência do negócio. O novo nome, "Biancovilli," foi escolhido para transmitir:',
+        content: "Pilares da Marca",
       },
       {
         type: "list",
         items: [
-          "Sofisticação e exclusividade",
-          "Conexão com as raízes do fundador",
-          "Uma experiência premium desde o primeiro contato",
-          "Um legado que pudesse ser construído ao longo do tempo",
+          "Missão: Oferecer uma experiência de tatuagem personalizada, transformando histórias e sentimentos em criações delicadas e significativas.",
+          "Visão: Ser referência em tatuagens botânicas e afetivas, reconhecida por um atendimento humanizado e uma conexão profunda com o cliente.",
+          "Valores: Empatia e acolhimento. Exclusividade e delicadeza. Conexão com a natureza. Respeito e transparência.",
+        ],
+      },
+      {
+        type: "paragraph",
+        content:
+          "Estes pilares guiaram cada decisão criativa, desde a escolha da tipografia até a paleta de cores, garantindo que a marca comunicasse de forma clara e consistente o propósito e os valores de Paola.",
+      },
+      {
+        type: "heading",
+        content: "Comunicação",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Tom & Voz: Empático e acolhedor, elegante e artístico, autêntico e acessível. A comunicação da marca busca criar um diálogo próximo e sincero com o público, transmitindo confiança e cuidado.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "Look & Feel: Extrovertida, alegre e elegante. A identidade visual é vibrante e expressiva, refletindo a personalidade de Paola e a beleza de suas criações.",
+      },
+      {
+        type: "quote",
+        content:
+          "A combinação de um tom de voz acolhedor com um visual elegante e alegre foi fundamental para construir uma marca que se destaca pela sua autenticidade e calor humano.",
+      },
+      {
+        type: "heading",
+        content: "Arquétipos",
+      },
+      {
+        type: "paragraph",
+        content:
+          "A marca Paola Gatti é personificada pela combinação dos arquétipos Cuidador e Criador. O Cuidador representa a empatia, o acolhimento e o desejo de nutrir as relações, refletindo a atenção e o respeito que Paola dedica a cada cliente. O Criador, por sua vez, simboliza a originalidade, a inspiração e a expressão artística, evidenciando a habilidade de Paola em transformar histórias e emoções em tatuagens únicas.",
+      },
+      {
+        type: "list",
+        items: [
+          "O Cuidador: Acolhedora, sensível e confiável. Foco na experiência humanizada e no bem-estar do cliente. Comunicação amigável e emocional.",
+          "O Criador: Valoriza a criatividade e a individualidade. Busca excelência e inovação artística. Expressão única e marcante.",
+        ],
+      },
+      {
+        type: "paragraph",
+        content:
+          "A sinergia entre esses dois arquétipos define a identidade da marca, equilibrando o cuidado com a expressão artística e a individualidade.",
+      },
+      {
+        type: "heading",
+        content: "Desafios e Desenvolvimento",
+      },
+      {
+        type: "paragraph",
+        content:
+          "O projeto de identidade visual para Paola Gatti apresentou alguns desafios e necessidades específicas, que foram abordados com cuidado e atenção em cada etapa do desenvolvimento:",
+      },
+      {
+        type: "list",
+        items: [
+          "Tradução da Essência: O principal desafio foi capturar a delicadeza, a sensibilidade e a exclusividade do trabalho de Paola em uma identidade visual.",
+          "Equilíbrio entre Arte e Acessibilidade: Era fundamental criar uma marca que fosse ao mesmo tempo elegante e artística, refletindo a qualidade do trabalho de Paola.",
+          "Destaque da Individualidade: Cada tatuagem de Paola é única e personalizada, refletindo a história e a personalidade de cada cliente.",
+          "Comunicação Eficaz: Desenvolver uma linguagem visual e verbal que transmitisse os valores da marca foi essencial.",
         ],
       },
       {
         type: "heading",
-        content: "Resultados",
+        content: "Considerações Finais",
       },
       {
         type: "paragraph",
         content:
-          "Com a nova marca, Gustavo se sentiu confiante para reposicionar seus produtos, ajustando seus preços para refletir a verdadeira qualidade oferecida. O feedback foi imediato: clientes se conectaram de forma mais profunda com a marca.",
+          "O projeto de identidade visual para Paola Gatti foi uma jornada de descoberta e criação, onde cada detalhe foi cuidadosamente pensado para refletir a essência e os valores da marca. O resultado é uma identidade que celebra a beleza da conexão humana e a arte de eternizar histórias na pele, posicionando Paola como uma referência em tatuagens botânicas e afetivas.",
       },
       {
-        type: "heading",
-        content: "Expansão do Negócio",
-      },
-      {
-        type: "paragraph",
+        type: "quote",
         content:
-          "Hoje, a Biancovilli não se limita a ser apenas uma doceria. A marca expandiu suas fronteiras e conquistou um novo nicho: infoprodutos. Com mais de mil alunos na Escola Biancovilli, a marca não só ensina a arte de fazer doces, mas também compartilha o segredo de seu sucesso.",
+          "Foi um privilégio dar vida a essa marca e contribuir para o sucesso de uma artista tão talentosa e dedicada.",
       },
     ],
   },
@@ -104,26 +173,40 @@ const projects = [
     slug: "oque-fazer-em-jf",
     title: "O que fazer em JF",
     subtitle: "Branding & Identidade Visual",
-    description: "O guia turístico mais querido de JF",
     image: OqueFazerEmJF,
     stats: [
       { label: "Seguidores", value: "100k+" },
       { label: "Parcerias locais", value: "50+" },
       { label: "Alcance mensal", value: "500k+" },
     ],
-    services: [
-      "Identidade visual",
-      "Design de marca",
-      "Estratégia de comunicação",
-      "Posicionamento",
-    ],
+    services: ["Identidade visual"],
     testimonial: {
       quote:
         "A identidade visual traduziu perfeitamente o que eu sempre quis comunicar: o amor e a energia de Juiz de Fora.",
       author: "Mirella Mota",
       role: "Fundadora",
     },
-    relatedProjects: ["biancovilli", "ninho"],
+    relatedProjects: ["ninho"],
+    beforeAfter: {
+      before: {
+        image: "/images/oqfjf_antes.jpg",
+        title: "Desafios",
+        items: [
+          "Falta de consistência visual",
+          "Dificuldade em parcerias profissionais",
+          "Imagem não refletia a energia da marca",
+        ],
+      },
+      after: {
+        image: "/images/oqfjf_depois.jpg",
+        title: "Resultados",
+        items: [
+          "Sistema visual dinâmico e flexível",
+          "Mais parcerias com negócios locais",
+          "Credibilidade e profissionalismo",
+        ],
+      },
+    },
     fullContent: [
       {
         type: "lead",
@@ -138,6 +221,11 @@ const projects = [
         type: "paragraph",
         content:
           "Mas apesar do excelente posicionamento, a marca não tinha uma identidade visual consistente. O que antes funcionava bem no formato simples e espontâneo começou a demandar mais profissionalismo e identidade.",
+      },
+      {
+        type: "image",
+        src: "/images/oqfjf_1.webp",
+        alt: "O Que Fazer em JF - Antes da nova identidade visual",
       },
       {
         type: "heading",
@@ -158,6 +246,11 @@ const projects = [
         ],
       },
       {
+        type: "image",
+        src: "/images/oqfjf_2.webp",
+        alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
+      },
+      {
         type: "heading",
         content: "Os resultados, tão coloridos quanto",
       },
@@ -165,6 +258,11 @@ const projects = [
         type: "paragraph",
         content:
           "A página não só manteve o crescimento, como passou a ser vista com mais seriedade. A mudança trouxe uma confiança maior para representar marcas e negócios locais, além de facilitar a comunicação com o público.",
+      },
+      {
+        type: "image",
+        src: "/images/oqfjf_3.webp",
+        alt: "O Que Fazer em JF - Aplicação da nova marca",
       },
       {
         type: "heading",
@@ -191,10 +289,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   if (!project) {
     notFound();
   }
-
-  const relatedProjects = project.relatedProjects
-    ? projects.filter((p) => project.relatedProjects?.includes(p.slug))
-    : [];
 
   const renderContent = (content: any) => {
     switch (content.type) {
@@ -228,6 +322,25 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             ))}
           </ul>
         );
+      case "image":
+        return (
+          <figure className="my-10">
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <Image
+                src={content.src}
+                alt={content.alt}
+                width={1200}
+                height={800}
+                className="w-full h-auto hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            {content.caption && (
+              <figcaption className="text-center text-gray-400 mt-3 text-sm">
+                {content.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
       default:
         return null;
     }
@@ -242,32 +355,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <Header />
 
         {/* Hero Section */}
-        <section className="pt-24 pb-32 relative">
+        <section className="pt-32 pb-32 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-30 z-0"></div>
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="mb-10">
-              <Link
-                href="/"
-                className="text-pale-pink hover:underline flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M19 12H5M12 19l-7-7 7-7" />
-                </svg>
-                Voltar para projetos
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-6 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               <div>
                 {project.subtitle && (
                   <div className="mb-3 text-pale-pink tracking-wider uppercase text-sm font-medium animate-fadeIn">
@@ -285,9 +376,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
                 {/* Services List */}
                 <div className="mb-10">
-                  <h3 className="text-sm uppercase tracking-wider text-gray-400 mb-4">
-                    Serviços
-                  </h3>
                   <div className="flex flex-wrap gap-3">
                     {project.services?.map((service, index) => (
                       <span
@@ -347,191 +435,127 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </section>
 
         {/* Before & After Section */}
-        <section className="py-24 bg-gray-900">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-16 text-center">
-              Antes & Depois
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              <div className="bg-gray-800 rounded-lg overflow-hidden">
-                <div className="h-64 bg-gray-700 flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <h3 className="text-xl font-medium mb-3">Delirium</h3>
-                    <p className="text-gray-400">
-                      Marca original com limitações de registro e posicionamento
-                    </p>
+        {project.beforeAfter && (
+          <section className="py-24 bg-gray-900">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-4xl font-bold mb-16 text-center">
+                Antes & Depois
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="bg-gray-800 rounded-lg overflow-hidden">
+                  <div className="aspect-square w-full relative">
+                    <Image
+                      src={project.beforeAfter.before.image}
+                      alt={`${project.title} - Antes`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-medium mb-3 text-pale-pink">
+                      {project.beforeAfter.before.title}
+                    </h4>
+                    <ul className="space-y-2 text-gray-300">
+                      {project.beforeAfter.before.items.map((item, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="mt-1 text-gray-500"
+                          >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="m15 9-6 6" />
+                            <path d="m9 9 6 6" />
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="font-medium mb-3 text-pale-pink">Desafios</h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-start gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 text-gray-500"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="m15 9-6 6" />
-                        <path d="m9 9 6 6" />
-                      </svg>
-                      <span>Nome não registrável</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 text-gray-500"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="m15 9-6 6" />
-                        <path d="m9 9 6 6" />
-                      </svg>
-                      <span>Não traduzia a sofisticação do produto</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 text-gray-500"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="m15 9-6 6" />
-                        <path d="m9 9 6 6" />
-                      </svg>
-                      <span>Limitava a expansão do negócio</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="bg-gray-800 rounded-lg overflow-hidden">
-                <div className="h-64 bg-pale-pink/10 flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <h3 className="text-xl font-medium mb-3 text-pale-pink">
-                      Biancovilli
-                    </h3>
-                    <p className="text-gray-400">
-                      Marca sofisticada e registrável com conexão pessoal
-                    </p>
+                <div className="bg-gray-800 rounded-lg overflow-hidden">
+                  <div className="aspect-square w-full relative">
+                    <Image
+                      src={project.beforeAfter.after.image}
+                      alt={`${project.title} - Depois`}
+                      className="object-cover"
+                      fill
+                    />
                   </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="font-medium mb-3 text-pale-pink">
-                    Resultados
-                  </h4>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-start gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 text-pale-pink"
-                      >
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
-                      <span>Nome registrável e exclusivo</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 text-pale-pink"
-                      >
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
-                      <span>Transmite sofisticação e exclusividade</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-1 text-pale-pink"
-                      >
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
-                      <span>Permitiu reposicionamento de preço</span>
-                    </li>
-                  </ul>
+
+                  <div className="p-6">
+                    <h4 className="font-medium mb-3 text-pale-pink">
+                      {project.beforeAfter.after.title}
+                    </h4>
+                    <ul className="space-y-2 text-gray-300">
+                      {project.beforeAfter.after.items.map((item, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="mt-1 text-pale-pink"
+                          >
+                            <path d="M20 6 9 17l-5-5" />
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Testimonial Section */}
         {project.testimonial && (
-          <section className="py-24 bg-gray-950 relative">
-            <div className="absolute left-0 top-0 w-1/3 h-full bg-gray-900 z-0"></div>
-            <div className="max-w-5xl mx-auto px-6 relative z-10">
-              <div className="bg-gray-900 rounded-lg p-10 md:p-16 shadow-2xl">
+          <section className="py-32 bg-gray-950 relative overflow-hidden">
+            <div className="absolute left-0 top-0 w-1/3 h-full bg-gradient-to-r from-gray-900 to-transparent z-0 opacity-70"></div>
+            <div className="absolute right-0 bottom-0 w-64 h-64 bg-pale-pink/5 rounded-full blur-3xl"></div>
+            <div className="max-w-5xl mx-auto px-6 relative">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 md:p-16 shadow-2xl border border-gray-800">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
+                  width="70"
+                  height="70"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-pale-pink/20 mb-6"
+                  className="text-pale-pink/30 mb-8"
                 >
                   <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
                   <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
                 </svg>
-                <p className="text-2xl md:text-3xl leading-relaxed mb-8 font-light">
-                  {project.testimonial.quote}
+                <p className="text-2xl md:text-3xl leading-relaxed mb-10 font-light italic text-white/90">
+                  &ldquo;{project.testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-pale-pink text-black rounded-full flex items-center justify-center font-bold mr-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-pale-pink to-pale-pink/70 text-black rounded-full flex items-center justify-center font-bold text-xl mr-5 shadow-lg">
                     {project.testimonial.author.charAt(0)}
                   </div>
                   <div>
-                    <div className="font-medium text-pale-pink">
+                    <div className="font-medium text-pale-pink text-xl">
                       {project.testimonial.author}
                     </div>
-                    <div className="text-gray-400">
+                    <div className="text-gray-400 mt-1">
                       {project.testimonial.role}
                     </div>
                   </div>
@@ -541,165 +565,26 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </section>
         )}
 
-        {/* Related Projects */}
-        {relatedProjects.length > 0 && (
-          <section className="py-24 bg-gray-900">
-            <div className="max-w-6xl mx-auto px-6">
-              <h2 className="text-3xl font-bold mb-16">Outros Projetos</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {relatedProjects.map((related) => (
-                  <Link
-                    key={related.slug}
-                    href={`/projects/${related.slug}`}
-                    className="group"
-                  >
-                    <div className="bg-gray-800 rounded-lg overflow-hidden h-full hover:shadow-xl hover:shadow-pale-pink/10 transition-all duration-300 transform group-hover:translate-y-[-5px]">
-                      <div className="aspect-video overflow-hidden">
-                        <Image
-                          src={related.image}
-                          alt={related.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <div className="text-sm text-pale-pink mb-2">
-                          {related.subtitle}
-                        </div>
-                        <h3 className="text-xl font-medium mb-2">
-                          {related.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm">
-                          {related.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* CTA Section */}
         <section className="py-24 bg-gray-950 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pale-pink/20 to-transparent opacity-30"></div>
-          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="max-w-4xl mx-auto px-6 text-center relative">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Vamos trabalhar juntos no seu próximo projeto?
+              Vamos trabalhar juntos na
+              <br /> <span className="text-pale-pink"> sua marca?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
               Transformamos marcas com estratégia, design e narrativas potentes
               que conectam seu negócio ao público certo.
             </p>
             <a
-              href="#contact"
+              href="https://form.respondi.app/NwPH9MZX"
               className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
             >
               Solicitar Orçamento
             </a>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="px-6 py-16 border-t border-gray-800">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div>
-              <Link href="/">
-                <span className="text-off-white">
-                  <img
-                    src={Logo.src}
-                    alt="Verv Studio"
-                    className="w-20 invert brightness-0 filter"
-                  />
-                </span>
-              </Link>
-              <p className="mt-4 text-sm text-gray-400 max-w-xs">
-                Transformamos marcas com estratégia, design e narrativas
-                potentes.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-4 text-pale-pink">Social</h4>
-              <ul className="space-y-3 opacity-80">
-                <li>
-                  <a
-                    href="https://instagram.com/estudioverv"
-                    className="hover:text-pale-pink duration-300 inline-flex items-center gap-2 hover:translate-x-1 transform transition-transform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect
-                        x="2"
-                        y="2"
-                        width="20"
-                        height="20"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://behance.net/verv"
-                    className="hover:text-pale-pink duration-300 inline-flex items-center gap-2 hover:translate-x-1 transform transition-transform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M8 3H2v18h6V3z" />
-                      <path d="M14 3h6v18h-6V3z" />
-                      <circle cx="8" cy="12" r="3" />
-                      <path d="M20 12a3 3 0 0 0-6 0v3a3 3 0 0 0 6 0v-3z" />
-                    </svg>
-                    Behance
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="md:col-span-2">
-              <h4 className="font-medium mb-4 text-pale-pink">Contato</h4>
-              <p className="opacity-80 mb-4 text-xl">hello@verv.studio</p>
-              <a
-                href="https://wa.me/yourphonenumber"
-                className="border-b-2 border-pale-pink text-pale-pink hover:text-white hover:border-white transition-colors duration-300 inline-block text-lg py-1"
-                id="contact"
-              >
-                Solicitar Orçamento
-              </a>
-            </div>
-          </div>
-          <div className="max-w-6xl mx-auto mt-16 pt-6 border-t border-gray-800/50 text-sm opacity-50">
-            <p>
-              © {new Date().getFullYear()} Verv Studio. Todos os direitos
-              reservados.
-            </p>
-          </div>
-        </footer>
       </main>
     </Fragment>
   );

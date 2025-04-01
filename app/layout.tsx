@@ -24,6 +24,10 @@ export default async function RootLayout({
 
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+
       <body className={inter.className}>
         {isEbookPage ? null : <Header />}
 
