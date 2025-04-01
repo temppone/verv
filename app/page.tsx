@@ -1,5 +1,11 @@
+import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
 import Biancovilli from "@/public/images/biancovilli.webp";
 import Ninho from "@/public/images/ninho.webp";
@@ -31,68 +37,10 @@ const feedbacks = [
 ];
 
 export default function Home() {
-
   return (
     <main className="min-h-screen bg-black text-white pt-24">
-      <header className="px-6 fixed w-full flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
-        <div className="flex justify-center text-xl font-bold hover:text-pale-pink transition-colors duration-300">
-          <span className="text-xl py-4 md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
-            <img
-              src={Logo.src}
-              alt="Verv Studio"
-              className="w-16 invert brightness-0 filter"
-            />
-          </span>
-        </div>
+      <Header />
 
-        <div className="block md:hidden animate-slideUp animation-delay-500">
-          <a
-            href="#contact"
-            className="bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
-          >
-            Fale conosco
-          </a>
-        </div>
-
-        <nav className="hidden md:block">
-          <ul className="flex space-x-8">
-            <li>
-              <a
-                href="#"
-                className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-              >
-                Início
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-              >
-                Portfólio
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-              >
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-              >
-                Contato
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      {/* Hero Section */}
       <section className="px-6 py-20 md:py-32 animate-fadeIn">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp">
@@ -112,7 +60,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Portfolio Preview */}
       <section className="px-6 py-8 bg-gray-950 overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
@@ -147,18 +94,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feedbacks Section */}
       <section className="px-6 py-4 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             O que dizem depois de virar a chave
           </h2>
-          <div >
+          <div>
             <Carousel className="w-ful">
               {feedbacks.map((feedback, index) => (
                 <CarouselItem key={index} className="p-6">
                   <div className="bg-black/50 p-12 rounded-lg">
-                    <p className="text-lg leading-relaxed mb-6">{feedback.text}</p>
+                    <p className="text-lg leading-relaxed mb-6">
+                      {feedback.text}
+                    </p>
                     <div className="flex flex-col">
                       <span className="font-bold">{feedback.author}</span>
                       <span className="text-pale-pink">{feedback.handle}</span>
@@ -171,7 +119,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
       <section className="px-6 py-12 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
@@ -182,25 +129,35 @@ export default function Home() {
               {
                 icon: Paintbrush,
                 title: "Branding",
-                description: "Desenvolvimento estratégico da sua marca, desde o posicionamento até a comunicação com seu público."
+                description:
+                  "Desenvolvimento estratégico da sua marca, desde o posicionamento até a comunicação com seu público.",
               },
               {
                 icon: BarChart3,
                 title: "Estratégia",
-                description: "Planejamento detalhado para alcançar seus objetivos de negócio através da comunicação efetiva."
+                description:
+                  "Planejamento detalhado para alcançar seus objetivos de negócio através da comunicação efetiva.",
               },
               {
                 icon: Layout,
                 title: "Identidade Visual",
-                description: "Criação de elementos visuais únicos que traduzem a essência da sua marca e conectam com seu público."
+                description:
+                  "Criação de elementos visuais únicos que traduzem a essência da sua marca e conectam com seu público.",
               },
               {
                 icon: Globe,
                 title: "Desenvolvimento Web",
-                description: "Criação de sites e landing pages modernos e responsivos que transmitem a essência da sua marca."
-              }
+                description:
+                  "Criação de sites e landing pages modernos e responsivos que transmitem a essência da sua marca.",
+              },
             ].map((service, index) => (
-              <div key={index} className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950">
+              <div
+                key={index}
+                className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                data-aos-once="true"
+              >
                 <div className="flex flex-col h-full">
                   <service.icon className="w-8 h-8 mb-4 text-pale-pink" />
                   <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
@@ -214,7 +171,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process Section */}
       <section className="px-6 py-8 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
@@ -225,23 +181,27 @@ export default function Home() {
               {
                 step: "01",
                 title: "Entrevista Individual",
-                description: "Começamos com uma conversa profunda para entender a história da sua marca, seus objetivos, personalidade e o que você deseja transmitir ao seu público."
+                description:
+                  "Começamos com uma conversa profunda para entender a história da sua marca, seus objetivos, personalidade e o que você deseja transmitir ao seu público.",
               },
               {
                 step: "02",
                 title: "Estratégia & Pesquisa",
-                description: "Desenvolvemos um documento estratégico e analisamos o mercado para entender como destacar sua marca da concorrência."
+                description:
+                  "Desenvolvemos um documento estratégico e analisamos o mercado para entender como destacar sua marca da concorrência.",
               },
               {
                 step: "03",
                 title: "Desenvolvimento Visual",
-                description: "Criamos moodboards e desenvolvemos sua identidade visual completa, incluindo logotipo, paleta de cores e tipografia."
+                description:
+                  "Criamos moodboards e desenvolvemos sua identidade visual completa, incluindo logotipo, paleta de cores e tipografia.",
               },
               {
                 step: "04",
                 title: "Refinamento & Entrega",
-                description: "Apresentamos o projeto, realizamos ajustes necessários e entregamos todos os arquivos e materiais para uso imediato."
-              }
+                description:
+                  "Apresentamos o projeto, realizamos ajustes necessários e entregamos todos os arquivos e materiais para uso imediato.",
+              },
             ].map((item, index) => (
               <div
                 key={index}
@@ -268,7 +228,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Q&A Section */}
       <section className="px-6 py-20 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
@@ -279,28 +238,34 @@ export default function Home() {
               {[
                 {
                   question: "Quanto tempo leva o processo completo?",
-                  answer: "O processo completo geralmente leva de 4 a 6 semanas, dependendo da complexidade do projeto e da rapidez do feedback do cliente."
+                  answer:
+                    "O processo completo geralmente leva de 4 a 6 semanas, dependendo da complexidade do projeto e da rapidez do feedback do cliente.",
                 },
                 {
                   question: "Como funciona o processo de pagamento?",
-                  answer: "Trabalhamos com um sistema de 50% de entrada para iniciar o projeto e 50% na entrega final. Também oferecemos opções de parcelamento."
+                  answer:
+                    "Trabalhamos com um sistema de 50% de entrada para iniciar o projeto e 50% na entrega final. Também oferecemos opções de parcelamento.",
                 },
                 {
                   question: "O que está incluído no pacote de branding?",
-                  answer: "O pacote inclui estratégia de marca, identidade visual completa (logo, cores, tipografia), manual de marca e arquivos em todos os formatos necessários."
+                  answer:
+                    "O pacote inclui estratégia de marca, identidade visual completa (logo, cores, tipografia), manual de marca e arquivos em todos os formatos necessários.",
                 },
                 {
                   question: "Vocês fazem alterações após a entrega?",
-                  answer: "Sim, incluímos duas rodadas de alterações no pacote padrão para garantir que você esteja completamente satisfeito com o resultado."
+                  answer:
+                    "Sim, incluímos duas rodadas de alterações no pacote padrão para garantir que você esteja completamente satisfeito com o resultado.",
                 },
                 {
                   question: "Trabalham com projetos internacionais?",
-                  answer: "Sim, trabalhamos remotamente com clientes de qualquer lugar do mundo através de reuniões online e ferramentas colaborativas."
+                  answer:
+                    "Sim, trabalhamos remotamente com clientes de qualquer lugar do mundo através de reuniões online e ferramentas colaborativas.",
                 },
                 {
                   question: "Como começar um projeto?",
-                  answer: "Entre em contato através do formulário ou WhatsApp. Faremos uma reunião inicial gratuita para entender suas necessidades e apresentar nossa proposta."
-                }
+                  answer:
+                    "Entre em contato através do formulário ou WhatsApp. Faremos uma reunião inicial gratuita para entender suas necessidades e apresentar nossa proposta.",
+                },
               ].map((item, index) => (
                 <AccordionItem
                   key={index}
