@@ -3,7 +3,7 @@ import Logo from "@/public/verv_logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="px-6 py-12 border-t border-gray-800">
+    <footer className="px-6 bg-black text-white py-12 border-t border-gray-800">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="animate-fadeIn">
           <span className="text-off-white">
