@@ -624,7 +624,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <li>
                   <a
                     href="https://instagram.com/estudioverv"
-                    className="hover:text-pale-pink transition-colors duration-300 inline-flex items-center gap-2 hover:translate-x-1 transform transition-transform"
+                    className="hover:text-pale-pink duration-300 inline-flex items-center gap-2 hover:translate-x-1 transform transition-transform"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -656,7 +656,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <li>
                   <a
                     href="https://behance.net/verv"
-                    className="hover:text-pale-pink transition-colors duration-300 inline-flex items-center gap-2 hover:translate-x-1 transform transition-transform"
+                    className="hover:text-pale-pink duration-300 inline-flex items-center gap-2 hover:translate-x-1 transform transition-transform"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

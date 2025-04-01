@@ -18,7 +18,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const headersList = await headers();
-  console.log("headersList", headersList);
 
   const pathname = headersList.get("x-pathname");
   const isEbookPage = pathname?.startsWith("/ebook");
