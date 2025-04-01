@@ -1,7 +1,8 @@
-import type React from "react";
 import "@/app/globals.css";
-import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Inter } from "next/font/google";
+import { headers } from "next/headers";
+import type React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,14 +12,21 @@ export const metadata = {
     "Estratégias profissionais de branding para designers, artistas e freelancers. Desenvolva sua identidade visual, atraia clientes ideais e destaque-se no mercado criativo com métodos eficientes e práticos.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+
+  const pathname = headersList.get("x-pathname");
+  const isEbookPage = pathname?.startsWith("/ebook");
+
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <body className={inter.className}>
+        {isEbookPage ? null : <Header />}
+
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -27,9 +35,13 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+
+        <Footer />
       </body>
     </html>
   );
 }
 
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import "./globals.css";
