@@ -25,13 +25,7 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="bg-black p-8 rounded-lg border border-gray-800">
             <h2 className="text-2xl font-bold mb-6">Envie uma mensagem</h2>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              className="space-y-6"
-              netlify
-            >
+            <form name="contact" className="space-y-6" netlify>
               <input type="hidden" name="form-name" value="contact" />
 
               <div className="space-y-2">

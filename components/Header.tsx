@@ -40,17 +40,19 @@ export default function Home() {
     <header className="px-6 fixed w-full flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
       <div className="flex justify-center text-xl font-bold hover:text-pale-pink transition-colors duration-300">
         <span className="text-xl py-4 md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
-          <img
-            src={Logo.src}
-            alt="Verv Studio"
-            className="w-16 invert brightness-0 filter"
-          />
+          <a href="/">
+            <img
+              src={Logo.src}
+              alt="Verv Studio"
+              className="w-16 invert brightness-0 filter"
+            />
+          </a>
         </span>
       </div>
 
       <div className="block md:hidden animate-slideUp animation-delay-500">
         <a
-          href="#contact"
+          href="/contact"
           className="bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
         >
           Fale conosco
@@ -61,18 +63,10 @@ export default function Home() {
         <ul className="flex space-x-8 text-white">
           <li>
             <a
-              href="#"
+              href="/"
               className="hover:text-pale-pink transition-colors duration-300 hover:underline"
             >
               Início
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-            >
-              Portfólio
             </a>
           </li>
           <li>

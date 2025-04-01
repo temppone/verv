@@ -3,6 +3,9 @@ import Image from "next/image";
 import AboutImage from "@/public/images/about-image.jpg"; // You'll need to add this image
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 export default function About() {
   const teamMembers = [
@@ -21,6 +24,28 @@ export default function About() {
     // You can add more team members as needed
   ];
 
+  const services = [
+    {
+      title: "Branding estratégico",
+      description:
+        "Porque uma marca forte não se constrói só com um logo bonito.",
+    },
+    {
+      title: "Identidade visual",
+      description: "Visual que não só impressiona, mas comunica.",
+    },
+    {
+      title: "Consultoria",
+      description:
+        "Te ajudamos a entender e aplicar estratégia no seu próprio negócio.",
+    },
+    {
+      title: "Websites",
+      description:
+        "Porque sua presença digital precisa ser tão autêntica quanto seu trabalho.",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-black text-white pt-24">
       <section className="px-6 py-20 md:py-32 animate-fadeIn">
@@ -30,11 +55,6 @@ export default function About() {
             <br />
             <span className="text-pale-pink">Verv Studio</span>
           </h1>
-
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl animate-slideUp animation-delay-300">
-            Somos um estúdio de design e branding focado em transformar a visão
-            de criativos destemidos em identidades visuais impactantes.
-          </p>
         </div>
       </section>
 
@@ -45,15 +65,16 @@ export default function About() {
               Nossa História
             </h2>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              A Verv nasceu da paixão por design e da crença de que cada marca
-              tem uma história única para contar. Fundada em 2018, nossa missão
-              tem sido conectar empresas criativas com seu verdadeiro potencial
-              através de identidades visuais autênticas.
+              A Verv nasceu para ajudar criativos a focarem no que fazem de
+              melhor: criar. Enquanto você mergulha no que faz de melhor, a
+              gente cuida do seu posicionamento estratégico, garantindo que sua
+              identidade visual e presença digital falem por você.
             </p>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              Cada projeto é uma oportunidade de criar algo extraordinário que
-              não apenas parece incrível, mas também comunica os valores e a
-              visão por trás da marca.
+              Aqui, nada de fórmulas prontas ou designs sem alma. Nosso trabalho
+              é estratégico, autêntico e afiado. Criamos marcas que respiram
+              ousadia, com identidade visual que impacta e posicionamento que
+              faz sentido – para você e para o público que quer atrair.
             </p>
           </div>
           <div className="relative h-[500px] rounded-lg overflow-hidden">
@@ -73,28 +94,62 @@ export default function About() {
         </div>
       </section>
 
-      <section className="px-6 py-16 bg-black">
+      {/* What We Do Section */}
+      <section className="px-6 pt-16 pb-2 bg-black md:py-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+            O que fazemos?
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="bg-gray-900 border-gray-800 hover:border-pale-pink transition-all duration-300 group"
+              >
+                <CardHeader>
+                  <CardTitle className="text-xl text-pale-pink">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300 group-hover:text-white transition-colors">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
             Nossa Filosofia
           </h2>
+          <p className="text-xl text-gray-300 mb-10 max-w-4xl">
+            A Verv. não acredita em design só pelo visual. Acreditamos em
+            impacto. Em marcas que transformam, que mexem com a percepção e que
+            fazem sentido. Nossa abordagem é fundamentada em três princípios:
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               {
-                title: "Autenticidade",
+                title: "Transformação",
                 description:
-                  "Acreditamos que as melhores marcas são aquelas que expressam sua verdadeira essência. Cada projeto é desenvolvido de forma personalizada.",
+                  "Design não é maquiagem. É alquimia. Cada cor, forma e conceito que criamos tem um propósito: revelar a verdadeira essência da sua marca e mudar a forma como o mundo a enxerga.",
               },
               {
                 title: "Estratégia",
                 description:
-                  "Design não é apenas estética. Trabalhamos com base em estratégias sólidas que alinham sua comunicação visual com seus objetivos de negócio.",
+                  "Nada aqui é aleatório. Criamos marcas que comunicam antes mesmo da primeira palavra. Seu público precisa sentir sua identidade antes de entender sua mensagem.",
               },
               {
-                title: "Colaboração",
+                title: "Ousadia",
                 description:
-                  "Você é o especialista em seu negócio, nós somos especialistas em design. Juntos, criamos resultados que superam expectativas.",
+                  "Quebramos padrões, mas com intenção. Fugimos do óbvio, mas sempre com estratégia. Ousadia sem direção é só barulho – e a gente prefere fazer ruído do jeito certo.",
               },
             ].map((principle, index) => (
               <div
@@ -111,6 +166,82 @@ export default function About() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* For You Section */}
+      <section className="px-6 py-16 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-10 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+            A Verv. é para você que…
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
+            <div className="p-6 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 flex gap-2 items-center">
+              <div className="text-pale-pink mb-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-8 h-8"
+                >
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </div>
+              <p className="text-xl text-gray-200 flex-grow">
+                Quer se destacar sem precisar gritar.
+              </p>
+            </div>
+            <div className="p-6 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 flex gap-2 items-center">
+              <div className="text-pale-pink mb-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-8 h-8"
+                >
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </div>
+              <p className="text-xl text-gray-200 flex-grow">
+                Cansou de brigar por preço e quer que seu trabalho seja
+                valorizado pelo que realmente é.
+              </p>
+            </div>
+            <div className="p-6 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 flex gap-2 items-center">
+              <div className="text-pale-pink mb-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-8 h-8"
+                >
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </div>
+              <p className="text-xl text-gray-200 flex-grow">
+                Acredita que estratégia e estética andam juntas.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -158,17 +289,10 @@ export default function About() {
             Vamos criar algo incrível juntos?
           </h2>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Estamos prontos para transformar sua marca e elevar seu negócio ao
-            próximo nível.
+            Se você sentiu o impacto, já sabe: sua marca pode ser muito mais. E
+            a gente está aqui para fazer isso acontecer.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-pale-pink hover:text-white transition-colors duration-300"
-            >
-              <span>Voltar para a Home</span>
-              <MoveRight size={16} />
-            </Link>
             <a
               href="https://form.respondi.app/NwPH9MZX"
               className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
