@@ -12,7 +12,7 @@ export default function Footer() {
               alt="Verv Studio"
               className="w-16 invert brightness-0 filter"
             />
-          </span>{" "}
+          </span>
         </div>
         <div className="animate-fadeIn animation-delay-200">
           <h4 className="font-medium mb-4">Social</h4>

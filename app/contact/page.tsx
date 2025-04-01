@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Contact() {
   return (
     <main className="min-h-screen bg-black text-white pt-24">
-      <section className="px-6 py-20 md:py-32 animate-fadeIn">
+      <section className="px-6 pb-4 pt-20 md:py-32 animate-fadeIn">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp">
             <span className="text-white">Entre em</span>
@@ -20,68 +20,19 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="px-6 py-16 bg-gray-950">
+      <section className="px-6 pb-2 pt-16 bg-gray-950 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Contact Information */}
-          <div>
-            <h2 className="text-4xl font-bold mb-8 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-              Informações de Contato
-            </h2>
-
-            <div className="space-y-8 mb-12">
-              <div className="flex items-start gap-4">
-                <Mail size={24} className="text-pale-pink mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">E-mail</h3>
-                  <a
-                    href="mailto:hello@vervstudio.com.br"
-                    className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
-                  >
-                    hello@vervstudio.com.br
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Phone size={24} className="text-pale-pink mt-1" />
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Telefone</h3>
-                  <a
-                    href="tel:+5532999508150"
-                    className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
-                  >
-                    +55 32 9950-8150
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <h3 className="text-2xl font-bold mb-6">Redes Sociais</h3>
-            <div className="flex gap-6 mb-8">
-              <a
-                href="https://www.instagram.com/vervstudio/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 border border-gray-800 rounded-full hover:border-pale-pink hover:text-pale-pink transition-all duration-300"
-              >
-                <Instagram size={24} />
-              </a>
-
-              <a
-                href="https://www.behance.net/studioverv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 border width-24 border-gray-800 rounded-full hover:border-pale-pink hover:text-pale-pink transition-all duration-300"
-              >
-                <Behance />
-              </a>
-            </div>
-          </div>
-
           {/* Contact Form */}
           <div className="bg-black p-8 rounded-lg border border-gray-800">
             <h2 className="text-2xl font-bold mb-6">Envie uma mensagem</h2>
-            <form className="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+
               <div className="space-y-2">
                 <label
                   htmlFor="name"
@@ -116,22 +67,6 @@ export default function Contact() {
 
               <div className="space-y-2">
                 <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-300"
-                >
-                  Assunto
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-300"
                 >
@@ -153,6 +88,41 @@ export default function Contact() {
                 Enviar Mensagem
               </button>
             </form>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h2 className="text-4xl font-bold mb-8 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+              Informações de Contato
+            </h2>
+
+            <div className="space-y-8 mb-12">
+              <div className="flex items-start gap-4">
+                <Mail size={24} className="text-pale-pink mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">E-mail</h3>
+                  <a
+                    href="mailto:hello@vervstudio.com.br"
+                    className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
+                  >
+                    hello@vervstudio.com.br
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <Phone size={24} className="text-pale-pink mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Telefone</h3>
+                  <a
+                    href="tel:+5532999508150"
+                    className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
+                  >
+                    +55 32 9950-8150
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -217,13 +187,6 @@ export default function Contact() {
             para começarmos seu projeto.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-pale-pink hover:text-white transition-colors duration-300"
-            >
-              <span>Voltar para a Home</span>
-              <MoveRight size={16} />
-            </Link>
             <a
               href="https://form.respondi.app/NwPH9MZX"
               className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
