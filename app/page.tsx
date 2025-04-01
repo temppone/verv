@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import ProjectCard from "@/components/ProjectCard";
 import {
   Accordion,
@@ -10,7 +9,6 @@ import { Carousel, CarouselItem } from "@/components/ui/carousel";
 import Biancovilli from "@/public/images/biancovilli.webp";
 import Ninho from "@/public/images/ninho.webp";
 import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
-import Logo from "@/public/verv_logo.svg";
 import { BarChart3, Globe, Layout, Paintbrush } from "lucide-react";
 
 const feedbacks = [
@@ -39,8 +37,6 @@ const feedbacks = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white pt-24">
-      <Header />
-
       <section className="px-6 py-20 md:py-32 animate-fadeIn">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp">
@@ -306,57 +302,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="px-6 py-12 border-t border-gray-800">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="animate-fadeIn">
-            <span className="text-off-white">
-              <img
-                src={Logo.src}
-                alt="Verv Studio"
-                className="w-16 invert brightness-0 filter"
-              />
-            </span>{" "}
-          </div>
-          <div className="animate-fadeIn animation-delay-200">
-            <h4 className="font-medium mb-4">Social</h4>
-            <ul className="space-y-2 opacity-70">
-              <li>
-                <a
-                  href="https://instagram.com/estudioverv"
-                  className="hover:text-pale-pink transition-colors duration-300 inline-block hover:translate-x-1"
-                >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://behance.net/verv"
-                  className="hover:text-pale-pink transition-colors duration-300 inline-block hover:translate-x-1"
-                >
-                  Behance
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="animate-fadeIn animation-delay-600">
-            <h4 className="font-medium mb-4">Contato</h4>
-            <p className="opacity-70 mb-2">hello@vervstudio.com.br</p>
-            <a
-              href="https://wa.me/yourphonenumber"
-              className="border-b border-pale-pink text-pale-pink hover:text-white hover:border-white transition-colors duration-300"
-            >
-              Solicitar Orçamento
-            </a>
-          </div>
-        </div>
-        <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-gray-800 text-sm opacity-50">
-          <p>
-            © {new Date().getFullYear()} Verv. Todos os direitos reservados.
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }
