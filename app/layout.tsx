@@ -10,6 +10,9 @@ export const metadata = {
   title: "Verv - Branding para criativos",
   description:
     "Estratégias profissionais de branding para designers, artistas e freelancers. Desenvolva sua identidade visual, atraia clientes ideais e destaque-se no mercado criativo com métodos eficientes e práticos.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default async function RootLayout({
@@ -24,10 +27,6 @@ export default async function RootLayout({
 
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
-
       <body className={inter.className}>
         {isEbookPage ? null : <Header />}
 

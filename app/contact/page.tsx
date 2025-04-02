@@ -22,11 +22,23 @@ export default function Contact() {
 
       <section className="px-6 pb-2 pt-16 bg-gray-950 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
           <div className="bg-black p-8 rounded-lg border border-gray-800">
             <h2 className="text-2xl font-bold mb-6">Envie uma mensagem</h2>
-            <form name="contact" className="space-y-6" netlify>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you"
+              className="space-y-6"
+            >
               <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human:{" "}
+                  <input name="bot-field" />
+                </label>
+              </p>
 
               <div className="space-y-2">
                 <label
@@ -76,10 +88,7 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="bg-pale-pink text-black px-6 py-3 font-medium rounded-md transition-all duration-300 hover:bg-white hover:scale-105 transform"
-              >
+              <button type="submit" className="btn-primary">
                 Enviar Mensagem
               </button>
             </form>
@@ -184,7 +193,7 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <a
               href="https://form.respondi.app/NwPH9MZX"
-              className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
+              className="btn-primary"
             >
               Solicitar Orçamento
             </a>

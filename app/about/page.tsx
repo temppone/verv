@@ -281,7 +281,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pale-pink/20 to-transparent opacity-30"></div>
         <div className="max-w-4xl mx-auto px-6 text-center relative">
@@ -295,7 +294,7 @@ export default function About() {
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <a
               href="https://form.respondi.app/NwPH9MZX"
-              className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
+              className="btn-primary"
             >
               Solicitar Orçamento
             </a>

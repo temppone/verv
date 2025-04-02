@@ -8,7 +8,6 @@ import {
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
 import PaolaGatti from "@/public/images/paola_01.webp";
 
-import Biancovilli from "@/public/images/biancovilli.webp";
 import Ninho from "@/public/images/ninho.webp";
 import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
 import { BarChart3, Globe, Layout, Paintbrush } from "lucide-react";
@@ -48,10 +47,7 @@ export default function Home() {
           </h1>
 
           <div className="hidden md:block mt-12 animate-slideUp animation-delay-500">
-            <a
-              href="#contact"
-              className="bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
-            >
+            <a href="#contact" className="btn-primary">
               Fale conosco
             </a>
           </div>
@@ -85,7 +81,7 @@ export default function Home() {
               title="Ninho Tattoo Studio"
               fullWidth={true}
               delay="400"
-              slug="ninho-tattoo"
+              slug="ninho"
             />
           </div>
         </div>
@@ -295,10 +291,7 @@ export default function Home() {
             Transformamos marcas com estratégia, design e narrativas potentes
             que conectam seu negócio ao público certo.
           </p>
-          <a
-            href="https://form.respondi.app/NwPH9MZX"
-            className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
-          >
+          <a href="https://form.respondi.app/NwPH9MZX" className="btn-primary">
             Solicitar Orçamento
           </a>
         </div>
