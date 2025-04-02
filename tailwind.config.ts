@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config = {
+  purge: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",

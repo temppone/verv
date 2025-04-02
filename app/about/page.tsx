@@ -10,18 +10,17 @@ import { Separator } from "@/components/ui/separator";
 export default function About() {
   const teamMembers = [
     {
-      name: "João Silva",
-      role: "Fundador & Diretor Criativo",
-      bio: "Com mais de 10 anos de experiência em design e branding, João fundou a Verv para ajudar marcas a descobrirem sua identidade única e autêntica.",
-      image: "/images/team-member-1.jpg", // Add these images to your public folder
+      name: "Giovani Lopes",
+      role: "Designer & Estrategista",
+      bio: "Com experiência em design e estratégia de marca, Giovani combina criatividade e visão estratégica para desenvolver identidades visuais que realmente comunicam a essência de cada negócio.",
+      image: "/images/giovani.webp",
     },
     {
-      name: "Marina Costa",
-      role: "Estrategista de Marca",
-      bio: "Marina combina análise de mercado e psicologia para desenvolver estratégias que conectam marcas ao seu público ideal de forma significativa.",
-      image: "/images/team-member-2.jpg",
+      name: "Gustavo Tempone",
+      role: "Desenvolvedor Frontend",
+      bio: "Especialista em criar experiências digitais impressionantes e funcionais, Gustavo transforma conceitos em interfaces interativas que elevam a presença digital das marcas.",
+      image: "/images/tempone.jpg",
     },
-    // You can add more team members as needed
   ];
 
   const services = [
@@ -76,20 +75,6 @@ export default function About() {
               ousadia, com identidade visual que impacta e posicionamento que
               faz sentido – para você e para o público que quer atrair.
             </p>
-          </div>
-          <div className="relative h-[500px] rounded-lg overflow-hidden">
-            {/* Replace this with actual About image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-pale-pink/30 to-black/50 mix-blend-overlay z-10" />
-            {/* Uncomment when you have the image */}
-            {/* <Image 
-              src={AboutImage} 
-              alt="Verv Studio Team" 
-              fill 
-              className="object-cover"
-            /> */}
-
-            {/* This is a placeholder div until you add the actual image */}
-            <div className="absolute inset-0 bg-gray-800" />
           </div>
         </div>
       </section>
@@ -257,23 +242,28 @@ export default function About() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="flex flex-col md:flex-row gap-6 items-start"
+                className="flex flex-col items-center md:items-start gap-6 "
               >
-                <div className="w-full md:w-40 h-40 rounded-lg overflow-hidden relative bg-gray-800">
-                  {/* Uncomment when you have the actual images */}
-                  {/* <Image 
-                    src={member.image} 
-                    alt={member.name} 
-                    fill 
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative flex-shrink-0 bg-gray-800 border-2 border-pale-pink shadow-lg">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
                     className="object-cover"
-                  /> */}
+                    sizes="(max-width: 768px) 100vw, 160px"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute inset-0 ring-2 ring-white/10 rounded-full"></div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 flex flex-col items-center md:items-start">
                   <h3 className="text-2xl font-bold text-white mb-1">
                     {member.name}
                   </h3>
                   <p className="text-pale-pink mb-4">{member.role}</p>
-                  <p className="text-gray-300 leading-relaxed">{member.bio}</p>
+                  <p className="text-gray-300 leading-relaxed text-center md:text-start">
+                    {member.bio}
+                  </p>
                 </div>
               </div>
             ))}

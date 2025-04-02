@@ -20,9 +20,10 @@ const project: Project = {
   ],
   testimonial: {
     quote:
-      "O redesign conseguiu capturar perfeitamente o equilíbrio entre seriedade profissional e o acolhimento que sempre quisemos transmitir. Agora nossa identidade visual realmente reflete quem somos.",
-    author: "Estúdio Ninho",
-    role: "Estúdio de Tatuagem",
+      "Ficou SENSACIONAL! E eu to amando aplicar aos pouquinhos! Só tenho a agradecer por esse trabalho maravilhoso e tãaaaaaao minha cara! Sucesso puro",
+    author: "Isabela Gatti",
+    role: "@ninhoestudio",
+    image: "/customersFeedback/feedback_ninho.webp",
   },
   relatedProjects: ["paola-gatti", "oque-fazer-em-jf"],
   beforeAfter: {

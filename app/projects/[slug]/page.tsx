@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getProjectBySlug, projects } from "@/data/projects";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -270,8 +271,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   &ldquo;{project.testimonial.quote}&rdquo;
                 </p>
                 <div className="flex items-center">
-                  <div className="w-14 h-14 bg-gradient-to-br from-pale-pink to-pale-pink/70 text-black rounded-full flex items-center justify-center font-bold text-xl mr-5 shadow-lg">
-                    {project.testimonial.author.charAt(0)}
+                  <div className="w-12 h-12 bg-gradient-to-br from-pale-pink to-pale-pink/70 text-black rounded-full flex items-center justify-center font-bold text-xl mr-5 shadow-lg">
+                    <Avatar>
+                      <AvatarImage src={project.testimonial.image} />
+                    </Avatar>
                   </div>
                   <div>
                     <div className="font-medium text-pale-pink text-xl">

@@ -1,16 +1,4 @@
-import ProjectCard from "@/components/ProjectCard";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Carousel, CarouselItem } from "@/components/ui/carousel";
-import Biancovilli from "@/public/images/biancovilli.webp";
-import Ninho from "@/public/images/ninho.webp";
-import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
 import Logo from "@/public/verv_logo.svg";
-import { BarChart3, Globe, Layout, Paintbrush } from "lucide-react";
 
 const feedbacks = [
   {
@@ -27,11 +15,6 @@ const feedbacks = [
     text: "Ficou SENSACIONAL! E eu to amando aplicar aos pouquinhos! Só tenho a agradecer por esse trabalho maravilhoso e tãaaaaaao minha cara! Sucesso puro",
     author: "Isabela Gatti",
     handle: "@ninhoestudio",
-  },
-  {
-    text: "Hoje não só nos sentimos parte de um grupo de grandes empresas, como também conseguimos reposicionar nossos produtos e aumentar a confiança dos clientes.",
-    author: "Gustavo Biancovilli",
-    handle: "@biancovillibrigaderia",
   },
 ];
 

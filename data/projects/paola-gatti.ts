@@ -19,6 +19,7 @@ const project: Project = {
       "Minha experiência de trabalhar com a empresa foi maravilhosa demais. Levei muito tempo pra criar coragem e me sentir aberta a sugestões que esse tipo de trabalho me traria... E eles me deram toda a confiança em me expor (do meu jeitinho)... Gostei da forma como tiveram a sensibilidade de entender meu ponto prático e afetivo no meu trabalho! Eu amei o resultado tanto quanto o processo de construção! Hoje me sinto lindamente conectada com tudo na identidade que criaram pra mim! A equipe está de parabéns! Muito obrigada por tudo!",
     author: "Paola Gatti",
     role: "Tatuadora",
+    image: "/customersFeedback/feedback_paola.webp",
   },
   relatedProjects: ["oque-fazer-em-jf", "ninho"],
   fullContent: [
@@ -135,15 +136,6 @@ const project: Project = {
         "Destaque da Individualidade: Cada tatuagem de Paola é única e personalizada, refletindo a história e a personalidade de cada cliente.",
         "Comunicação Eficaz: Desenvolver uma linguagem visual e verbal que transmitisse os valores da marca foi essencial.",
       ],
-    },
-    {
-      type: "heading",
-      content: "Considerações Finais",
-    },
-    {
-      type: "paragraph",
-      content:
-        "O projeto de identidade visual para Paola Gatti foi uma jornada de descoberta e criação, onde cada detalhe foi cuidadosamente pensado para refletir a essência e os valores da marca. O resultado é uma identidade que celebra a beleza da conexão humana e a arte de eternizar histórias na pele, posicionando Paola como uma referência em tatuagens botânicas e afetivas.",
     },
     {
       type: "quote",

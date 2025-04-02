@@ -17,6 +17,7 @@ const project: Project = {
       "A identidade visual traduziu perfeitamente o que eu sempre quis comunicar: o amor e a energia de Juiz de Fora.",
     author: "Mirella Mota",
     role: "Fundadora",
+    image: "/customersFeedback/feedback_oqfjf.webp",
   },
   relatedProjects: ["ninho", "paola-gatti"],
   beforeAfter: {

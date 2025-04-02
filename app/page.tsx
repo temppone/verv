@@ -28,11 +28,6 @@ const feedbacks = [
     author: "Isabela Gatti",
     handle: "@ninhoestudio",
   },
-  {
-    text: "Hoje não só nos sentimos parte de um grupo de grandes empresas, como também conseguimos reposicionar nossos produtos e aumentar a confiança dos clientes.",
-    author: "Gustavo Biancovilli",
-    handle: "@biancovillibrigaderia",
-  },
 ];
 
 export default function Home() {
@@ -40,11 +35,18 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white pt-24">
       <section className="px-6 py-20 md:py-32 animate-fadeIn">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp">
+          <h1
+            className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp"
+            id="hero-heading"
+          >
             <span className="text-white">Branding estratégico para</span>
             <br />
             <span className="text-pale-pink">criativos destemidos.</span>
           </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl animate-slideUp animation-delay-300">
+            Transformamos ideias em identidades visuais que capturam a essência
+            do seu negócio e conectam com seu público ideal.
+          </p>
 
           <div className="hidden md:block mt-12 animate-slideUp animation-delay-500">
             <a href="#contact" className="btn-primary">
