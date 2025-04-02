@@ -8,15 +8,10 @@ const project: Project = {
   description:
     "Transformando memórias e sentimentos em tatuagens únicas com delicadeza, afeto e conexão",
   image: PaolaGatti,
-  stats: [
-    { label: "Seguidores", value: "+10k" },
-    { label: "Clientes fiéis", value: "95%" },
-    { label: "Tempo do projeto", value: "2 meses" },
-  ],
   services: ["Identidade visual", "Posicionamento", "Arquétipos", "Tom de voz"],
   testimonial: {
     quote:
-      "Minha experiência de trabalhar com a empresa foi maravilhosa demais. Levei muito tempo pra criar coragem e me sentir aberta a sugestões que esse tipo de trabalho me traria... E eles me deram toda a confiança em me expor (do meu jeitinho)... Gostei da forma como tiveram a sensibilidade de entender meu ponto prático e afetivo no meu trabalho! Eu amei o resultado tanto quanto o processo de construção! Hoje me sinto lindamente conectada com tudo na identidade que criaram pra mim! A equipe está de parabéns! Muito obrigada por tudo!",
+      "Trabalhar com a Verv foi incrível! Demorei pra criar coragem e me abrir a sugestões, mas o Giovani me deu total confiança no processo. Teve sensibilidade pra entender tanto o lado prático quanto o afetivo do meu trabalho. Amei o resultado tanto quanto a jornada! Hoje, me sinto lindamente conectada à minha identidade. Parabéns e muito obrigada!",
     author: "Paola Gatti",
     role: "Tatuadora",
     image: "/customersFeedback/feedback_paola.webp",
@@ -103,13 +98,6 @@ const project: Project = {
         "A marca Paola Gatti é personificada pela combinação dos arquétipos Cuidador e Criador. O Cuidador representa a empatia, o acolhimento e o desejo de nutrir as relações, refletindo a atenção e o respeito que Paola dedica a cada cliente. O Criador, por sua vez, simboliza a originalidade, a inspiração e a expressão artística, evidenciando a habilidade de Paola em transformar histórias e emoções em tatuagens únicas.",
     },
     {
-      type: "list",
-      items: [
-        "O Cuidador: Acolhedora, sensível e confiável. Foco na experiência humanizada e no bem-estar do cliente. Comunicação amigável e emocional.",
-        "O Criador: Valoriza a criatividade e a individualidade. Busca excelência e inovação artística. Expressão única e marcante.",
-      ],
-    },
-    {
       type: "paragraph",
       content:
         "A sinergia entre esses dois arquétipos define a identidade da marca, equilibrando o cuidado com a expressão artística e a individualidade.",
@@ -131,10 +119,10 @@ const project: Project = {
     {
       type: "list",
       items: [
-        "Tradução da Essência: O principal desafio foi capturar a delicadeza, a sensibilidade e a exclusividade do trabalho de Paola em uma identidade visual.",
-        "Equilíbrio entre Arte e Acessibilidade: Era fundamental criar uma marca que fosse ao mesmo tempo elegante e artística, refletindo a qualidade do trabalho de Paola.",
-        "Destaque da Individualidade: Cada tatuagem de Paola é única e personalizada, refletindo a história e a personalidade de cada cliente.",
-        "Comunicação Eficaz: Desenvolver uma linguagem visual e verbal que transmitisse os valores da marca foi essencial.",
+        "O principal desafio foi capturar a delicadeza, a sensibilidade e a exclusividade do trabalho de Paola em uma identidade visual.",
+        "Era fundamental criar uma marca que fosse ao mesmo tempo elegante e artística, refletindo a qualidade do trabalho de Paola.",
+        "E desenvolver uma linguagem visual e verbal que transmitisse os valores da marca foi essencial.",
+        "Cada tatuagem de Paola é única e personalizada, refletindo a história e a personalidade de cada cliente.",
       ],
     },
     {

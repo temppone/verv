@@ -1,12 +1,13 @@
 import ProjectCard from "@/components/ProjectCard";
+import HeroSection from "@/components/home/HeroSection";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Carousel, CarouselItem } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselItem } from "@/components/ui/carousel";
 import PaolaGatti from "@/public/images/paola_01.webp";
 
 import Ninho from "@/public/images/ninho.webp";
@@ -20,7 +21,8 @@ const feedbacks = [
     handle: "@paolagatti.tattoo",
   },
   {
-    text: "Durante o processo de criação da identidade visual, ele não apenas entregou uma nova cara para minha marca, mas trouxe autenticidade e alinhamento com o estilo que sempre sonhei.",
+    text: "Preciso agradecer imensamente vcs por esse trampo perfeito! Vcs conseguiram traduzir perfeitamente tudo que eu queria pra minha bebê.",
+
     author: "Mirella Mota",
     handle: "@oquefazerem.jf",
   },
@@ -34,24 +36,7 @@ const feedbacks = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white pt-24">
-      <section className="px-6 py-20 md:py-32 animate-fadeIn">
-        <div className="max-w-5xl mx-auto">
-          <h1
-            className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp"
-            id="hero-heading"
-          >
-            <span className="text-white">Branding estratégico para</span>
-            <br />
-            <span className="text-pale-pink">criativos destemidos.</span>
-          </h1>
-
-          <div className="md:block mt-12 animate-slideUp animation-delay-500">
-            <Button asChild variant="link" className="btn-primary px-0">
-              <a href="/contact">Fale conosco</a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       <section className="px-6 py-8 bg-gray-950 overflow-hidden">
         <div className="max-w-6xl mx-auto">
@@ -290,7 +275,7 @@ export default function Home() {
             Transformamos marcas com estratégia, design e narrativas potentes
             que conectam seu negócio ao público certo.
           </p>
-          <Button asChild variant="link" className="btn-primary px-0">
+          <Button size="lg">
             <a href="https://form.respondi.app/NwPH9MZX">Solicitar Orçamento</a>
           </Button>
         </div>

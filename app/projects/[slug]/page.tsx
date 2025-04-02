@@ -299,12 +299,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pale-pink/20 to-transparent opacity-30"></div>
           <div className="max-w-4xl mx-auto px-6 text-center relative">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Vamos trabalhar juntos na
-              <br /> <span className="text-pale-pink"> sua marca?</span>
+              A próxima marca aqui <br />{" "}
+              <span className="text-pale-pink">pode ser a sua</span>
             </h2>
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-              Transformamos marcas com estratégia, design e narrativas potentes
-              que conectam seu negócio ao público certo.
+              Marcas autênticas não acontecem por acaso. Se você quer uma marca
+              que se destaque de verdade e conecte com o seu público, clica no
+              botão e bora conversar.
             </p>
             <a
               href="https://form.respondi.app/NwPH9MZX"

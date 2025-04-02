@@ -7,11 +7,6 @@ const project: Project = {
   description:
     "Um estúdio de tatuagem que oferece acolhimento, confiança e expressão através da arte corporal",
   image: "/images/ninho.webp",
-  stats: [
-    { label: "Clientes satisfeitos", value: "98%" },
-    { label: "Crescimento", value: "+45%" },
-    { label: "Reconhecimento local", value: "Top 3" },
-  ],
   services: [
     "Redesign de marca",
     "Identidade visual",
@@ -26,26 +21,6 @@ const project: Project = {
     image: "/customersFeedback/feedback_ninho.webp",
   },
   relatedProjects: ["paola-gatti", "oque-fazer-em-jf"],
-  beforeAfter: {
-    before: {
-      image: "/images/ninho_antes.webp",
-      title: "Antes do Redesign",
-      items: [
-        "Identidade visual desconectada da essência da marca",
-        "Percepção de informalidade excessiva",
-        "Dificuldade em transmitir confiança e acolhimento",
-      ],
-    },
-    after: {
-      image: "/images/ninho_depois.webp",
-      title: "Resultados",
-      items: [
-        "Marca que reflete acolhimento e profissionalismo",
-        "Percepção de ambiente seguro e confiável",
-        "Equilíbrio entre rebeldia criativa e seriedade",
-      ],
-    },
-  },
   fullContent: [
     {
       type: "lead",
@@ -91,7 +66,7 @@ const project: Project = {
     },
     {
       type: "image",
-      src: "/images/ninho_3.jpg",
+      src: "/images/ninho_3.webp",
       alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
     },
     {
@@ -126,15 +101,6 @@ const project: Project = {
       type: "paragraph",
       content:
         "O estúdio agora transmite com clareza seus valores de acolhimento e confiança, enquanto mantém o aspecto criativo e rebelde que é essencial à sua área de atuação. O resultado é uma marca que comunica com autenticidade sua verdadeira essência.",
-    },
-    {
-      type: "heading",
-      content: "Impacto no Negócio",
-    },
-    {
-      type: "paragraph",
-      content:
-        "Após o redesign, o Ninho experimentou um crescimento significativo tanto em novos clientes quanto em fidelização. A marca agora é percebida como mais profissional, sem perder sua essência acolhedora, o que aumentou a confiança do público e fortaleceu sua posição no mercado local de tatuagem e body piercing.",
     },
   ],
 };
