@@ -1,18 +1,12 @@
-import Header from "@/components/Header";
-import Image from "next/image";
-import AboutImage from "@/public/images/about-image.jpg"; // You'll need to add this image
-import { MoveRight } from "lucide-react";
-import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BarChart3, Globe, Layout, Paintbrush } from "lucide-react";
 
 export default function About() {
   const teamMembers = [
     {
       name: "Giovani Lopes",
       role: "Designer & Estrategista",
-      bio: "Com experiência em design e estratégia de marca, Giovani combina criatividade e visão estratégica para desenvolver identidades visuais que realmente comunicam a essência de cada negócio.",
+      bio: "    Criativo de natureza e estrategista por escolha, Giovani transforma marcas em experiências visuais autênticas. Depois de anos vendo design ser tratado como detalhe, decidiu unir estética e estratégia para criar identidades que fazem sentido — e não só agradam aos olhos.",
       image: "/images/giovani.webp",
     },
     {
@@ -23,97 +17,96 @@ export default function About() {
     },
   ];
 
-  const services = [
-    {
-      title: "Branding estratégico",
-      description:
-        "Porque uma marca forte não se constrói só com um logo bonito.",
-    },
-    {
-      title: "Identidade visual",
-      description: "Visual que não só impressiona, mas comunica.",
-    },
-    {
-      title: "Consultoria",
-      description:
-        "Te ajudamos a entender e aplicar estratégia no seu próprio negócio.",
-    },
-    {
-      title: "Websites",
-      description:
-        "Porque sua presença digital precisa ser tão autêntica quanto seu trabalho.",
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-black text-white pt-24">
       <section className="px-6 py-20 md:py-32 animate-fadeIn">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto md:text-center">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6 animate-slideUp">
-            <span className="text-white">Quem está por trás da</span>
+            <span className="text-white">Muito mais que design</span>
             <br />
-            <span className="text-pale-pink">Verv Studio</span>
+            <span className="text-pale-pink">Esse é o nosso porquê</span>
           </h1>
         </div>
       </section>
 
       <section className="px-6 py-16 bg-gray-950">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-4xl font-bold mb-8 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-              Nossa História
-            </h2>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              A Verv nasceu para ajudar criativos a focarem no que fazem de
-              melhor: criar. Enquanto você mergulha no que faz de melhor, a
-              gente cuida do seu posicionamento estratégico, garantindo que sua
-              identidade visual e presença digital falem por você.
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 text-center">
+            <p className="text-xl text-gray-300 leading-relaxed">
+              A Verv existe porque acredita que os criativos têm o poder de
+              transformar o mundo através de suas criações. No entanto, muitos
+              criativos enfrentam dificuldades para construir marcas fortes e
+              relevantes, o que os impede de alcançar seu pleno potencial.
             </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              Aqui, nada de fórmulas prontas ou designs sem alma. Nosso trabalho
-              é estratégico, autêntico e afiado. Criamos marcas que respiram
-              ousadia, com identidade visual que impacta e posicionamento que
-              faz sentido – para você e para o público que quer atrair.
+
+            <p className="text-xl text-gray-300 leading-relaxed">
+              Acreditamos que, ao ajudar artistas e criativos a construirem
+              marcas fortes, a Verv contribui para um mundo mais inspirador e
+              transformador.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className="px-6 pt-16 pb-2 bg-black md:py-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-            O que fazemos?
+      <section className="px-6 py-12 bg-black">
+        <div className="max-w-6xl mx-auto md:flex md:flex-col md:items-center">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 md:before:left-1/2 md:before:-translate-x-1/2 before:bg-pale-pink md:text-center">
+            O que fazemos
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-            {services.map((service, index) => (
-              <Card
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {[
+              {
+                icon: Paintbrush,
+                title: "Branding",
+                description:
+                  "Desenvolvimento estratégico da sua marca, desde o posicionamento até a comunicação com seu público.",
+              },
+              {
+                icon: BarChart3,
+                title: "Estratégia",
+                description:
+                  "Planejamento detalhado para alcançar seus objetivos de negócio através da comunicação efetiva.",
+              },
+              {
+                icon: Layout,
+                title: "Identidade Visual",
+                description:
+                  "Criação de elementos visuais únicos que traduzem a essência da sua marca e conectam com seu público.",
+              },
+              {
+                icon: Globe,
+                title: "Desenvolvimento Web",
+                description:
+                  "Criação de sites e landing pages modernos e responsivos que transmitem a essência da sua marca.",
+              },
+            ].map((service, index) => (
+              <div
                 key={index}
-                className="bg-gray-900 border-gray-800 hover:border-pale-pink transition-all duration-300 group"
+                className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950 md:text-center"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                data-aos-once="true"
               >
-                <CardHeader>
-                  <CardTitle className="text-xl text-pale-pink">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300 group-hover:text-white transition-colors">
+                <div className="flex flex-col h-full md:items-center">
+                  <service.icon className="w-8 h-8 mb-4 text-pale-pink" />
+                  <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-gray-400 text-lg leading-relaxed group-hover:text-white transition-colors duration-300">
                     {service.description}
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <section className="px-6 py-16 bg-gray-950">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+        <div className="max-w-6xl mx-auto md:flex md:flex-col md:items-center">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 md:before:left-1/2 md:before:-translate-x-1/2 before:bg-pale-pink md:text-center">
             Nossa Filosofia
           </h2>
-          <p className="text-xl text-gray-300 mb-10 max-w-4xl">
+          <p className="text-xl text-gray-300 mb-10 max-w-4xl md:text-center">
             A Verv. não acredita em design só pelo visual. Acreditamos em
             impacto. Em marcas que transformam, que mexem com a percepção e que
             fazem sentido. Nossa abordagem é fundamentada em três princípios:
@@ -124,12 +117,12 @@ export default function About() {
               {
                 title: "Transformação",
                 description:
-                  "Design não é maquiagem. É alquimia. Cada cor, forma e conceito que criamos tem um propósito: revelar a verdadeira essência da sua marca e mudar a forma como o mundo a enxerga.",
+                  "Cada cor, forma e conceito que criamos tem um propósito: revelar a verdadeira essência da sua marca e mudar a forma como o mundo a enxerga.",
               },
               {
                 title: "Estratégia",
                 description:
-                  "Nada aqui é aleatório. Criamos marcas que comunicam antes mesmo da primeira palavra. Seu público precisa sentir sua identidade antes de entender sua mensagem.",
+                  "Criamos marcas que comunicam antes mesmo da primeira palavra. Seu público precisa sentir sua identidade antes de entender sua mensagem.",
               },
               {
                 title: "Ousadia",
@@ -139,9 +132,9 @@ export default function About() {
             ].map((principle, index) => (
               <div
                 key={index}
-                className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950"
+                className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950 md:text-center"
               >
-                <div className="flex flex-col h-full">
+                <div className="flex flex-col h-full md:items-center">
                   <h3 className="text-2xl font-bold mb-4 text-pale-pink">
                     {principle.title}
                   </h3>
@@ -156,112 +149,40 @@ export default function About() {
       </section>
 
       {/* For You Section */}
-      <section className="px-6 py-16 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-10 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-            A Verv. é para você que…
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
-            <div className="p-6 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 flex gap-2 items-center">
-              <div className="text-pale-pink mb-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-8 h-8"
-                >
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg>
-              </div>
-              <p className="text-xl text-gray-200 flex-grow">
-                Quer se destacar sem precisar gritar.
-              </p>
-            </div>
-            <div className="p-6 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 flex gap-2 items-center">
-              <div className="text-pale-pink mb-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-8 h-8"
-                >
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg>
-              </div>
-              <p className="text-xl text-gray-200 flex-grow">
-                Cansou de brigar por preço e quer que seu trabalho seja
-                valorizado pelo que realmente é.
-              </p>
-            </div>
-            <div className="p-6 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 flex gap-2 items-center">
-              <div className="text-pale-pink mb-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-8 h-8"
-                >
-                  <path d="M20 6L9 17l-5-5"></path>
-                </svg>
-              </div>
-              <p className="text-xl text-gray-200 flex-grow">
-                Acredita que estratégia e estética andam juntas.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Team Section */}
       <section className="px-6 py-16 bg-gray-950">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-            Nossa Equipe
+        <div className="max-w-6xl mx-auto md:flex md:flex-col md:items-center">
+          <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 md:before:left-1/2 md:before:-translate-x-1/2 before:bg-pale-pink text-left md:text-center">
+            Quem está por trás da Verv
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center md:items-start gap-6 "
+                className="flex flex-col items-center gap-6 text-center"
               >
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative flex-shrink-0 bg-gray-800 border-2 border-pale-pink shadow-lg">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 160px"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  <div className="absolute inset-0 ring-2 ring-white/10 rounded-full"></div>
+                <div className="flex-shrink-0">
+                  <div className="relative w-32 h-32 md:w-40 md:h-40">
+                    <Avatar className="w-full h-full border-2 border-pale-pink shadow-lg">
+                      <AvatarImage src={member.image} alt={member.name} />
+                      <AvatarFallback className="bg-gray-800">
+                        {member.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-full"></div>
+                  </div>
                 </div>
-                <div className="flex-1 flex flex-col items-center md:items-start">
+                <div className="flex-1 flex flex-col items-center">
                   <h3 className="text-2xl font-bold text-white mb-1">
                     {member.name}
                   </h3>
                   <p className="text-pale-pink mb-4">{member.role}</p>
-                  <p className="text-gray-300 leading-relaxed text-center md:text-start">
+                  <p className="text-gray-300 leading-relaxed text-center">
                     {member.bio}
                   </p>
                 </div>

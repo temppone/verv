@@ -36,10 +36,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         );
       case "list":
         return (
-          <ul className="mb-6 pl-5 space-y-2">
+          <ul className="mb-8 pl-5 space-y-3">
             {content.items.map((item: string, index: number) => (
-              <li key={index} className="list-disc list-outside">
-                {item}
+              <li
+                key={index}
+                className="flex items-start gap-2.5 text-gray-200"
+              >
+                <span className="inline-block w-1.5 h-1.5 bg-pale-pink rounded-full mt-2.5 flex-shrink-0"></span>
+                <span className="leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>

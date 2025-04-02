@@ -1,73 +1,84 @@
 import Logo from "@/public/verv_logo.svg";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
-const feedbacks = [
-  {
-    text: "Eu amei todo o conceito, o formato dos elementos que escolheu, a paleta!!! Ta perfeito. Eu nem sei o que dizer, conseguiu me tirar um sorriso imenso junto com aquele silêncio de satisfação sabe. Fiquei apaixonada, pra dizer o mínimo",
-    author: "Paola Gatti",
-    handle: "@paolagatti.tattoo",
-  },
-  {
-    text: "Durante o processo de criação da identidade visual, ele não apenas entregou uma nova cara para minha marca, mas trouxe autenticidade e alinhamento com o estilo que sempre sonhei.",
-    author: "Mirella Mota",
-    handle: "@oquefazerem.jf",
-  },
-  {
-    text: "Ficou SENSACIONAL! E eu to amando aplicar aos pouquinhos! Só tenho a agradecer por esse trabalho maravilhoso e tãaaaaaao minha cara! Sucesso puro",
-    author: "Isabela Gatti",
-    handle: "@ninhoestudio",
-  },
-];
+export default function Header() {
+  const navItems = [
+    { name: "Início", href: "/" },
+    // { name: "Ebooks", href: "/ebooks/1" },
+    { name: "Sobre", href: "/about" },
+    { name: "Contato", href: "/contact" },
+  ];
 
-export default function Home() {
   return (
-    <header className="px-6 fixed w-full flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80">
+    <header className="px-6 fixed w-full flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80 h-16">
       <div className="flex justify-center text-xl font-bold hover:text-pale-pink transition-colors duration-300">
-        <span className="text-xl py-4 md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
-          <a href="/">
+        <span className="py-4 font-black text-off-white transition-transform duration-300 hover:scale-105">
+          <Link href="/">
             <img
               src={Logo.src}
               alt="Verv Studio"
               className="w-16 invert brightness-0 filter"
             />
-          </a>
+          </Link>
         </span>
       </div>
 
-      <div className="block md:hidden animate-slideUp animation-delay-500">
-        <a
-          href="/contact"
-          className="bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform"
-        >
-          Fale conosco
-        </a>
+      {/* Mobile Contact Button */}
+      <div className="flex items-center gap-2 md:hidden">
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="link">
+              <Menu className="h-5 w-5 text-white" />
+              <span className="sr-only">Open menu</span>
+            </Button>
+          </SheetTrigger>
+
+          <SheetContent className="bg-black/95">
+            <SheetClose asChild className="absolute right-4 top-4">
+              <Button variant="link" size="icon">
+                <X className="text-white" />
+
+                <span className="sr-only">Close</span>
+              </Button>
+            </SheetClose>
+
+            <nav className="flex flex-col gap-4 mt-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-white text-lg py-2 hover:text-pale-pink transition-colors duration-300"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
 
+      {/* Desktop Navigation */}
       <nav className="hidden md:block">
         <ul className="flex space-x-8 text-white">
-          <li>
-            <a
-              href="/"
-              className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-            >
-              Início
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about"
-              className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-            >
-              Sobre
-            </a>
-          </li>
-          <li>
-            <a
-              href="/contact"
-              className="hover:text-pale-pink transition-colors duration-300 hover:underline"
-            >
-              Contato
-            </a>
-          </li>
+          {navItems.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className="hover:text-pale-pink transition-colors duration-300 hover:underline"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

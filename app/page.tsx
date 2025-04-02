@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 import PaolaGatti from "@/public/images/paola_01.webp";
 
 import Ninho from "@/public/images/ninho.webp";
@@ -43,15 +44,11 @@ export default function Home() {
             <br />
             <span className="text-pale-pink">criativos destemidos.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl animate-slideUp animation-delay-300">
-            Transformamos ideias em identidades visuais que capturam a essência
-            do seu negócio e conectam com seu público ideal.
-          </p>
 
-          <div className="hidden md:block mt-12 animate-slideUp animation-delay-500">
-            <a href="#contact" className="btn-primary">
-              Fale conosco
-            </a>
+          <div className="md:block mt-12 animate-slideUp animation-delay-500">
+            <Button asChild variant="link" className="btn-primary px-0">
+              <a href="/contact">Fale conosco</a>
+            </Button>
           </div>
         </div>
       </section>
@@ -117,7 +114,7 @@ export default function Home() {
       <section className="px-6 py-12 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-            Serviços
+            O que fazemos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {[
@@ -169,7 +166,7 @@ export default function Home() {
       <section className="px-6 py-8 bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-            Nosso Processo
+            Como fazemos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -200,20 +197,20 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group relative p-8 rounded-xl transition-all duration-500 ease-out hover:bg-black/40 hover:scale-[1.02] cursor-pointer backdrop-blur-sm border border-transparent hover:border-pale-pink/20"
+                className="group relative p-8 rounded-xl transition-all duration-500 ease-out bg-black/40 scale-[1.02] cursor-pointer backdrop-blur-sm border border-pale-pink/20"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-pale-pink/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-b from-pale-pink/5 to-transparent opacity-100 transition-opacity duration-500 rounded-xl" />
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="text-pale-pink font-bold text-4xl opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-pale-pink font-bold text-4xl opacity-100 transition-opacity duration-300">
                       {item.step}
                     </span>
-                    <div className="h-[1px] flex-grow bg-pale-pink/20 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                    <div className="h-[1px] flex-grow bg-pale-pink/20 transform origin-left scale-x-100 transition-transform duration-500" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-white/90 group-hover:text-pale-pink transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="leading-relaxed text-gray-300 transition-colors duration-300">
                     {item.description}
                   </p>
                 </div>
@@ -293,9 +290,9 @@ export default function Home() {
             Transformamos marcas com estratégia, design e narrativas potentes
             que conectam seu negócio ao público certo.
           </p>
-          <a href="https://form.respondi.app/NwPH9MZX" className="btn-primary">
-            Solicitar Orçamento
-          </a>
+          <Button asChild variant="link" className="btn-primary px-0">
+            <a href="https://form.respondi.app/NwPH9MZX">Solicitar Orçamento</a>
+          </Button>
         </div>
       </section>
     </main>

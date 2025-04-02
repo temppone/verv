@@ -5,6 +5,7 @@ const project: Project = {
   slug: "oque-fazer-em-jf",
   title: "O que fazer em JF",
   subtitle: "Branding & Identidade Visual",
+  description: "O amor por Juiz de Fora que acumulou uma legião de fãs",
   image: OqueFazerEmJF,
   stats: [
     { label: "Seguidores", value: "100k+" },
@@ -14,7 +15,7 @@ const project: Project = {
   services: ["Identidade visual"],
   testimonial: {
     quote:
-      "A identidade visual traduziu perfeitamente o que eu sempre quis comunicar: o amor e a energia de Juiz de Fora.",
+      "Preciso agradecer imensamente vcs por esse trampo perfeito! Vcs conseguiram traduzir perfeitamente tudo que eu queria pra minha bebê.",
     author: "Mirella Mota",
     role: "Fundadora",
     image: "/customersFeedback/feedback_oqfjf.webp",
@@ -44,7 +45,7 @@ const project: Project = {
     {
       type: "lead",
       content:
-        "O amor por Juiz de Fora que acumulou uma legião de fãs. Quando Mirella Mota criou a página O Que Fazer em JF, o objetivo era claro: mostrar para juiz-foranos e turistas o quanto Juiz de Fora tem a oferecer.",
+        "Quando Mirella Mota criou a página O Que Fazer em JF, o objetivo era claro: mostrar para juiz-foranos e turistas o quanto Juiz de Fora tem a oferecer.",
     },
     {
       type: "heading",
@@ -69,6 +70,13 @@ const project: Project = {
       content:
         "A missão era clara: criar uma marca que fosse divertida, criativa e tão vibrante quanto Juiz de Fora, mas sem perder a personalidade leve e acolhedora que Mirella construiu ao longo dos anos.",
     },
+
+    {
+      type: "image",
+      src: "/images/oqfjf_2.webp",
+      alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
+    },
+
     {
       type: "list",
       items: [
@@ -78,15 +86,12 @@ const project: Project = {
         "Elementos gráficos lúdicos",
       ],
     },
-    {
-      type: "image",
-      src: "/images/oqfjf_2.webp",
-      alt: "O Que Fazer em JF - Desenvolvimento da identidade visual",
-    },
+
     {
       type: "heading",
       content: "Os resultados, tão coloridos quanto",
     },
+
     {
       type: "paragraph",
       content:

@@ -1,5 +1,14 @@
 import { Behance } from "@/public/icons/behanceIcon";
-import { Instagram, Mail, MoveRight, Phone } from "lucide-react";
+import {
+  File,
+  FileSymlink,
+  FormInput,
+  Instagram,
+  Mail,
+  MoveRight,
+  Phone,
+  Sheet,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Contact() {
@@ -119,10 +128,25 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Telefone</h3>
                   <a
-                    href="tel:+5532999508150"
+                    href="https://wa.me/5532999508150"
                     className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
                   >
-                    +55 32 9950-8150
+                    +55 32 99950-8150
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <FileSymlink size={24} className="text-pale-pink mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Solicitar orçamento
+                  </h3>
+                  <a
+                    href="https://form.respondi.app/NwPH9MZX"
+                    className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
+                  >
+                    Clique aqui{" "}
                   </a>
                 </div>
               </div>
