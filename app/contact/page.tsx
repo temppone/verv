@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Behance } from "@/public/icons/behanceIcon";
 import {
   File,
@@ -97,9 +98,7 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-primary">
-                Enviar Mensagem
-              </button>
+              <Button type="submit">Enviar Mensagem</Button>
             </form>
           </div>
 

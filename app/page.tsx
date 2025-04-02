@@ -1,19 +1,15 @@
 import { Progress } from "@/components/ui/progress";
-import React, { Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 
-const CTASection = React.lazy(() => import("@/components/CTASection"));
-const FeedbackCarousel = React.lazy(
-  () => import("@/components/FeedbackCarousel")
-);
-const HeroSection = React.lazy(() => import("@/components/home/HeroSection"));
-const HowWeDoSection = React.lazy(() => import("@/components/HowWeDoSection"));
-const SelectedProjectsSection = React.lazy(
+const CTASection = lazy(() => import("@/components/CTASection"));
+const FeedbackCarousel = lazy(() => import("@/components/FeedbackCarousel"));
+const HeroSection = lazy(() => import("@/components/home/HeroSection"));
+const HowWeDoSection = lazy(() => import("@/components/HowWeDoSection"));
+const SelectedProjectsSection = lazy(
   () => import("@/components/SelectedProjectsSection")
 );
-const WhatWeDoSection = React.lazy(
-  () => import("@/components/WhatWeDoSection")
-);
-const FAQSection = React.lazy(() => import("./components/FAQSection"));
+const WhatWeDoSection = lazy(() => import("@/components/WhatWeDoSection"));
+const FAQSection = lazy(() => import("./components/FAQSection"));
 
 export default function Home() {
   return (

@@ -15,7 +15,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="animate-fadeIn animation-delay-200">
-          <h4 className="font-medium mb-4">Social</h4>
+          <h2 className="font-medium mb-4 text-base">Social</h2>
           <ul className="space-y-2 opacity-70">
             <li>
               <a
@@ -36,7 +36,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="animate-fadeIn animation-delay-600">
-          <h4 className="font-medium mb-4">Contato</h4>
+          <h2 className="font-medium mb-4 text-base">Contato</h2>
           <p className="opacity-70 mb-2">hello@vervstudio.com.br</p>
           <a
             href="https://form.respondi.app/NwPH9MZX"

@@ -14,9 +14,9 @@ export default function HeroSection() {
         </h1>
 
         <div className="md:block mt-12 animate-slideUp animation-delay-500">
-          <Button size="lg">
-            <a href="/contact">Fale conosco</a>
-          </Button>
+          <a href="/contact">
+            <Button size="lg">Fale conosco</Button>
+          </a>
         </div>
       </div>
     </section>
