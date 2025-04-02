@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import Logo from "@/public/ia-para-criativos.svg";
 import HotmartIcons from "@/public/icones-hotmart.webp";
-import Profile from "@/public/profile.jpg";
+import Profile from "@/public/images/giovani.webp";
 import {
   ArrowRight,
   BrainCircuit,

@@ -1,5 +1,15 @@
+import { Button } from "@/components/ui/button";
 import { Behance } from "@/public/icons/behanceIcon";
-import { Instagram, Mail, MoveRight, Phone } from "lucide-react";
+import {
+  File,
+  FileSymlink,
+  FormInput,
+  Instagram,
+  Mail,
+  MoveRight,
+  Phone,
+  Sheet,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function Contact() {
@@ -22,11 +32,23 @@ export default function Contact() {
 
       <section className="px-6 pb-2 pt-16 bg-gray-950 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
           <div className="bg-black p-8 rounded-lg border border-gray-800">
             <h2 className="text-2xl font-bold mb-6">Envie uma mensagem</h2>
-            <form name="contact" className="space-y-6" netlify>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thank-you"
+              className="space-y-6"
+            >
               <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human:{" "}
+                  <input name="bot-field" />
+                </label>
+              </p>
 
               <div className="space-y-2">
                 <label
@@ -76,12 +98,7 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="bg-pale-pink text-black px-6 py-3 font-medium rounded-md transition-all duration-300 hover:bg-white hover:scale-105 transform"
-              >
-                Enviar Mensagem
-              </button>
+              <Button type="submit">Enviar Mensagem</Button>
             </form>
           </div>
 
@@ -110,10 +127,25 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Telefone</h3>
                   <a
-                    href="tel:+5532999508150"
+                    href="https://wa.me/5532999508150"
                     className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
                   >
-                    +55 32 9950-8150
+                    +55 32 99950-8150
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <FileSymlink size={24} className="text-pale-pink mt-1" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Solicitar orçamento
+                  </h3>
+                  <a
+                    href="https://form.respondi.app/NwPH9MZX"
+                    className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
+                  >
+                    Clique aqui{" "}
                   </a>
                 </div>
               </div>
@@ -184,7 +216,7 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <a
               href="https://form.respondi.app/NwPH9MZX"
-              className="bg-pale-pink text-black px-10 py-4 text-lg font-medium transition-all duration-300 hover:bg-white hover:scale-105 transform inline-block rounded-md shadow-lg hover:shadow-pale-pink/20"
+              className="btn-primary"
             >
               Solicitar Orçamento
             </a>

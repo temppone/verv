@@ -15,7 +15,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="animate-fadeIn animation-delay-200">
-          <h4 className="font-medium mb-4">Social</h4>
+          <h2 className="font-medium mb-4 text-base">Social</h2>
           <ul className="space-y-2 opacity-70">
             <li>
               <a
@@ -27,7 +27,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://behance.net/verv"
+                href="https://behance.net/estudioverv"
                 className="hover:text-pale-pink transition-colors duration-300 inline-block hover:translate-x-1"
               >
                 Behance
@@ -36,10 +36,10 @@ export default function Footer() {
           </ul>
         </div>
         <div className="animate-fadeIn animation-delay-600">
-          <h4 className="font-medium mb-4">Contato</h4>
+          <h2 className="font-medium mb-4 text-base">Contato</h2>
           <p className="opacity-70 mb-2">hello@vervstudio.com.br</p>
           <a
-            href="https://wa.me/yourphonenumber"
+            href="https://form.respondi.app/NwPH9MZX"
             className="border-b border-pale-pink text-pale-pink hover:text-white hover:border-white transition-colors duration-300"
           >
             Solicitar Orçamento

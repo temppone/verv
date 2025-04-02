@@ -5,32 +5,39 @@ import { FC } from "react";
 interface ProjectCardProps {
   image: StaticImageData;
   title: string;
-  description: string;
   delay?: string;
   fullWidth?: boolean;
   slug: string;
+  square?: boolean;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
   image,
   title,
-  description,
   delay = "0",
   fullWidth = false,
   slug,
+  square,
 }) => {
   return (
     <Link
       href={`/projects/${slug}`}
-      className={`animate-fadeIn group relative overflow-hidden block rounded-2xl ${fullWidth ? "md:col-span-2" : ""
-        }`}
+      className={`animate-fadeIn group relative overflow-hidden block rounded-2xl ${
+        fullWidth ? "md:col-span-2" : ""
+      }`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="overflow-hidden rounded-2xl">
+      <div
+        className={`overflow-hidden rounded-2xl ${
+          square ? "aspect-square" : ""
+        }`}
+      >
         <Image
           src={image}
           alt={title}
-          className="w-full h-auto transition-transform duration-500 group-hover:scale-105"
+          className={`w-full transition-transform duration-500 group-hover:scale-105 ${
+            square ? "h-full object-cover" : "h-auto"
+          }`}
           placeholder="blur"
         />
       </div>
