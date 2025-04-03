@@ -1,18 +1,73 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import { Behance } from "@/public/icons/behanceIcon";
 import {
-  File,
-  FileSymlink,
-  FormInput,
-  Instagram,
-  Mail,
-  MoveRight,
-  Phone,
-  Sheet,
-} from "lucide-react";
-import Link from "next/link";
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FileSymlink, Mail, Phone } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { useSendEmail } from "../hooks/useSendEmail";
 
 export default function Contact() {
+  const { toast } = useToast();
+  const { sendSimpleMessage, success, error, isLoading } = useSendEmail();
+
+  const schema = z.object({
+    name: z.string({
+      required_error: "Nome é obrigatório",
+    }),
+    email: z
+      .string({
+        required_error: "E-mail é obrigatório",
+      })
+      .email({
+        message: "E-mail inválido",
+      }),
+    message: z.string({
+      required_error: "Mensagem é obrigatória",
+    }),
+  });
+
+  type ContactFormData = z.infer<typeof schema>;
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    const { email, message, name } = data;
+
+    sendSimpleMessage({
+      email,
+      message,
+      name,
+    });
+
+    if (success) {
+      toast({
+        title: "Mensagem enviada com sucesso!",
+        description: "Agradecemos seu contato. Retornaremos em breve.",
+        className: "bg-green-100 border-green-400 text-green-800",
+      });
+
+      form.reset();
+    } else if (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente mais tarde.",
+      });
+    }
+  };
+
   return (
     <main className="min-h-screen bg-black text-white pt-24">
       <section className="px-6 pb-4 pt-20 md:py-32 animate-fadeIn">
@@ -34,72 +89,79 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="bg-black p-8 rounded-lg border border-gray-800">
             <h2 className="text-2xl font-bold mb-6">Envie uma mensagem</h2>
-            <form
-              name="contact"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              action="/thank-you"
-              className="space-y-6"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden">
-                <label>
-                  Don't fill this out if you're human:{" "}
-                  <input name="bot-field" />
-                </label>
-              </p>
-
-              <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-300"
-                >
-                  Nome
-                </label>
-                <input
-                  type="text"
-                  id="name"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)}>
+                <FormField
+                  control={form.control}
                   name="name"
-                  className="w-full bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                  required
+                  render={({ field }) => (
+                    <FormItem className="mb-2">
+                      <FormLabel className="text-sm font-medium text-gray-300">
+                        Nome
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
+                          placeholder="Seu nome"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-300"
-                >
-                  E-mail
-                </label>
-                <input
-                  type="email"
-                  id="email"
+                <FormField
+                  control={form.control}
                   name="email"
-                  className="w-full bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                  required
+                  render={({ field }) => (
+                    <FormItem className="mb-2">
+                      <FormLabel className="text-sm font-medium text-gray-300">
+                        E-mail
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="email"
+                          className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
+                          placeholder="seu@email.com"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="space-y-2">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-300"
-                >
-                  Mensagem
-                </label>
-                <textarea
-                  id="message"
+                <FormField
+                  control={form.control}
                   name="message"
-                  rows={5}
-                  className="w-full bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                  required
-                ></textarea>
-              </div>
+                  render={({ field }) => (
+                    <FormItem className="mb-2">
+                      <FormLabel className="text-sm font-medium text-gray-300">
+                        Mensagem
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          {...field}
+                          rows={5}
+                          className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
+                          placeholder="Sua mensagem"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <Button type="submit">Enviar Mensagem</Button>
-            </form>
+                <Button
+                  type="submit"
+                  className="w-full mt-6"
+                  disabled={isLoading}
+                >
+                  Enviar Mensagem
+                </Button>
+              </form>
+            </Form>
           </div>
 
           {/* Contact Information */}

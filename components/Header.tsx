@@ -53,13 +53,14 @@ export default function Header() {
 
             <nav className="flex flex-col gap-4 mt-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-white text-lg py-2 hover:text-pale-pink transition-colors duration-300"
-                >
-                  {item.name}
-                </Link>
+                <SheetClose key={item.name} asChild>
+                  <Link
+                    href={item.href}
+                    className="text-white text-lg py-2 hover:text-pale-pink transition-colors duration-300"
+                  >
+                    {item.name}
+                  </Link>
+                </SheetClose>
               ))}
             </nav>
           </SheetContent>

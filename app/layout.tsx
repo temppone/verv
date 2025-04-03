@@ -32,11 +32,13 @@ export default async function RootLayout({
 
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           {children}
+
+          <Toaster />
         </ThemeProvider>
 
         <Footer />
@@ -47,4 +49,5 @@ export default async function RootLayout({
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
