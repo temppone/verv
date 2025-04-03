@@ -32,7 +32,7 @@ export default function About() {
       <section className="px-6 py-16 bg-gray-950">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1">
-            <p className="text-xl text-gray-300 leading-relaxed text-left md:text-center">
+            <p className="text-xl text-gray-300 leading-relaxed text-left pb-4 md:text-center">
               A Verv existe porque acredita que os criativos têm o poder de
               transformar o mundo através de suas criações. No entanto, muitos
               criativos enfrentam dificuldades para construir marcas fortes e
