@@ -13,10 +13,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FileSymlink, Mail, Phone } from "lucide-react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useSendEmail } from "../hooks/useSendEmail";
-import { useEffect } from "react";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -132,7 +132,6 @@ export default function Contact() {
                         <Input
                           {...field}
                           className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                          placeholder="Seu nome"
                         />
                       </FormControl>
                       <FormMessage />
@@ -153,7 +152,6 @@ export default function Contact() {
                           {...field}
                           type="email"
                           className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                          placeholder="seu@email.com"
                         />
                       </FormControl>
                       <FormMessage />
@@ -174,7 +172,6 @@ export default function Contact() {
                           {...field}
                           rows={5}
                           className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
-                          placeholder="Sua mensagem"
                         />
                       </FormControl>
                       <FormMessage />
