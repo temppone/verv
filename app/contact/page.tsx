@@ -16,6 +16,7 @@ import { FileSymlink, Mail, Phone } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useSendEmail } from "../hooks/useSendEmail";
+import { useEffect } from "react";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -43,15 +44,7 @@ export default function Contact() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
-    const { email, message, name } = data;
-
-    sendSimpleMessage({
-      email,
-      message,
-      name,
-    });
-
+  useEffect(() => {
     if (success) {
       toast({
         title: "Mensagem enviada com sucesso!",
@@ -66,6 +59,16 @@ export default function Contact() {
         description: "Tente novamente mais tarde.",
       });
     }
+  }, [success, error]); // Dispara o Toast quando success ou error mudar
+
+  const onSubmit = async (data: ContactFormData) => {
+    const { email, message, name } = data;
+
+    await sendSimpleMessage({
+      email,
+      message,
+      name,
+    });
   };
 
   return (
@@ -87,7 +90,33 @@ export default function Contact() {
 
       <section className="px-6 pb-2 pt-16 bg-gray-950 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="bg-black p-8 rounded-lg border border-gray-800">
+          <div className="bg-black p-8 rounded-lg border border-gray-800 relative overflow-hidden">
+            {success ? (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-95 z-10 animate-fadeIn">
+                <div className="w-16 h-16 rounded-full bg-pale-pink/20 flex items-center justify-center mb-6">
+                  <svg
+                    className="w-8 h-8 text-pale-pink"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-pale-pink mb-2">
+                  Mensagem Enviada!
+                </h3>
+                <p className="text-gray-300 text-center max-w-xs">
+                  Obrigado por entrar em contato. Retornaremos em breve.
+                </p>
+              </div>
+            ) : null}
+
             <h2 className="text-2xl font-bold mb-6">Envie uma mensagem</h2>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -155,10 +184,40 @@ export default function Contact() {
 
                 <Button
                   type="submit"
-                  className="w-full mt-6"
+                  className={`w-full mt-6 transition-all ${
+                    isLoading
+                      ? "bg-gray-700"
+                      : "bg-pale-pink hover:bg-pale-pink/80 text-black"
+                  }`}
                   disabled={isLoading}
                 >
-                  Enviar Mensagem
+                  {isLoading ? (
+                    <span className="flex items-center justify-center">
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Enviando...
+                    </span>
+                  ) : (
+                    "Enviar mensagem"
+                  )}
                 </Button>
               </form>
             </Form>
