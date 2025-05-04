@@ -32,14 +32,7 @@ The project includes:
 ## API Endpoints
 
 - **POST /api/email/send-email**: Handles contact form submissions through Mailgun
-
-## eBook Features
-
-- Pricing at R$19 (promotional rate)
-- Content focused on AI automation for creative professionals
-- Sections on time-saving, client communication, and workflow optimization
-- 7-day money-back guarantee
-
+- 
 ## Getting Started
 
 1. Clone the repository
