@@ -1,15 +1,15 @@
 import React from "react";
-import Logo from "@/public/verv_logo.svg";
+import Logo from "@/public/primitiva_logo.svg";
 
 export default function Footer() {
   return (
-    <footer className="px-6 bg-black text-white py-12 border-t border-gray-800">
+    <footer className="px-6 bg-black text-white py-12 border-t border-white-900">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="animate-fadeIn">
           <span className="text-off-white">
             <img
               src={Logo.src}
-              alt="Verv Studio"
+              alt="Primitiva Studio"
               className="w-16 invert brightness-0 filter"
             />
           </span>
@@ -19,7 +19,7 @@ export default function Footer() {
           <ul className="space-y-2 opacity-70">
             <li>
               <a
-                href="https://instagram.com/estudioverv"
+                href="https://instagram.com/primitiva.cc"
                 className="hover:text-pale-pink transition-colors duration-300 inline-block hover:translate-x-1"
               >
                 Instagram
@@ -27,7 +27,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://behance.net/estudioverv"
+                href="https://behance.net/primitiva.cc"
                 className="hover:text-pale-pink transition-colors duration-300 inline-block hover:translate-x-1"
               >
                 Behance
@@ -37,17 +37,22 @@ export default function Footer() {
         </div>
         <div className="animate-fadeIn animation-delay-600">
           <h2 className="font-medium mb-4 text-base">Contato</h2>
-          <p className="opacity-70 mb-2">hello@vervstudio.com.br</p>
-          <a
-            href="https://form.respondi.app/NwPH9MZX"
-            className="border-b border-pale-pink text-pale-pink hover:text-white hover:border-white transition-colors duration-300"
-          >
-            Solicitar Orçamento
-          </a>
+          <p>
+            <a
+              href="https://wa.me/5532999508150"
+              className="text-pale-pink mb-2 transition-colors duration-300"
+            >
+              +55 32 99950-8150
+            </a>
+          </p>
+
+          <p className="opacity-70 mb-2">oi@primitiva.cc</p>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-gray-800 text-sm opacity-50">
-        <p>© {new Date().getFullYear()} Verv. Todos os direitos reservados.</p>
+      <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white-900 text-sm opacity-50">
+        <p>
+          © {new Date().getFullYear()} Primitiva. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
   );

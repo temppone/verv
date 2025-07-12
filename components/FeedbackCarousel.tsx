@@ -31,10 +31,10 @@ const feedbacks = [
 
 export default function FeedbackCarousel() {
   return (
-    <section className="px-6 py-4 bg-gray-950">
+    <section className="px-6 py-4 bg-gray-1000">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-          O que dizem depois de virar a chave
+          Vozes de quem despertou
         </h2>
         <div>
           <Carousel className="w-ful">

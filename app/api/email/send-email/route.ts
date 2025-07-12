@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       "sandboxac203c9ff42f417a947555b3ea3d4790.mailgun.org",
       {
         from: "Mailgun Sandbox <postmaster@sandboxac203c9ff42f417a947555b3ea3d4790.mailgun.org>",
-        to: ["Giovani <hello@vervstudio.com.br>"],
+        to: ["Giovani <oi@primitiva.cc>"],
         subject: `New message from: ${name}`,
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       }

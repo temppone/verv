@@ -1,4 +1,4 @@
-import Logo from "@/public/verv_logo.svg";
+import Logo from "@/public/primitiva_logo.svg";
 import {
   Sheet,
   SheetContent,
@@ -14,7 +14,7 @@ export default function Header() {
     { name: "Início", href: "/" },
     // { name: "Ebooks", href: "/ebooks/1" },
     { name: "Sobre", href: "/about" },
-    { name: "Contato", href: "/contact" },
+    { name: "Contato", href: "#contato" },
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/">
             <img
               src={Logo.src}
-              alt="Verv Studio"
+              alt="Primitiva Studio"
               className="w-16 invert brightness-0 filter"
             />
           </Link>

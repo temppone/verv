@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Bot, Instagram, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Logo from "@/public/verv_logo.svg";
+import Logo from "@/public/primitiva_logo.svg";
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
             className="bg-dark-teal-500 hover:bg-dark-teal-600 text-off-white-100 transition-all duration-200 ease-in-out hover:shadow-md w-full max-w-sm py-6 text-base font-medium"
             asChild
           >
-            <Link href="https://form.respondi.app/NwPH9MZX" target="_blank">
+            <Link href="https://form.respondi.app/9NqpobzW" target="_blank">
               Fazer um orçamento <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

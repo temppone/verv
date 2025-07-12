@@ -94,6 +94,6 @@ body {
   }
 
   .btn-primary {
-    @apply bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:bg-white hover:scale-105 transform;
+    @apply bg-pale-pink text-black px-4 py-3 text-lg font-medium rounded-lg transition-all duration-300 hover:scale-105 transform;
   }
 }
