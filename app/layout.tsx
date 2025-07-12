@@ -7,7 +7,7 @@ import type React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Verv - Branding para criativos",
+  title: "Primitiva - Branding para criativos",
   description:
     "Estratégias profissionais de branding para designers, artistas e freelancers. Desenvolva sua identidade visual, atraia clientes ideais e destaque-se no mercado criativo com métodos eficientes e práticos.",
   icons: {

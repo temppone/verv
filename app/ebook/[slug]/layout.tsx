@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Verv Studio - Automatize tarefas com IA",
+  title: "Primitiva Studio - Automatize tarefas com IA",
   description:
     "Pare de perder horas com tarefas chatas. Aprenda a usar IA para automatizar processos operacionais e foque no que realmente importa no seu trabalho criativo - por apenas R$19!",
 };

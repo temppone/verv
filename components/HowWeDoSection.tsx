@@ -27,10 +27,10 @@ export default function HowWeDoSection() {
   ];
 
   return (
-    <section className="px-6 py-8 bg-gray-950">
+    <section className="px-6 py-8 bg-gray-1000">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-          Como fazemos
+          Nosso ritual
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((item, index) => (
@@ -38,7 +38,7 @@ export default function HowWeDoSection() {
               key={index}
               className="group relative p-8 rounded-xl transition-all duration-500 ease-out bg-black/40 scale-[1.02] cursor-pointer backdrop-blur-sm border border-pale-pink/20"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-pale-pink/5 to-transparent opacity-100 transition-opacity duration-500 rounded-xl" />
+              <div className="absolute inset-0 from-pale-pink/5 to-transparent opacity-100 transition-opacity duration-500 rounded-xl" />
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-pale-pink font-bold text-4xl opacity-100 transition-opacity duration-300">

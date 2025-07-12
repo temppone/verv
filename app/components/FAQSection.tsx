@@ -51,7 +51,7 @@ export default function FAQSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-gray-800 rounded-lg px-6 data-[state=open]:border-pale-pink transition-all duration-300"
+                className="border border-white-900 rounded-lg px-6 data-[state=open]:border-pale-pink transition-all duration-300"
               >
                 <AccordionTrigger className="hover:no-underline group">
                   <span className="text-xl font-medium text-left group-hover:text-pale-pink transition-colors duration-300">

@@ -66,7 +66,7 @@ export default function Home() {
               <span className="text-xl md:text-2xl font-black text-off-white transition-transform duration-300 hover:scale-105">
                 <img
                   src={Logo.src}
-                  alt="Verv Studio"
+                  alt="Primitiva Studio"
                   className="w-20 invert brightness-0 filter"
                 />
               </span>
@@ -542,7 +542,7 @@ export default function Home() {
                   <div className="w-100 flex justify-center">
                     <img
                       src={HotmartIcons.src}
-                      alt="Verv Studio"
+                      alt="Primitiva Studio"
                       className="w-60"
                     />
                   </div>
@@ -628,9 +628,10 @@ export default function Home() {
 
                     <div className="space-y-4 text-dark-teal-700">
                       <p>
-                        Sou o Giovani, designer estratégico e fundador da Verv,
-                        um estúdio que ajuda criativos a construir marcas
-                        autênticas sem ficarem presos a tarefas operacionais.
+                        Sou o Giovani, designer estratégico e fundador da
+                        Primitiva, um estúdio que ajuda criativos a construir
+                        marcas autênticas sem ficarem presos a tarefas
+                        operacionais.
                       </p>
 
                       <p>

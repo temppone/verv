@@ -32,13 +32,13 @@ export default function WhatWeDoSection() {
     <section className="px-6 py-12 bg-black">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
-          O que fazemos
+          Como podemos te guiar
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950"
+              className="p-8 border border-white-900 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-1000"
               data-aos="fade-up"
               data-aos-delay={index * 100}
               data-aos-once="true"
