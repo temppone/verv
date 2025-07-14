@@ -1,4 +1,4 @@
-import Logo from "@/public/verv_logo.svg";
+import Logo from "@/public/primitiva_logo.svg";
 import {
   Sheet,
   SheetContent,
@@ -14,7 +14,7 @@ export default function Header() {
     { name: "Início", href: "/" },
     // { name: "Ebooks", href: "/ebooks/1" },
     { name: "Sobre", href: "/about" },
-    { name: "Contato", href: "/contact" },
+    { name: "Contato", href: "#contato" },
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function Header() {
           <Link href="/">
             <img
               src={Logo.src}
-              alt="Verv Studio"
+              alt="Primitiva Studio"
               className="w-16 invert brightness-0 filter"
             />
           </Link>
@@ -43,14 +43,6 @@ export default function Header() {
           </SheetTrigger>
 
           <SheetContent className="bg-black/95">
-            <SheetClose asChild className="absolute right-4 top-4">
-              <Button variant="link" size="icon">
-                <X className="text-white" />
-
-                <span className="sr-only">Close</span>
-              </Button>
-            </SheetClose>
-
             <nav className="flex flex-col gap-4 mt-8">
               {navItems.map((item) => (
                 <SheetClose key={item.name} asChild>

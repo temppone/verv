@@ -88,9 +88,9 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="px-6 pb-2 pt-16 bg-gray-950 md:py-20">
+      <section className="px-6 pb-2 pt-16 bg-gray-1000 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="bg-black p-8 rounded-lg border border-gray-800 relative overflow-hidden">
+          <div className="bg-black p-8 rounded-lg border border-white-900 relative overflow-hidden">
             {success ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-95 z-10 animate-fadeIn">
                 <div className="w-16 h-16 rounded-full bg-pale-pink/20 flex items-center justify-center mb-6">
@@ -131,7 +131,7 @@ export default function Contact() {
                       <FormControl>
                         <Input
                           {...field}
-                          className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
+                          className="bg-gray-950 border border-white-900 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
                         />
                       </FormControl>
                       <FormMessage />
@@ -151,7 +151,7 @@ export default function Contact() {
                         <Input
                           {...field}
                           type="email"
-                          className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
+                          className="bg-gray-950 border border-white-900 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
                         />
                       </FormControl>
                       <FormMessage />
@@ -171,7 +171,7 @@ export default function Contact() {
                         <Textarea
                           {...field}
                           rows={5}
-                          className="bg-gray-900 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
+                          className="bg-gray-950 border border-white-900 rounded-md p-3 text-white focus:outline-none focus:ring-2 focus:ring-pale-pink focus:border-transparent"
                         />
                       </FormControl>
                       <FormMessage />
@@ -232,10 +232,10 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">E-mail</h3>
                   <a
-                    href="mailto:hello@vervstudio.com.br"
+                    href="mailto:oi@primitiva.cc"
                     className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
                   >
-                    hello@vervstudio.com.br
+                    oi@primitiva.cc
                   </a>
                 </div>
               </div>
@@ -257,10 +257,10 @@ export default function Contact() {
                 <FileSymlink size={24} className="text-pale-pink mt-1" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2">
-                    Solicitar orçamento
+                    Agendar uma conversa
                   </h3>
                   <a
-                    href="https://form.respondi.app/NwPH9MZX"
+                    href="https://form.respondi.app/9NqpobzW"
                     className="text-gray-300 hover:text-pale-pink transition-colors duration-300"
                   >
                     Clique aqui{" "}
@@ -304,7 +304,7 @@ export default function Contact() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="p-8 border border-gray-800 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-950"
+                className="p-8 border border-white-900 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-1000"
               >
                 <div className="flex flex-col h-full">
                   <h3 className="text-2xl font-bold mb-4 text-pale-pink">
@@ -321,7 +321,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-950 relative overflow-hidden">
+      <section className="py-16 bg-gray-1000 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-pale-pink/20 to-transparent opacity-30"></div>
         <div className="max-w-4xl mx-auto px-6 text-center relative">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -333,10 +333,10 @@ export default function Contact() {
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <a
-              href="https://form.respondi.app/NwPH9MZX"
+              href="https://form.respondi.app/9NqpobzW"
               className="btn-primary"
             >
-              Solicitar Orçamento
+              Agendar uma conversa
             </a>
           </div>
         </div>

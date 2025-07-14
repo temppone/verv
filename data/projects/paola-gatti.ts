@@ -11,7 +11,7 @@ const project: Project = {
   services: ["Identidade visual", "Posicionamento", "Arquétipos", "Tom de voz"],
   testimonial: {
     quote:
-      "Trabalhar com a Verv foi incrível! Demorei pra criar coragem e me abrir a sugestões, mas o Giovani me deu total confiança no processo. Teve sensibilidade pra entender tanto o lado prático quanto o afetivo do meu trabalho. Amei o resultado tanto quanto a jornada! Hoje, me sinto lindamente conectada à minha identidade. Parabéns e muito obrigada!",
+      "Trabalhar com a Primitiva foi incrível! Demorei pra criar coragem e me abrir a sugestões, mas o Giovani me deu total confiança no processo. Teve sensibilidade pra entender tanto o lado prático quanto o afetivo do meu trabalho. Amei o resultado tanto quanto a jornada! Hoje, me sinto lindamente conectada à minha identidade. Parabéns e muito obrigada!",
     author: "Paola Gatti",
     role: "Tatuadora",
     image: "/customersFeedback/feedback_paola.webp",

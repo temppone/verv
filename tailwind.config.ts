@@ -101,7 +101,7 @@ const config = {
         },
 
         "pale-pink": {
-          DEFAULT: "#f06292",
+          DEFAULT: "#e2dcc3",
           100: "#FEE8F0",
           200: "#FDD1E1",
           300: "#FBBAD2",
