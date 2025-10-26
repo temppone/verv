@@ -1,4 +1,7 @@
+"use client";
+
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface Feedback {
   text: string;
@@ -30,13 +33,31 @@ const feedbacks = [
 ];
 
 export default function FeedbackCarousel() {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  });
+
   return (
     <section className="px-6 py-4 bg-gray-1000">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+      <div
+        ref={sectionRef}
+        className={`max-w-6xl mx-auto transition-all duration-1000 ${
+          sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <h2
+          className={`text-4xl font-bold mb-16 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink transition-all duration-1000 delay-200 ${
+            sectionVisible ? "animate-fade-in" : "opacity-0"
+          }`}
+        >
           Vozes de quem despertou
         </h2>
-        <div>
+        <div
+          className={`transition-all duration-1000 delay-300 ${
+            sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
+          }`}
+        >
           <Carousel className="w-ful">
             {feedbacks.map((feedback, index) => (
               <CarouselItem key={index} className="p-6">

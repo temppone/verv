@@ -1,4 +1,7 @@
+"use client";
+
 import { Paintbrush, BarChart3, Layout, Globe } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -28,20 +31,38 @@ const services = [
 ];
 
 export default function WhatWeDoSection() {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  });
+
   return (
     <section className="px-6 py-12 bg-black">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-16 animate-fadeIn tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink">
+      <div
+        ref={sectionRef}
+        className={`max-w-6xl mx-auto transition-all duration-1000 ${
+          sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <h2
+          className={`text-4xl font-bold mb-16 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink transition-all duration-1000 delay-200 ${
+            sectionVisible ? "animate-fade-in" : "opacity-0"
+          }`}
+        >
           Como podemos te guiar
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-8 border border-white-900 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-1000"
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-              data-aos-once="true"
+              className={`p-8 border border-white-900 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-1000 ${
+                sectionVisible
+                  ? "animate-fade-in-up"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{
+                transitionDelay: `${300 + index * 100}ms`,
+              }}
             >
               <div className="flex flex-col h-full">
                 <service.icon className="w-8 h-8 mb-4 text-pale-pink" />
