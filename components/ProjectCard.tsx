@@ -9,6 +9,7 @@ interface ProjectCardProps {
   fullWidth?: boolean;
   slug: string;
   square?: boolean;
+  isVisible?: boolean;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -18,12 +19,17 @@ const ProjectCard: FC<ProjectCardProps> = ({
   fullWidth = false,
   slug,
   square,
+  isVisible = true,
 }) => {
   return (
     <Link
       href={`/projects/${slug}`}
-      className={`animate-fadeIn group relative overflow-hidden block rounded-2xl ${
+      className={`group relative overflow-hidden block rounded-2xl transition-all duration-1000 ${
         fullWidth ? "md:col-span-2" : ""
+      } ${
+        isVisible
+          ? "animate-fade-in-up opacity-100 translate-y-0"
+          : "opacity-0 translate-y-8"
       }`}
       style={{ animationDelay: `${delay}ms` }}
     >

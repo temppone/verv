@@ -46,13 +46,6 @@ export default function About() {
               ver o mercado saturado de fórmulas prontas , soluções superficiais
               e design que é só estética.
             </p>
-
-            <p className="text-xl text-gray-300 leading-relaxed text-left md:text-center">
-              Nós acreditamos que as marcas mais poderosas não são inventadas,
-              mas sim despertadas. Por isso, nosso trabalho não é criar algo do
-              zero, mas guiar você em uma jornada de autodescoberta para revelar
-              a marca que já existe aí dentro.
-            </p>
           </div>
         </div>
       </section>
