@@ -3,10 +3,24 @@ import OqueFazerEmJF from "@/public/images/oqueFazerEmJF.webp";
 
 const project: Project = {
   slug: "oque-fazer-em-jf",
+  category: "Influencer",
   title: "O que fazer em JF",
   subtitle: "Branding & Identidade Visual",
   description: "O amor por Juiz de Fora que acumulou uma legião de fãs",
   image: OqueFazerEmJF,
+  client: "O Que Fazer em JF?",
+  superficial: "Uma página de reviews e dicas sobre Juiz de Fora.",
+  primitivo: "Um movimento que captura a energia local e cultiva o orgulho de pertencer à cidade.",
+  caseStudy: `"O Que Fazer em JF?" nasceu como uma página prática e espontânea, cheia de dicas simples. Com o tempo, sua influência cresceu e sua voz, tornou-se essencial. No entanto, sua identidade visual ainda não refletia a força e a conexão que já tinha com a cidade.
+
+Nosso desafio na Primitiva foi ir fundo na essência desse movimento. O que faz dele indispensável? É a energia pulsante de Juiz de Fora, capturada e curada com carinho pela Mirella.
+
+Desenvolvemos um sistema visual que traduz essa vibração: uma mistura harmoniosa de criatividade, dinamismo e acolhimento. Com essa nova identidade, o "O Que Fazer em JF?" deixou de ser só uma página de dicas para virar a voz autêntica da cidade — uma marca respeitada, autoridade local que conecta negócios e pessoas ao que Juiz de Fora tem de melhor.`,
+  images: [
+    "/images/oqfjf_1.webp",
+    "/images/oqfjf_2.webp", 
+    "/images/oqfjf_3.webp",
+  ],
   stats: [
     { label: "Seguidores", value: "100k+" },
     { label: "Parcerias locais", value: "50+" },
@@ -20,7 +34,7 @@ const project: Project = {
     role: "Fundadora",
     image: "/customersFeedback/feedback_oqfjf.webp",
   },
-  relatedProjects: ["ninho", "paola-gatti"],
+  relatedProjects: ["ninho", "pe-de-cafe"],
   beforeAfter: {
     before: {
       image: "/images/oqfjf_antes.jpg",

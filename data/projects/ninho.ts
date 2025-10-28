@@ -3,15 +3,30 @@ import { Project } from "@/types/project";
 const project: Project = {
   slug: "ninho",
   title: "Ninho",
+  category: "Tatuagem",
   subtitle: "Identidade Visual & Branding",
   description:
     "Um estúdio de tatuagem que oferece acolhimento, confiança e expressão através da arte corporal",
   image: "/images/ninho.webp",
+  client: "Ninho",
+  superficial: "Um coworking informal de tatuagem.",
+  primitivo: "O orgulho de transformar. Uma marca que coloca o cuidado e a experiência do cliente no centro de tudo.",
+  caseStudy: `O Ninho nasceu para acolher e transformar. Mas sua antiga identidade visual não contava essa história. Havia um afastamento entre a essência genuína e a forma como a marca era vista.
+
+Nosso desafio na Primitiva foi revelar a raiz da marca, trazendo para a superfície aquilo que já pulsava no seu âmago. A transformação do corpo, para o Ninho, é simples, profunda e cheia de empatia.
+
+Inspirados no conceito de "ninho", criamos um sistema visual que oferece segurança e conforto, sem perder a ousadia e a liberdade que a tatuagem carrega. Formas orgânicas abraçam a marca, enquanto a comunicação fala com proximidade, confiança e criatividade.
+
+Com a nova identidade, o Ninho deixou de ser apenas um espaço "informal". Agora, sua comunicação reflexa autenticidade, confiabilidade e um cuidado que faz da experiência do cliente o seu verdadeiro centro.`,
+  images: [
+    "/images/ninho_1.jpg",
+    "/images/ninho_2.jpg",
+    "/images/ninho_3.webp",
+    "/images/ninho.webp"
+  ],
   services: [
-    "Redesign de marca",
     "Identidade visual",
-    "Posicionamento",
-    "Comunicação",
+    "Identidade verbal",
   ],
   testimonial: {
     quote:
@@ -20,7 +35,7 @@ const project: Project = {
     role: "@ninhoestudio",
     image: "/customersFeedback/feedback_ninho.webp",
   },
-  relatedProjects: ["paola-gatti", "oque-fazer-em-jf"],
+  relatedProjects: ["oque-fazer-em-jf", "gustavo-knop"],
   fullContent: [
     {
       type: "lead",

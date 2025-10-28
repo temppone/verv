@@ -54,23 +54,28 @@ export default function WhatWeDoSection() {
 
         <div className="flex">
           <p
-            className={`font-libre hidden md:block text-sm w-full md:text-base mb-10 md:mb-14 opacity-70 ${
+            className={`font-libre hidden md:block text-sm w-[50%] md:text-base mb-10 md:mb-14 opacity-70 ${
               sectionVisible ? "animate-fade-in" : "opacity-0"
             }`}
           >
             (O que fazemos)
           </p>
 
-          <div className="hidden md:block w-[60%]"></div>
           <div>
             {items.map((item, index) => (
               <div
                 key={index}
-                className="pb-10 mb-10 border-b border-black/20 last:border-b-0 last:mb-0"
+                className="pb-10 mb-10"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
-                <h3 className="font-libre text-3xl md:text-5xl leading-tight mb-4">
-                  {item.title}
+                <h3 className="font-libre text-3xl md:text-3xl leading-tight mb-4 cursor-pointer overflow-hidden relative group border-b pb-4 border-black/20 last:border-b-0 last:mb-0">
+                  <span className="inline-block transition-all duration-100 ease-in-out group-hover:-translate-y-full group-hover:italic">
+                    {item.title}
+                  </span>
+
+                  <span className="inline-block absolute top-full left-0 transition-all duration-100 ease-in-out pb-4 group-hover:-translate-y-full italic opacity-0 group-hover:opacity-100">
+                    {item.title}
+                  </span>
                 </h3>
                 <p className="text-base md:text-lg opacity-80 max-w-3xl">
                   {item.description}

@@ -18,7 +18,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="px-6 fixed w-full flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80 h-16">
+    <header className="px-6 fixed w-full font-libre flex justify-between items-center top-0 z-10 backdrop-blur-sm bg-black/80 h-16">
       <div className="flex justify-center text-xl font-bold hover:text-pale-pink transition-colors duration-300">
         <span className="py-4 font-black text-off-white transition-transform duration-300 hover:scale-105">
           <Link href="/">

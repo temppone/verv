@@ -34,10 +34,16 @@ export type Stat = {
 
 export type Project = {
   slug: string;
+  category: string;
   title: string;
   subtitle: string;
   description?: string;
   image: string | any; // Allow for imported images or strings
+  client: string;
+  superficial: string;
+  primitivo: string;
+  caseStudy: string;
+  images: string[];
   stats?: Stat[];
   services: string[];
   testimonial?: Testimonial;

@@ -14,7 +14,7 @@ export default function SelectedProjectsSection() {
   });
 
   return (
-    <section className="relative px-6 py-16 bg-gray-1000 overflow-hidden">
+    <section className="relative px-6 pt-16 bg-gray-1000 overflow-hidden">
       {/* Decorative pale-pink background word with parallax */}
 
       <div

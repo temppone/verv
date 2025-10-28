@@ -23,10 +23,9 @@ export default function HeroSection() {
           id="hero-heading"
         >
           <span className="text-white">
-            Sua marca já existe. Nós só te ajudamos a{" "}
+            Sua marca já existe. Nós só te ajudamos <br />
           </span>
-          <br />
-          <span className="text-pale-pink italic">descobrir!</span>
+          <span className="text-pale-pink italic">a descobrir!</span>
         </h1>
 
         <span className="text-white">

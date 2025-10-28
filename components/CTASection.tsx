@@ -19,7 +19,7 @@ export default function CTASection() {
         }`}
       >
         <h2
-          className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 delay-200 ${
+          className={`text-4xl md:text-5xl font-bold mb-6 transition-all duration-1000 delay-200 font-libre ${
             sectionVisible ? "animate-fade-in" : "opacity-0"
           }`}
         >
@@ -38,7 +38,10 @@ export default function CTASection() {
             sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-4"
           }`}
         >
-          <Button size="lg" className="bg-black text-white">
+          <Button
+            size="lg"
+            className="bg-transparent text-black border rounded-3xl border-black"
+          >
             <a href="https://form.respondi.app/9NqpobzW">
               Agendar uma conversa
             </a>

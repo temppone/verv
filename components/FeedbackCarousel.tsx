@@ -9,10 +9,6 @@ interface Feedback {
   handle: string;
 }
 
-interface FeedbackCarouselProps {
-  feedbacks: Feedback[];
-}
-
 const feedbacks = [
   {
     text: "Eu amei todo o conceito, o formato dos elementos que escolheu, a paleta!!! Ta perfeito. Eu nem sei o que dizer, conseguiu me tirar um sorriso imenso junto com aquele silêncio de satisfação sabe. Fiquei apaixonada, pra dizer o mínimo",
@@ -39,7 +35,7 @@ export default function FeedbackCarousel() {
   });
 
   return (
-    <section className="px-6 py-4 bg-gray-1000">
+    <section className="px-6 bg-gray-1000">
       <div
         ref={sectionRef}
         className={`max-w-6xl mx-auto transition-all duration-1000 ${
