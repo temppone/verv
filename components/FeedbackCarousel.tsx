@@ -46,13 +46,6 @@ export default function FeedbackCarousel() {
           sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2
-          className={`text-4xl font-bold mb-16 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink transition-all duration-1000 delay-200 ${
-            sectionVisible ? "animate-fade-in" : "opacity-0"
-          }`}
-        >
-          Vozes de quem despertou
-        </h2>
         <div
           className={`transition-all duration-1000 delay-300 ${
             sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"

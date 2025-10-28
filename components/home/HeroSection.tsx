@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function HeroSection() {
@@ -10,15 +9,15 @@ export default function HeroSection() {
   });
 
   return (
-    <section className="px-6 py-20 md:py-32">
+    <section className="px-6 py-20 md:pt-32 pb-10">
       <div
         ref={sectionRef}
-        className={`max-w-5xl mx-auto transition-all duration-1000 ${
+        className={`max-w-5xl mx-auto text-center transition-all duration-1000 ${
           sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
         }`}
       >
         <h1
-          className={`text-6xl md:text-8xl font-bold tracking-tight mb-6 transition-all duration-1000 delay-200 ${
+          className={`text-6xl font-libre md:text-8xl tracking-tight mb-6 text-center transition-all duration-1000 delay-200 ${
             sectionVisible ? "animate-slide-up" : "opacity-0 translate-y-4"
           }`}
           id="hero-heading"
@@ -27,18 +26,13 @@ export default function HeroSection() {
             Sua marca já existe. Nós só te ajudamos a{" "}
           </span>
           <br />
-          <span className="text-pale-pink">(re)descobrir!</span>
+          <span className="text-pale-pink italic">descobrir!</span>
         </h1>
 
-        <div
-          className={`md:block mt-12 transition-all duration-1000 delay-500 ${
-            sectionVisible ? "animate-fade-in" : "opacity-0"
-          }`}
-        >
-          <a href="https://form.respondi.app/9NqpobzW" target="_blank">
-            <Button size="lg">Descubra</Button>
-          </a>
-        </div>
+        <span className="text-white">
+          Branding, design e web para marcas vivas, instintivas e fora do
+          padrão.
+        </span>
       </div>
     </section>
   );

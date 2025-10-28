@@ -10,34 +10,33 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const faqItems = [
   {
-    question: "Quanto tempo leva o processo completo?",
-    answer:
-      "O processo completo geralmente leva de 4 a 6 semanas, dependendo da complexidade do projeto e da rapidez do feedback do cliente.",
+    question: "Por que o nome Primitiva?",
+    answer: `Porque acreditamos que toda marca nasce de algo essencial: uma verdade, uma emoção, uma intenção bruta. Nosso papel é voltar a essa origem, despir o excesso e revelar o que realmente faz sua marca ser o que é. Primitiva é sobre instinto, autenticidade e propósito antes da estética.`,
   },
   {
-    question: "Como funciona o processo de pagamento?",
-    answer:
-      "Trabalhamos com um sistema de 50% de entrada para iniciar o projeto e 50% na entrega final. Também oferecemos opções de parcelamento.",
+    question: "Que tipo de marcas vocês fazem?",
+    answer: `Marcas vivas. Autênticas. Que não querem parecer com ninguém.
+
+Trabalhamos principalmente com pessoas criativas, que querem um posicionamento claro, uma identidade com propósito e uma presença digital que sustente isso.`,
   },
   {
-    question: "O que está incluído no pacote de branding?",
-    answer:
-      "O pacote inclui estratégia de marca, identidade visual completa (logo, cores, tipografia), manual de marca e arquivos em todos os formatos necessários.",
+    question: "Quanto tempo demora um projeto?",
+    answer: `Depende da complexidade, mas em média:
+
+- Branding: entre 4 e 8 semanas.
+- Site: entre 3 e 5 semanas.
+
+Acreditamos em processos estratégicos, não em correria.`,
   },
   {
-    question: "Vocês fazem alterações após a entrega?",
-    answer:
-      "Sim, incluímos duas rodadas de alterações no pacote padrão para garantir que você esteja completamente satisfeito com o resultado.",
+    question: "Quanto custa um projeto?",
+    answer: `Cada marca tem um tamanho, uma história e uma necessidade diferente, por isso não trabalhamos com tabelas fixas. O investimento depende do escopo e da profundidade do trabalho, sempre com foco em retorno e consistência, não só em estética.`,
   },
   {
-    question: "Trabalham com projetos internacionais?",
-    answer:
-      "Sim, trabalhamos remotamente com clientes de qualquer lugar do mundo através de reuniões online e ferramentas colaborativas.",
-  },
-  {
-    question: "Como começar um projeto?",
-    answer:
-      "Entre em contato através do formulário ou WhatsApp. Faremos uma reunião inicial gratuita para entender suas necessidades e apresentar nossa proposta.",
+    question: "Vocês são flexíveis com preços?",
+    answer: `Somos flexíveis com escopos, não com valores.
+
+A gente acredita em construir algo que caiba na sua realidade sem desvalorizar o que entregamos. Então, se o orçamento for um desafio, ajustamos as etapas, nunca a qualidade.`,
   },
 ];
 
@@ -48,50 +47,72 @@ export default function FAQSection() {
   });
 
   return (
-    <section className="px-6 py-20 bg-black">
+    <section className="bg-pale-pink text-black">
       <div
         ref={sectionRef}
-        className={`max-w-6xl mx-auto transition-all duration-1000 ${
+        className={`max-w-6xl mx-auto px-6 md:px-8 lg:px-10 py-20 transition-all duration-1000 ${
           sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2
-          className={`text-4xl font-bold mb-16 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink transition-all duration-1000 delay-200 ${
+        <p
+          className={`font-libre block md:hidden text-sm w-full md:text-base mb-10 md:mb-14 opacity-70 ${
             sectionVisible ? "animate-fade-in" : "opacity-0"
           }`}
         >
           Perguntas Frequentes
-        </h2>
+        </p>
+
         <div
-          className={`w-100 transition-all duration-1000 delay-300 ${
+          className={`transition-all duration-1000 delay-300 ${
             sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
           }`}
         >
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqItems.map((item, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className={`border border-white-900 rounded-lg px-6 data-[state=open]:border-pale-pink transition-all duration-300 ${
-                  sectionVisible
-                    ? "animate-fade-in-up"
-                    : "opacity-0 translate-y-8"
-                }`}
-                style={{
-                  transitionDelay: `${400 + index * 100}ms`,
-                }}
-              >
-                <AccordionTrigger className="hover:no-underline group">
-                  <span className="text-xl font-medium text-left group-hover:text-pale-pink transition-colors duration-300">
-                    {item.question}
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-400 text-base">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="flex">
+            <p
+              className={`font-libre hidden md:block text-sm w-[30%] md:text-base mb-10 md:mb-14 opacity-70 ${
+                sectionVisible ? "animate-fade-in" : "opacity-0"
+              }`}
+            >
+              Perguntas Frequentes
+            </p>
+
+            <Accordion
+              type="single"
+              collapsible
+              className="divide-y w-full divide-black/20"
+            >
+              {faqItems.map((item, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className={`py-4 first:pt-0 last:pb-0 border-b border-black/20 last:border-b-0 transition-all duration-300 ${
+                    sectionVisible
+                      ? "animate-fade-in-up"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{ transitionDelay: `${400 + index * 100}ms` }}
+                >
+                  <AccordionTrigger className="group flex w-full items-center justify-between py-2 text-left hover:no-underline">
+                    <span className="text-base md:text-lg font-medium pr-6">
+                      {item.question}
+                    </span>
+                    <span className="ml-auto inline-flex items-center justify-center w-6 md:w-7">
+                      <span className="text-2xl leading-none group-data-[state=open]:hidden">
+                        +
+                      </span>
+                      <span className="hidden text-2xl leading-none group-data-[state=open]:block">
+                        −
+                      </span>
+                    </span>
+                  </AccordionTrigger>
+
+                  <AccordionContent className="text-black/70 text-base md:text-lg pr-8">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>

@@ -1,32 +1,32 @@
 "use client";
 
-import { Paintbrush, BarChart3, Layout, Globe } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const services = [
+const items = [
   {
-    icon: Paintbrush,
-    title: "Branding",
+    title: "Transformação",
     description:
-      "Desenvolvimento estratégico da sua marca, desde o posicionamento até a comunicação com seu público.",
+      "Reoriente o seu negócio em direção a uma nova oportunidade de mercado em que você tenha vantagem competitiva.",
   },
   {
-    icon: BarChart3,
-    title: "Estratégia",
+    title: "Reposicionamento",
     description:
-      "Planejamento detalhado para alcançar seus objetivos de negócio através da comunicação efetiva.",
+      "Crie uma posição defensável no mercado para que seus clientes vejam com clareza o que você faz de melhor.",
   },
   {
-    icon: Layout,
-    title: "Identidade Visual",
+    title: "Estratégia de marca",
     description:
-      "Criação de elementos visuais únicos que traduzem a essência da sua marca e conectam com seu público.",
+      "Estabeleça um framework de marca que alinhe cultura e comportamento internos com as ações e a comunicação externa.",
   },
   {
-    icon: Globe,
-    title: "Desenvolvimento Web",
+    title: "Identidade visual & verbal",
     description:
-      "Criação de sites e landing pages modernos e responsivos que transmitem a essência da sua marca.",
+      "Crie ativos únicos, modernos e memoráveis que levem à vida o seu posicionamento e a sua estratégia.",
+  },
+  {
+    title: "Implementação da marca",
+    description:
+      "Aplique sua identidade em cada ponto de contato para que todos se conectem com ela em segundos.",
   },
 ];
 
@@ -37,42 +37,47 @@ export default function WhatWeDoSection() {
   });
 
   return (
-    <section className="px-6 py-12 bg-black">
+    <section className="bg-pale-pink text-black">
       <div
         ref={sectionRef}
-        className={`max-w-6xl mx-auto transition-all duration-1000 ${
+        className={`max-w-6xl mx-auto px-6 md:px-8 lg:px-10 py-20 transition-all duration-1000 ${
           sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2
-          className={`text-4xl font-bold mb-16 tracking-tight relative before:content-[''] before:absolute before:w-20 before:h-1 before:-bottom-4 before:left-0 before:bg-pale-pink transition-all duration-1000 delay-200 ${
+        <p
+          className={`font-libre block md:hidden text-sm w-full md:text-base mb-10 md:mb-14 opacity-70 ${
             sectionVisible ? "animate-fade-in" : "opacity-0"
           }`}
         >
-          Como podemos te guiar
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`p-8 border border-white-900 rounded-lg hover:border-pale-pink transition-all duration-300 group relative min-h-[200px] hover:bg-gray-1000 ${
-                sectionVisible
-                  ? "animate-fade-in-up"
-                  : "opacity-0 translate-y-8"
-              }`}
-              style={{
-                transitionDelay: `${300 + index * 100}ms`,
-              }}
-            >
-              <div className="flex flex-col h-full">
-                <service.icon className="w-8 h-8 mb-4 text-pale-pink" />
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-400 text-lg leading-relaxed group-hover:text-white transition-colors duration-300">
-                  {service.description}
+          (O que fazemos)
+        </p>
+
+        <div className="flex">
+          <p
+            className={`font-libre hidden md:block text-sm w-full md:text-base mb-10 md:mb-14 opacity-70 ${
+              sectionVisible ? "animate-fade-in" : "opacity-0"
+            }`}
+          >
+            (O que fazemos)
+          </p>
+
+          <div className="hidden md:block w-[60%]"></div>
+          <div>
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="pb-10 mb-10 border-b border-black/20 last:border-b-0 last:mb-0"
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
+              >
+                <h3 className="font-libre text-3xl md:text-5xl leading-tight mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-base md:text-lg opacity-80 max-w-3xl">
+                  {item.description}
                 </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

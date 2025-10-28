@@ -38,7 +38,7 @@ export default function CTASection() {
             sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-4"
           }`}
         >
-          <Button size="lg">
+          <Button size="lg" className="bg-black text-white">
             <a href="https://form.respondi.app/9NqpobzW">
               Agendar uma conversa
             </a>

@@ -20,6 +20,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        libre: ["var(--font-libre)", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

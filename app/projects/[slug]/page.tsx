@@ -85,53 +85,14 @@ export default async function ProjectPage({
       >
         <Header />
 
-        {/* Hero Section */}
-        <section className="pt-32 pb-32 relative">
-          {/* Removed gradient background */}
-          <div className="absolute inset-0 bg-black opacity-30 z-0"></div>
-          <div className="max-w-7xl mx-auto px-6 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              <div>
-                {project.subtitle && (
-                  <div className="mb-3 text-pale-pink tracking-wider uppercase text-sm font-medium animate-fadeIn">
-                    {project.subtitle}
-                  </div>
-                )}
-
-                <h1 className="text-5xl md:text-7xl font-bold mb-8 animate-fadeIn leading-tight">
-                  {project.title}
-                </h1>
-
-                <p className="text-xl md:text-2xl text-gray-300 mb-12 animate-fadeIn animation-delay-200 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Services List */}
-                <div className="mb-10">
-                  <div className="flex flex-wrap gap-3">
-                    {project.services?.map((service, index) => (
-                      <span
-                        key={index}
-                        className="px-4 py-2 bg-pale-pink rounded-full text-gray-950 text-sm"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-lg animate-fadeIn animation-delay-300 shadow-2xl">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
+        <section className="mt-16 bg-gray-1000">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={1200}
+            height={800}
+            className="w-full h-auto"
+          />
         </section>
 
         {/* Stats Section */}
@@ -141,7 +102,7 @@ export default async function ProjectPage({
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
                 {project.stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-4xl md:text-5xl font-bold text-pale-pink mb-2">
+                    <div className="text-4xl md:text-5xl font-bold text-black mb-2">
                       {stat.value}
                     </div>
                     <div className="text-gray-400 font-medium">
@@ -155,7 +116,7 @@ export default async function ProjectPage({
         )}
 
         {/* Project Content */}
-        <section className="py-24 bg-gray-1000">
+        <section className="py-16 bg-gray-1000">
           <div className="max-w-3xl mx-auto px-6">
             <div className="prose prose-lg prose-invert mx-auto animate-fadeIn animation-delay-400">
               {project.fullContent &&
@@ -312,7 +273,7 @@ export default async function ProjectPage({
             <p className="text-xl text-gray-950 mb-10 max-w-2xl mx-auto">
               Marcas autênticas não acontecem por acaso. Se você quer uma marca
               que se destaque de verdade e conecte com o seu público, clica no
-              botão e bora conversar.
+              botão e bora conversar.e
             </p>
             <a
               href="https://form.respondi.app/9NqpobzW"
