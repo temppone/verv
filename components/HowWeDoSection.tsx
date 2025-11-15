@@ -1,13 +1,21 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function HowWeDoSection() {
   const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation({
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
   });
+
+  const [activeTab, setActiveTab] = useState("branding");
 
   const brandingSteps = [
     {
@@ -63,98 +71,100 @@ export default function HowWeDoSection() {
     },
   ];
 
+  const steps = activeTab === "branding" ? brandingSteps : webSteps;
+
   return (
-    <section className="px-6 py-8 bg-gray-1000">
+    <section className="px-6 py-20 bg-gray-1000 text-white overflow-hidden">
       <div
         ref={sectionRef}
         className={`max-w-6xl mx-auto transition-all duration-1000 ${
           sectionVisible ? "animate-fade-in-up" : "opacity-0 translate-y-8"
         }`}
       >
-        <h2
-          className={`text-4xl font-bold font-libre mb-10 pt-10 text-center tracking-tight transition-all duration-1000 delay-200 ${
-            sectionVisible ? "animate-fade-in" : "opacity-0"
-          }`}
-        >
-          Nosso ritual
-        </h2>
-
-        <Tabs defaultValue="branding">
-          <div className="flex items-center justify-center">
-            <TabsList className="bg-transparent p-0">
-              <TabsTrigger value="branding" variant="ghost">
-                Branding
-              </TabsTrigger>
-              <TabsTrigger value="web" variant="ghost">
-                Web
-              </TabsTrigger>
-            </TabsList>
+        <div className="grid md:grid-cols-12 gap-8 items-start">
+          <div className="md:col-span-4">
+            <h2
+              className={`text-4xl md:text-5xl font-libre font-bold mb-10 tracking-tight transition-all duration-1000 delay-200 text-left ${
+                sectionVisible ? "animate-fade-in" : "opacity-0"
+              }`}
+            >
+              Nosso ritual
+            </h2>
+            <div
+              className={`flex flex-col items-start gap-4 transition-all duration-1000 delay-300 ${
+                sectionVisible ? "animate-fade-in" : "opacity-0"
+              }`}
+            >
+              <button
+                onClick={() => setActiveTab("branding")}
+                className={`font-libre text-2xl relative group ${
+                  activeTab === "branding" ? "text-pale-pink" : "text-white/50"
+                } transition-colors duration-300`}
+              >
+                <span>Branding</span>
+                <span
+                  className={`absolute bottom-[-2px] left-0 h-[1px] bg-pale-pink origin-left transition-transform duration-500 ease-out ${
+                    activeTab === "branding" ? "scale-x-100" : "scale-x-0"
+                  } group-hover:scale-x-100`}
+                />
+              </button>
+              <button
+                onClick={() => setActiveTab("web")}
+                className={`font-libre text-2xl relative group ${
+                  activeTab === "web" ? "text-pale-pink" : "text-white/50"
+                } transition-colors duration-300`}
+              >
+                <span>Web</span>
+                <span
+                  className={`absolute bottom-[-2px] left-0 h-[1px] bg-pale-pink origin-left transition-transform duration-500 ease-out ${
+                    activeTab === "web" ? "scale-x-100" : "scale-x-0"
+                  } group-hover:scale-x-100`}
+                />
+              </button>
+            </div>
           </div>
 
-          <TabsContent value="branding">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-              {brandingSteps.map((item, index) => (
-                <div
-                  key={`branding-${index}`}
-                  className={`group relative p-8 rounded-xl transition-all duration-500 ease-out bg-black/40 scale-[1.02] cursor-pointer backdrop-blur-sm border border-pale-pink/20 ${
+          <div className="md:col-span-8 mt-10 md:mt-0">
+            <Accordion type="single" collapsible className="w-full">
+              {steps.map((item, index) => (
+                <AccordionItem
+                  value={`item-${index}`}
+                  key={`${activeTab}-${index}`}
+                  className={`relative transition-all duration-700 ease-in-out border-b-transparent ${
                     sectionVisible
                       ? "animate-fade-in-up"
-                      : "opacity-0 translate-y-8"
+                      : "opacity-0 translate-y-4"
                   }`}
-                  style={{ transitionDelay: `${300 + index * 100}ms` }}
+                  style={{ transitionDelay: `${400 + index * 150}ms` }}
                 >
-                  <div className="absolute inset-0 from-pale-pink/5 to-transparent opacity-100 transition-opacity duration-500 rounded-xl" />
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="text-pale-pink font-bold text-4xl opacity-100 transition-opacity duration-300">
+                  <AccordionTrigger className="font-libre text-2xl md:text-3xl text-left hover:no-underline group py-8">
+                    <div className="flex items-center gap-6">
+                      <span className="text-pale-pink/50 group-hover:text-pale-pink transition-colors duration-300">
                         {item.step}
                       </span>
-                      <div className="h-[1px] flex-grow bg-pale-pink/20 transform origin-left scale-x-100 transition-transform duration-500" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white/90 group-hover:text-pale-pink transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="leading-relaxed text-gray-300 transition-colors duration-300">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="web">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
-              {webSteps.map((item, index) => (
-                <div
-                  key={`web-${index}`}
-                  className={`group relative p-8 rounded-xl transition-all duration-500 ease-out bg-black/40 scale-[1.02] cursor-pointer backdrop-blur-sm border border-pale-pink/20 ${
-                    sectionVisible
-                      ? "animate-fade-in-up"
-                      : "opacity-0 translate-y-8"
-                  }`}
-                  style={{ transitionDelay: `${300 + index * 100}ms` }}
-                >
-                  <div className="absolute inset-0 from-pale-pink/5 to-transparent opacity-100 transition-opacity duration-500 rounded-xl" />
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="text-pale-pink font-bold text-4xl opacity-100 transition-opacity duration-300">
-                        {item.step}
+                      <span className="text-white/80 group-hover:text-white transition-colors duration-300">
+                        {item.title}
                       </span>
-                      <div className="h-[1px] flex-grow bg-pale-pink/20 transform origin-left scale-x-100 transition-transform duration-500" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-4 text-white/90 group-hover:text-pale-pink transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="leading-relaxed text-gray-300 transition-colors duration-300">
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-8 pl-16">
+                    <p className="text-base md:text-lg text-white/60 max-w-2xl leading-relaxed">
                       {item.description}
                     </p>
-                  </div>
-                </div>
+                  </AccordionContent>
+                  <span
+                    className="absolute bottom-0 left-0 h-px w-full bg-white/10 origin-left transition-transform ease-out"
+                    style={{
+                      transform: sectionVisible ? "scaleX(1)" : "scaleX(0)",
+                      transitionDelay: `${2000 + index * 200}ms`,
+                      transitionDuration: `${800 + index * 200}ms`,
+                    }}
+                  />
+                </AccordionItem>
               ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+            </Accordion>
+          </div>
+        </div>
       </div>
     </section>
   );

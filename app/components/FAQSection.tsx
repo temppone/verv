@@ -76,16 +76,12 @@ export default function FAQSection() {
               Perguntas Frequentes
             </p>
 
-            <Accordion
-              type="single"
-              collapsible
-              className="divide-y w-full divide-black/20"
-            >
+            <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className={`py-4 first:pt-0 last:pb-0 border-b border-black/20 last:border-b-0 transition-all duration-300 ${
+                  className={`relative py-4 first:pt-0 last:pb-4 last:border-b-0 transition-all duration-300 border-b-transparent ${
                     sectionVisible
                       ? "animate-fade-in-up"
                       : "opacity-0 translate-y-8"
@@ -109,6 +105,14 @@ export default function FAQSection() {
                   <AccordionContent className="text-black/70 text-base md:text-lg pr-8">
                     {item.answer}
                   </AccordionContent>
+                  <span
+                    className="absolute bottom-0 left-0 h-px w-full bg-black/20 origin-left transition-transform ease-out"
+                    style={{
+                      transform: sectionVisible ? "scaleX(1)" : "scaleX(0)",
+                      transitionDelay: `${1400 + index * 200}ms`,
+                      transitionDuration: `${2000 + index * 200}ms`,
+                    }}
+                  />
                 </AccordionItem>
               ))}
             </Accordion>

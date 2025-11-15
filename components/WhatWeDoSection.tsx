@@ -68,7 +68,7 @@ export default function WhatWeDoSection() {
                 className="pb-10 mb-10"
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
-                <h3 className="font-libre text-3xl md:text-3xl leading-tight mb-4 cursor-pointer overflow-hidden relative group border-b pb-4 border-black/20 last:border-b-0 last:mb-0">
+                <h3 className="font-libre text-3xl md:text-3xl leading-tight mb-4 cursor-pointer overflow-hidden relative group pb-4 last:border-b-0 last:mb-0">
                   <span className="inline-block transition-all duration-100 ease-in-out group-hover:-translate-y-full group-hover:italic">
                     {item.title}
                   </span>
@@ -76,6 +76,14 @@ export default function WhatWeDoSection() {
                   <span className="inline-block absolute top-full left-0 transition-all duration-100 ease-in-out pb-4 group-hover:-translate-y-full italic opacity-0 group-hover:opacity-100">
                     {item.title}
                   </span>
+                  <span
+                    className="absolute bottom-0 left-0 h-px w-full bg-black/20 origin-left transition-transform ease-out"
+                    style={{
+                      transform: sectionVisible ? "scaleX(1)" : "scaleX(0)",
+                      transitionDelay: `${800 + index * 200}ms`,
+                      transitionDuration: `${400 + index * 200}ms`,
+                    }}
+                  />
                 </h3>
                 <p className="text-base md:text-lg opacity-80 max-w-3xl">
                   {item.description}

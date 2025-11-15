@@ -4,13 +4,6 @@ export default function Footer() {
   return (
     <footer className="px-6 bg-black text-white py-12 border-t border-white-900">
       <div className="max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="animate-fadeIn">
-          <span className="text-off-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            quos.
-          </span>
-        </div>
-
         <div className="animate-fadeIn animation-delay-600">
           <h2 className="font-medium mb-4 text-base">Vamos conversar</h2>
           <p>
