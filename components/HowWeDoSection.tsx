@@ -156,8 +156,8 @@ export default function HowWeDoSection() {
                     className="absolute bottom-0 left-0 h-px w-full bg-white/10 origin-left transition-transform ease-out"
                     style={{
                       transform: sectionVisible ? "scaleX(1)" : "scaleX(0)",
-                      transitionDelay: `${2000 + index * 200}ms`,
-                      transitionDuration: `${800 + index * 200}ms`,
+                      transitionDelay: `${800 + index * 200}ms`,
+                      transitionDuration: `${2000 + index * 200}ms`,
                     }}
                   />
                 </AccordionItem>

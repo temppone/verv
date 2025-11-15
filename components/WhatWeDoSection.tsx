@@ -81,7 +81,7 @@ export default function WhatWeDoSection() {
                     style={{
                       transform: sectionVisible ? "scaleX(1)" : "scaleX(0)",
                       transitionDelay: `${800 + index * 200}ms`,
-                      transitionDuration: `${400 + index * 200}ms`,
+                      transitionDuration: `${2000 + index * 200}ms`,
                     }}
                   />
                 </h3>
